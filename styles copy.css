@@ -1,3 +1,5 @@
+/* for easy temp storing */
+
 * {
     margin: 0;
     padding: 0;
@@ -86,7 +88,7 @@ body {
 
 /* Hero Section */
 .hero {
-    min-height: 90vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #ff7300 100%);
@@ -143,6 +145,7 @@ body {
     top: 20%;
     left: 10%;
     background: rgba(255, 115, 0, 0.2);
+    animation: float 6s ease-in-out infinite;
 }
 
 .shape2 {
@@ -151,6 +154,7 @@ body {
     top: 60%;
     left: 8%;
     background: rgba(255, 255, 255, 0.25);
+    animation: float 8s ease-in-out infinite reverse;
 }
 
 .shape3 {
@@ -159,6 +163,7 @@ body {
     top: 30%;
     right: 15%;
     background: rgba(255, 115, 0, 0.18);
+    animation: float 7s ease-in-out infinite;
 }
 
 .shape4 {
@@ -167,6 +172,7 @@ body {
     top: 70%;
     right: 20%;
     background: rgba(255, 255, 255, 0.3);
+    animation: float 5s ease-in-out infinite;
 }
 
 .shape5 {
@@ -175,6 +181,7 @@ body {
     top: 15%;
     left: 25%;
     background: rgba(255, 115, 0, 0.15);
+    animation: float 9s ease-in-out infinite reverse;
 }
 
 .shape6 {
@@ -183,6 +190,7 @@ body {
     top: 45%;
     left: 15%;
     background: rgba(255, 255, 255, 0.2);
+    animation: float 4s ease-in-out infinite;
 }
 
 .shape7 {
@@ -191,6 +199,7 @@ body {
     top: 75%;
     right: 35%;
     background: rgba(255, 115, 0, 0.12);
+    animation: float 10s ease-in-out infinite reverse;
 }
 
 .hero-content {
@@ -879,16 +888,13 @@ body {
         flex-direction: row;
         background: white;
         width: 100%;
-        height: auto;
         text-align: center;
         transition: 0.3s;
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-        padding: 0.5rem 0;
-        justify-content: space-evenly;
-        overflow: hidden;
+        padding: 1rem 0;
+        justify-content: center;
+        overflow-x: auto;
         white-space: nowrap;
-        display: flex;
-        align-items: center;
     }
 
     .nav-menu.active {
@@ -896,25 +902,11 @@ body {
     }
 
     .nav-menu li {
-        margin: 0;
-        flex: 1;
-        text-align: center;
-    }
-
-    .nav-link {
-        font-size: 0.7rem;
-        padding: 0.4rem 0.2rem;
-        display: block;
-        font-weight: 500;
+        margin: 0 1rem;
     }
 
     .nav-toggle {
         display: flex;
-    }
-
-    /* Shorter hero section on mobile */
-    .hero {
-        min-height: 60vh;
     }
 
     /* Keep hero section horizontal on mobile */

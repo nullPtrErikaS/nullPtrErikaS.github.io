@@ -54,28 +54,46 @@ window.addEventListener('scroll', () => {
 });
 
 // Typing animation for hero text
-function typeWriter(element, text, speed = 100) {
+function typeWriter(element, text, speed = 100, deleteSpeed = 50, pauseTime = 2000) {
     let i = 0;
-    element.innerHTML = '';
+    let isDeleting = false;
     
     function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
+        if (!isDeleting && i < text.length) {
+            // Typing
+            element.textContent = text.substring(0, i + 1);
             i++;
+            setTimeout(type, speed);
+        } else if (!isDeleting && i === text.length) {
+            // Pause before deleting
+            setTimeout(() => {
+                isDeleting = true;
+                type();
+            }, pauseTime);
+        } else if (isDeleting && i > 0) {
+            // Deleting
+            element.textContent = text.substring(0, i - 1);
+            i--;
+            setTimeout(type, deleteSpeed);
+        } else if (isDeleting && i === 0) {
+            // Start typing again
+            isDeleting = false;
             setTimeout(type, speed);
         }
     }
+    
     type();
 }
 
 // Initialize typing animation when page loads
 window.addEventListener('load', () => {
-    const heroTitle = document.querySelector('.hero-text h1');
-    if (heroTitle) {
-        const originalText = heroTitle.innerHTML;
+    const typingElement = document.getElementById('typing-name');
+    if (typingElement) {
+        // Clear initial text and start animation
+        typingElement.textContent = '';
         setTimeout(() => {
-            typeWriter(heroTitle, originalText, 50);
-        }, 500);
+            typeWriter(typingElement, 'Erika Sy', 200, 100, 3000);
+        }, 1000);
     }
 });
 
@@ -83,9 +101,7 @@ window.addEventListener('load', () => {
 const contactButtons = document.querySelectorAll('.contact-button');
 contactButtons.forEach(button => {
     button.addEventListener('click', (e) => {
-        if (button.textContent === 'HIRE ME') {
-            window.location.href = 'mailto:ebasy22@gmail.com?subject=Let\'s work together!';
-        } else if (button.textContent === 'DOWNLOAD CV') {
+        if (button.textContent === 'DOWNLOAD CV') {
             // Add link to your CV here
             window.open('Sy, E. Résumé 2024.pdf', '_blank');
         }
