@@ -108,11 +108,20 @@ contactButtons.forEach(button => {
     });
 });
 
-// Timeline interaction
+// Timeline interaction - Updated for new chronological order
 const horizontalItems = document.querySelectorAll('.horizontal-timeline-item');
 const timelineItems = document.querySelectorAll('.timeline-item');
 
-horizontalItems.forEach((item, index) => {
+// Mapping between horizontal timeline (original order) and vertical timeline (chronological order)
+const timelineMapping = {
+    0: 4, // KPMG (horizontal index 0) -> timeline index 4 (last in chronological)
+    1: 3, // UIC Research (horizontal index 1) -> timeline index 3
+    2: 2, // AbbVie (horizontal index 2) -> timeline index 2
+    3: 1, // Snap Inc (horizontal index 3) -> timeline index 1
+    4: 0  // UW Research (horizontal index 4) -> timeline index 0 (first in chronological)
+};
+
+horizontalItems.forEach((item, horizontalIndex) => {
     item.addEventListener('mouseenter', () => {
         // Remove active class from all items
         horizontalItems.forEach(i => i.classList.remove('active'));
@@ -121,8 +130,9 @@ horizontalItems.forEach((item, index) => {
         // Add active class to current item
         item.classList.add('active');
         
-        // Highlight corresponding timeline item
-        const correspondingItem = document.querySelector(`[data-timeline-index="${index}"]`);
+        // Highlight corresponding timeline item based on mapping
+        const timelineIndex = timelineMapping[horizontalIndex];
+        const correspondingItem = document.querySelector(`[data-timeline-index="${timelineIndex}"]`);
         if (correspondingItem) {
             correspondingItem.style.opacity = '1';
             correspondingItem.style.transform = 'translateX(10px)';
@@ -139,11 +149,13 @@ horizontalItems.forEach((item, index) => {
     });
 });
 
-// Timeline dots interaction
+// Timeline dots interaction - Updated for new chronological order
 const timelineDots = document.querySelectorAll('.timeline-dot');
-timelineDots.forEach((dot, index) => {
+timelineDots.forEach((dot, timelineIndex) => {
     dot.addEventListener('mouseenter', () => {
-        const correspondingHorizontalItem = document.querySelector(`[data-index="${timelineItems.length - 1 - index}"]`);
+        // Find the corresponding horizontal item based on reverse mapping
+        const horizontalIndex = Object.keys(timelineMapping).find(key => timelineMapping[key] === timelineIndex);
+        const correspondingHorizontalItem = document.querySelector(`[data-index="${horizontalIndex}"]`);
         if (correspondingHorizontalItem) {
             correspondingHorizontalItem.classList.add('active');
         }

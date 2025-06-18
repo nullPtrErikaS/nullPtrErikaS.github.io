@@ -86,7 +86,7 @@ body {
 
 /* Hero Section */
 .hero {
-    min-height: 90vh;
+    height: 90vh;
     display: flex;
     align-items: center;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #ff7300 100%);
@@ -106,7 +106,6 @@ body {
     transform: translateX(30%);
 }
 
-/* Subtle background shapes */
 .hero::after {
     content: '';
     position: absolute;
@@ -203,6 +202,11 @@ body {
     padding: 0 5%;
     position: relative;
     z-index: 2;
+    height: 90vh;
+}
+
+.hero-text {
+    padding-left: 2rem;
 }
 
 .hero-text h1 {
@@ -260,18 +264,18 @@ body {
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+    height: 100%;
+    padding-bottom: 0;
 }
 
 .profile-pic {
-    width: clamp(200px, 25vw, 350px);
-    height: clamp(200px, 25vw, 350px);
-    border-radius: 50%;
+    width: clamp(200px, 70vh, 500px);
+    height: clamp(200px, 70vh, 500px);
     object-fit: cover;
-    border: 5px solid white;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 3;
+    margin-bottom: 0;
 }
 
 /* About Section */
@@ -519,9 +523,23 @@ body {
     cursor: pointer;
 }
 
+/* Green dot for current positions */
+.timeline-dot.current {
+    background: #28a745;
+    box-shadow: 0 0 0 4px rgba(40, 167, 69, 0.2);
+}
+
 .timeline-dot:hover {
-    background: #ff5e00;
     transform: translateX(-50%) scale(1.2);
+}
+
+.timeline-dot.current:hover {
+    background: #218838;
+    box-shadow: 0 0 0 6px rgba(40, 167, 69, 0.3);
+}
+
+.timeline-dot:not(.current):hover {
+    background: #ff5e00;
     box-shadow: 0 0 0 6px rgba(255, 115, 0, 0.3);
 }
 
@@ -912,16 +930,41 @@ body {
         display: flex;
     }
 
-    /* Shorter hero section on mobile */
+    /* Hero section mobile fixes */
     .hero {
-        min-height: 60vh;
+        height: 75vh;
     }
 
-    /* Keep hero section horizontal on mobile */
     .hero-content {
         grid-template-columns: 1fr 1fr;
-        gap: clamp(1rem, 4vw, 2rem);
+        gap: clamp(0.5rem, 2vw, 1.5rem);
         padding: 0 2%;
+        height: 75vh;
+    }
+
+    .hero-image {
+        padding-bottom: 0;
+    }
+
+    .profile-pic {
+        width: 45vh;
+        height: 45vh;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(1.2rem, 5vw, 2rem);
+        margin-bottom: 1rem;
+    }
+
+    .hero-text .highlight {
+        font-size: clamp(1.5rem, 6.5vw, 2.5rem);
+        margin-top: 0.5rem;
+    }
+
+    .cta-button {
+        padding: 0.6rem 1rem;
+        font-size: 0.7rem;
+        border-radius: 30px;
     }
 
     .about-container {
