@@ -4,32 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Erika Sy - Computer Science Student</title>
+    <meta name="description" content="Computer Science student specializing in research, AR development, and software engineering">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <div class="logo">Erika</div>
+            <div class="logo" aria-label="Erika Sy Portfolio">Erika</div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#services" class="nav-link">Experience</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#portfolio" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="nav-toggle">
+            <button class="nav-toggle" aria-label="Toggle navigation menu">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-shapes">
+        <div class="hero-shapes" aria-hidden="true">
             <div class="shape shape1"></div>
             <div class="shape shape2"></div>
             <div class="shape shape3"></div>
@@ -40,11 +41,14 @@
         </div>
         <div class="hero-content">
             <div class="hero-text fade-in">
-                <h1>Hello I am,<br><span class="highlight typing-text" id="typing-name">Erika Sy</span></h1>
+                <h1>
+                    <span class="nowrap">Hello I am,</span><br>
+                    <span class="highlight typing-text" id="typing-name">Erika Sy</span>
+                </h1>
                 <a href="#portfolio" class="cta-button">VIEW PORTFOLIO</a>
             </div>
             <div class="hero-image fade-in">
-                <img src="images/2025_03_15_136_Kleki.png" alt="Profile Picture" class="profile-pic">
+                <img src="images/2025_03_15_136_Kleki.png" alt="Erika Sy - Computer Science Student" class="profile-pic">
             </div>
         </div>
     </section>
@@ -53,11 +57,11 @@
     <section id="about" class="about">
         <div class="about-container fade-in">
             <div class="about-image">
-                <img src="images/2025_03_15_136_Kleki.png" alt="About me" class="about-pic">
+                <img src="images/Sy, Erika - Headshot.png" alt="Erika Sy profile photo" class="about-pic">
                 
                 <!-- Floating Stats Cards -->
-                <div class="floating-stat stat1">
-                    <div class="stat-icon">
+                <div class="floating-stat stat1" aria-label="5+ internships completed">
+                    <div class="stat-icon" aria-hidden="true">
                         <i class="fas fa-briefcase"></i>
                     </div>
                     <div class="stat-info">
@@ -66,8 +70,8 @@
                     </div>
                 </div>
                 
-                <div class="floating-stat stat2">
-                    <div class="stat-icon">
+                <div class="floating-stat stat2" aria-label="4+ board positions held">
+                    <div class="stat-icon" aria-hidden="true">
                         <i class="fas fa-users-cog"></i>
                     </div>
                     <div class="stat-info">
@@ -76,8 +80,8 @@
                     </div>
                 </div>
                 
-                <div class="floating-stat stat3">
-                    <div class="stat-icon">
+                <div class="floating-stat stat3" aria-label="3+ research projects">
+                    <div class="stat-icon" aria-hidden="true">
                         <i class="fas fa-flask"></i>
                     </div>
                     <div class="stat-info">
@@ -86,8 +90,8 @@
                     </div>
                 </div>
                 
-                <div class="floating-stat stat4">
-                    <div class="stat-icon">
+                <div class="floating-stat stat4" aria-label="16+ coding projects">
+                    <div class="stat-icon" aria-hidden="true">
                         <i class="fas fa-code"></i>
                     </div>
                     <div class="stat-info">
@@ -103,64 +107,64 @@
                 <p>A story of passion and perseverance.</p>
                 <p>My tech journey began with a love for sandbox games, where I discovered the joy of letting my creativity run free. I'm actively involved in the tech community, holding leadership positions and participating in research roles. I'm excited about finding opportunities where I can meet new people, apply my skills, and continue growing.</p>
                 <div class="contact-info">
-                    <button class="contact-button download-cv">DOWNLOAD CV</button>
+                    <button class="contact-button download-cv" type="button">DOWNLOAD CV</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
+    <!-- Experience Section -->
+    <section id="experience" class="services">
         <div class="services-container fade-in">
             <div class="subtitle">MY PROFESSIONAL JOURNEY</div>
             <h2>Experience</h2>
             
-            <!-- Horizontal Timeline (unchanged) -->
+            <!-- Horizontal Timeline -->
             <div class="horizontal-timeline">
                 <div class="horizontal-timeline-items">
-                    <div class="horizontal-timeline-item" data-index="0">
+                    <div class="horizontal-timeline-item" data-index="0" role="button" tabindex="0" aria-label="KPMG experience">
                         <div class="horizontal-flag">KPMG</div>
                         <div class="horizontal-dot"></div>
                     </div>
-                    <div class="horizontal-timeline-item" data-index="1">
+                    <div class="horizontal-timeline-item" data-index="1" role="button" tabindex="0" aria-label="UIC Research experience">
                         <div class="horizontal-flag">UIC Research</div>
                         <div class="horizontal-dot"></div>
                     </div>
-                    <div class="horizontal-timeline-item" data-index="2">
+                    <div class="horizontal-timeline-item" data-index="2" role="button" tabindex="0" aria-label="AbbVie experience">
                         <div class="horizontal-flag">AbbVie</div>
                         <div class="horizontal-dot"></div>
                     </div>
-                    <div class="horizontal-timeline-item" data-index="3">
+                    <div class="horizontal-timeline-item" data-index="3" role="button" tabindex="0" aria-label="Snap Inc experience">
                         <div class="horizontal-flag">Snap Inc</div>
                         <div class="horizontal-dot"></div>
                     </div>
-                    <div class="horizontal-timeline-item" data-index="4">
+                    <div class="horizontal-timeline-item" data-index="4" role="button" tabindex="0" aria-label="UW Research experience">
                         <div class="horizontal-flag">UW Research</div>
                         <div class="horizontal-dot"></div>
                     </div>
                 </div>
-                <div class="horizontal-timeline-line"></div>
+                <div class="horizontal-timeline-line" aria-hidden="true"></div>
             </div>
 
-            <!-- Vertical Timeline (chronological newest to oldest) -->
+            <!-- Vertical Timeline -->
             <div class="timeline">
-                <!-- UW Research (Current - Green dot) -->
-                <div class="timeline-item fade-in" data-timeline-index="0">
-                    <div class="timeline-dot current"></div>
+                <!-- UW Research (Current) -->
+                <article class="timeline-item fade-in" data-timeline-index="0">
+                    <div class="timeline-dot current" role="button" tabindex="0" aria-label="Current position"></div>
                     <div class="timeline-content">
-                        <div class="timeline-header">
+                        <header class="timeline-header">
                             <div class="timeline-left">
-                                <img src="images/uw logo.jpg" alt="UW-Madison Logo" class="timeline-logo">
+                                <img src="images/uw logo.jpg" alt="University of Wisconsin Madison logo" class="timeline-logo">
                                 <div class="timeline-text">
                                     <h3>Undergraduate Research Assistant</h3>
                                     <div class="timeline-company">University of Wisconsin, Madison</div>
                                 </div>
                             </div>
-                            <div class="timeline-date">September 2024 - Present</div>
-                        </div>
-                        <div class="timeline-description">
+                            <time class="timeline-date" datetime="2024-09">September 2024 - Present</time>
+                        </header>
+                        <p class="timeline-description">
                             Engaged in advancing autonomous humanoid robots through cutting-edge motion and decision-making technologies. Contributing to robotic motion analysis using SimRobot and developing hand gesture detection systems for referees using MediaPipe.
-                        </div>
+                        </p>
                         <div class="timeline-skills">
                             <span class="timeline-skill">SimRobot</span>
                             <span class="timeline-skill">MediaPipe</span>
@@ -168,25 +172,25 @@
                             <span class="timeline-skill">Robotics</span>
                         </div>
                     </div>
-                </div>
+                </article>
 
                 <!-- Snap Inc -->
-                <div class="timeline-item fade-in" data-timeline-index="1">
-                    <div class="timeline-dot"></div>
+                <article class="timeline-item fade-in" data-timeline-index="1">
+                    <div class="timeline-dot" role="button" tabindex="0" aria-label="Snap Inc position"></div>
                     <div class="timeline-content">
-                        <div class="timeline-header">
+                        <header class="timeline-header">
                             <div class="timeline-left">
-                                <img src="images/snapinclogo.jpg" alt="Snap Inc Logo" class="timeline-logo">
+                                <img src="images/snapinclogo.jpg" alt="Snap Inc logo" class="timeline-logo">
                                 <div class="timeline-text">
                                     <h3>Augmented Reality Extern</h3>
                                     <div class="timeline-company">Snap Inc.</div>
                                 </div>
                             </div>
-                            <div class="timeline-date">September 2024 - November 2024</div>
-                        </div>
-                        <div class="timeline-description">
+                            <time class="timeline-date" datetime="2024-09/2024-11">September 2024 - November 2024</time>
+                        </header>
+                        <p class="timeline-description">
                             Worked on cutting-edge AR technologies and immersive experiences, contributing to the development of innovative augmented reality solutions and interactive digital experiences.
-                        </div>
+                        </p>
                         <div class="timeline-skills">
                             <span class="timeline-skill">AR Development</span>
                             <span class="timeline-skill">Lens Studio</span>
@@ -194,25 +198,25 @@
                             <span class="timeline-skill">3D Graphics</span>
                         </div>
                     </div>
-                </div>
+                </article>
 
                 <!-- AbbVie -->
-                <div class="timeline-item fade-in" data-timeline-index="2">
-                    <div class="timeline-dot"></div>
+                <article class="timeline-item fade-in" data-timeline-index="2">
+                    <div class="timeline-dot" role="button" tabindex="0" aria-label="AbbVie position"></div>
                     <div class="timeline-content">
-                        <div class="timeline-header">
+                        <header class="timeline-header">
                             <div class="timeline-left">
-                                <img src="images/abbvie-logo.jpg" alt="AbbVie Logo" class="timeline-logo">
+                                <img src="images/abbvie-logo.jpg" alt="AbbVie logo" class="timeline-logo">
                                 <div class="timeline-text">
                                     <h3>Business Solutions Technology Intern</h3>
                                     <div class="timeline-company">AbbVie</div>
                                 </div>
                             </div>
-                            <div class="timeline-date">May 2024 - August 2024</div>
-                        </div>
-                        <div class="timeline-description">
+                            <time class="timeline-date" datetime="2024-05/2024-08">May 2024 - August 2024</time>
+                        </header>
+                        <p class="timeline-description">
                             Enhanced ServiceNow platform efficiency by mapping critical processes and documenting operational procedures. Led employee workshops and contributed to AI landing page rebranding.
-                        </div>
+                        </p>
                         <div class="timeline-skills">
                             <span class="timeline-skill">ServiceNow</span>
                             <span class="timeline-skill">Process Mapping</span>
@@ -220,25 +224,25 @@
                             <span class="timeline-skill">UI/UX</span>
                         </div>
                     </div>
-                </div>
+                </article>
 
                 <!-- UIC Research -->
-                <div class="timeline-item fade-in" data-timeline-index="3">
-                    <div class="timeline-dot"></div>
+                <article class="timeline-item fade-in" data-timeline-index="3">
+                    <div class="timeline-dot" role="button" tabindex="0" aria-label="UIC Research position"></div>
                     <div class="timeline-content">
-                        <div class="timeline-header">
+                        <header class="timeline-header">
                             <div class="timeline-left">
-                                <img src="images/uic-logo.jpg" alt="UIC Logo" class="timeline-logo">
+                                <img src="images/uic-logo.jpg" alt="University of Illinois Chicago logo" class="timeline-logo">
                                 <div class="timeline-text">
                                     <h3>Undergraduate Research Assistant</h3>
                                     <div class="timeline-company">University of Illinois, Chicago</div>
                                 </div>
                             </div>
-                            <div class="timeline-date">February 2024 - May 2024</div>
-                        </div>
-                        <div class="timeline-description">
+                            <time class="timeline-date" datetime="2024-02/2024-05">February 2024 - May 2024</time>
+                        </header>
+                        <p class="timeline-description">
                             Contributed to developing a digital twin for managing nuclear waste using Codesys and Unreal Engine. Enhanced simulation code and improved real-time TCP/IP communication.
-                        </div>
+                        </p>
                         <div class="timeline-skills">
                             <span class="timeline-skill">Unreal Engine</span>
                             <span class="timeline-skill">Codesys</span>
@@ -246,25 +250,25 @@
                             <span class="timeline-skill">Digital Twin</span>
                         </div>
                     </div>
-                </div>
+                </article>
 
                 <!-- KPMG -->
-                <div class="timeline-item fade-in" data-timeline-index="4">
-                    <div class="timeline-dot"></div>
+                <article class="timeline-item fade-in" data-timeline-index="4">
+                    <div class="timeline-dot" role="button" tabindex="0" aria-label="KPMG position"></div>
                     <div class="timeline-content">
-                        <div class="timeline-header">
+                        <header class="timeline-header">
                             <div class="timeline-left">
-                                <img src="images/kpmg-logo.jpg" alt="KPMG Logo" class="timeline-logo">
+                                <img src="images/kpmg-logo.jpg" alt="KPMG logo" class="timeline-logo">
                                 <div class="timeline-text">
                                     <h3>Seasonal Advisory Intern</h3>
                                     <div class="timeline-company">KPMG</div>
                                 </div>
                             </div>
-                            <div class="timeline-date">May 2023</div>
-                        </div>
-                        <div class="timeline-description">
+                            <time class="timeline-date" datetime="2023-05">May 2023</time>
+                        </header>
+                        <p class="timeline-description">
                             Investigated innovative technological solutions to support net-zero carbon footprint goals. Developed presentations using Power BI and wireframed sustainability apps.
-                        </div>
+                        </p>
                         <div class="timeline-skills">
                             <span class="timeline-skill">Power BI</span>
                             <span class="timeline-skill">Figma</span>
@@ -272,26 +276,26 @@
                             <span class="timeline-skill">Data Analysis</span>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
 
             <div class="services-grid">
                 <div class="service-card featured">
-                    <div class="service-icon">
+                    <div class="service-icon" aria-hidden="true">
                         <i class="fas fa-laptop-code"></i>
                     </div>
                     <h3>Research & Development</h3>
                     <p>Contributing to cutting-edge robotics research and AR development, pushing the boundaries of technology innovation.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">
+                    <div class="service-icon" aria-hidden="true">
                         <i class="fas fa-cogs"></i>
                     </div>
                     <h3>Process Optimization</h3>
                     <p>Enhancing business processes and platforms through strategic analysis, documentation, and workflow improvements.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">
+                    <div class="service-icon" aria-hidden="true">
                         <i class="fas fa-users"></i>
                     </div>
                     <h3>Leadership & Training</h3>
@@ -307,8 +311,8 @@
             <div class="subtitle">SOME OF MY RECENT WORK</div>
             <h2>Portfolio</h2>
             <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="portfolio-image">Robotic Motion Analysis</div>
+                <article class="portfolio-item">
+                    <div class="portfolio-image" aria-label="Robotic Motion Analysis project">Robotic Motion Analysis</div>
                     <div class="portfolio-content">
                         <h3>SimRobot Enhancement</h3>
                         <p>Advanced robotic motion analysis using SimRobot, enhancing robot walking speed and agility for competitive scenarios.</p>
@@ -318,9 +322,9 @@
                             <span class="tech-tag">Robotics</span>
                         </div>
                     </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image">Hand Gesture Recognition</div>
+                </article>
+                <article class="portfolio-item">
+                    <div class="portfolio-image" aria-label="Hand Gesture Recognition project">Hand Gesture Recognition</div>
                     <div class="portfolio-content">
                         <h3>Virtual Whiteboard</h3>
                         <p>Innovative whiteboard application using MediaPipe and OpenCV for hand gesture recognition and interactive digital experiences.</p>
@@ -330,9 +334,9 @@
                             <span class="tech-tag">OpenCV</span>
                         </div>
                     </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image">Digital Twin System</div>
+                </article>
+                <article class="portfolio-item">
+                    <div class="portfolio-image" aria-label="Digital Twin System project">Digital Twin System</div>
                     <div class="portfolio-content">
                         <h3>Nuclear Waste Management</h3>
                         <p>Digital twin development for nuclear waste management using Codesys and Unreal Engine with real-time TCP/IP communication.</p>
@@ -342,9 +346,9 @@
                             <span class="tech-tag">TCP/IP</span>
                         </div>
                     </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image">Sustainability App</div>
+                </article>
+                <article class="portfolio-item">
+                    <div class="portfolio-image" aria-label="Sustainability App project">Sustainability App</div>
                     <div class="portfolio-content">
                         <h3>Eco-Friendly Travel Rewards</h3>
                         <p>Wireframed sustainability app using Figma, encouraging eco-friendly travel choices through gamification and rewards system.</p>
@@ -354,7 +358,7 @@
                             <span class="tech-tag">Sustainability</span>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
@@ -365,14 +369,14 @@
             <h2>Contact Me</h2>
             <p>Ready to bring your ideas to life? Let's collaborate and create something amazing together!</p>
             <div class="social-links">
-                <a href="mailto:ebasy22@gmail.com" class="social-link">
-                    <i class="fas fa-envelope"></i>
+                <a href="mailto:ebasy22@gmail.com" class="social-link" aria-label="Send email to Erika Sy">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/erika-sy/" target="_blank" class="social-link">
-                    <i class="fab fa-linkedin"></i>
+                <a href="https://www.linkedin.com/in/erika-sy/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Visit Erika Sy's LinkedIn profile">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
                 </a>
-                <a href="https://github.com/nullPtrErikaS" target="_blank" class="social-link">
-                    <i class="fab fa-github"></i>
+                <a href="https://github.com/nullPtrErikaS" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Visit Erika Sy's GitHub profile">
+                    <i class="fab fa-github" aria-hidden="true"></i>
                 </a>
             </div>
         </div>

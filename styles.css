@@ -1,3 +1,4 @@
+/* Clean, Simple Responsive CSS */
 * {
     margin: 0;
     padding: 0;
@@ -84,9 +85,9 @@ body {
     transition: 0.3s;
 }
 
-/* Hero Section */
+/* Hero Section - Clean and Simple */
 .hero {
-    height: 90vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #ff7300 100%);
@@ -197,12 +198,12 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 5%;
     position: relative;
     z-index: 2;
-    height: 90vh;
+    min-height: 90vh;
 }
 
 .hero-text {
@@ -221,6 +222,14 @@ body {
     font-size: clamp(2.5rem, 10vw, 4rem);
     display: block;
     margin-top: 1rem;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.typing-text {
+    white-space: nowrap;
 }
 
 .typing-text::after {
@@ -260,22 +269,31 @@ body {
     color: white;
 }
 
+/* Hero Image - Fixed Size and Position */
 .hero-image {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    height: 100%;
+    height: 90vh;
+    min-height: 500px;
     padding-bottom: 0;
+    overflow: visible;
+    flex-shrink: 0;
+    min-width: 200px;
 }
 
 .profile-pic {
-    width: clamp(200px, 70vh, 500px);
-    height: clamp(200px, 70vh, 500px);
+    height: 80vh; /* Increased from 70vh */
+    min-height: 550px; /* Increased from 450px */
+    width: auto; /* Maintains aspect ratio */
     object-fit: cover;
+    object-position: center bottom;
     position: relative;
     z-index: 3;
     margin-bottom: 0;
+    transition: transform 0.3s ease;
+    transform: translateY(8%); /* Consistent positioning */
 }
 
 /* About Section */
@@ -891,7 +909,9 @@ body {
     transform: translateY(-5px);
 }
 
-/* Responsive Design */
+/* RESPONSIVE DESIGN - SIMPLIFIED */
+
+/* Tablet/Mobile Navigation */
 @media (max-width: 768px) {
     .nav-menu {
         position: fixed;
@@ -933,43 +953,49 @@ body {
         display: flex;
     }
 
-    /* Hero section mobile fixes */
+    /* Simplified Hero Responsive - Proportional image scaling */
     .hero {
-        height: 75vh;
+        min-height: 70vh; /* Slightly smaller on mobile */
     }
-
+    
     .hero-content {
-        grid-template-columns: 1fr 1fr;
-        gap: clamp(0.5rem, 2vw, 1.5rem);
-        padding: 0 2%;
-        height: 75vh;
+        min-height: 70vh;
+        gap: 2rem; /* Reduce gap */
+        padding: 0 3%; /* Adjust padding */
     }
-
+    
     .hero-image {
-        padding-bottom: 0;
+        height: 70vh; /* Match hero height */
     }
-
+    
+    /* Scale down image proportionally on mobile */
     .profile-pic {
-        width: 45vh;
-        height: 45vh;
+        height: 60vh; /* Reduced from 70vh */
+        min-height: 380px; /* Reduced from 450px */
+        transform: translateY(8%) scale(0.9); /* Added scale down */
     }
-
+    
+    /* Only adjust text size, keep image the same */
+    .hero-text {
+        padding-left: 1rem; /* Less padding */
+    }
+    
     .hero-text h1 {
-        font-size: clamp(1.2rem, 5vw, 2rem);
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
         margin-bottom: 1rem;
     }
-
+    
     .hero-text .highlight {
-        font-size: clamp(1.5rem, 6.5vw, 2.5rem);
+        font-size: clamp(1.8rem, 7.5vw, 3rem);
         margin-top: 0.5rem;
     }
-
+    
     .cta-button {
-        padding: 0.6rem 1rem;
-        font-size: 0.7rem;
-        border-radius: 30px;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
     }
 
+    /* Other sections mobile adjustments */
     .about-container {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -1011,6 +1037,43 @@ body {
     .horizontal-flag {
         font-size: 0.75rem;
         padding: 0.6rem 1rem;
+    }
+}
+
+/* Very small phones - more scaling */
+@media (max-width: 480px) {
+    .hero {
+        min-height: 60vh;
+    }
+    
+    .hero-content {
+        min-height: 60vh;
+        gap: 1rem;
+        padding: 0 2%;
+    }
+    
+    .hero-image {
+        height: 60vh;
+    }
+    
+    /* Scale down even more on small phones */
+    .profile-pic {
+        height: 50vh; /* Further reduced */
+        min-height: 320px; /* Further reduced */
+        transform: translateY(8%) scale(0.8); /* Scale down more */
+    }
+    
+    .hero-text h1 {
+        font-size: clamp(1.3rem, 5.5vw, 2rem);
+    }
+    
+    .hero-text .highlight {
+        font-size: clamp(1.6rem, 7vw, 2.5rem);
+    }
+    
+    .cta-button {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.8rem;
     }
 }
 
