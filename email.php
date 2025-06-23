@@ -10,7 +10,7 @@ $config = [
     'from_email' => 'noreply@erikasy.com', // Update with your domain
     'from_name' => 'Erika Sy Portfolio',
     'max_message_length' => 5000,
-    'rate_limit_file' => 'rate_limit.json',
+    'rate_limit_file' => '../data/rate_limit.json',
     'rate_limit_max' => 5, // Max submissions per hour per IP
 ];
 
@@ -31,6 +31,12 @@ function checkRateLimit($config) {
     $ip = $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';
     $current_time = time();
     $rate_limit_file = $config['rate_limit_file'];
+    
+    // Create data directory if it doesn't exist
+    $data_dir = dirname($rate_limit_file);
+    if (!is_dir($data_dir)) {
+        mkdir($data_dir, 0755, true);
+    }
     
     // Load existing rate limit data
     $rate_data = [];
@@ -118,7 +124,14 @@ function logSubmission($name, $email, $success) {
         'user_agent' => $_SERVER['HTTP_USER_AGENT'] ?? 'unknown'
     ];
     
-    $log_file = 'contact_log.json';
+    $log_file = '../data/contact_log.json';
+    $log_dir = dirname($log_file);
+    
+    // Create data directory if it doesn't exist
+    if (!is_dir($log_dir)) {
+        mkdir($log_dir, 0755, true);
+    }
+    
     $existing_logs = [];
     
     if (file_exists($log_file)) {

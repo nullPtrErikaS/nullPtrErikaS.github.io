@@ -161,18 +161,20 @@ const initializeScrollAnimations = () => {
 const initializeTimeline = () => {
     // Horizontal timeline interactions
     elements.horizontalItems.forEach((item, horizontalIndex) => {
+        // Hover events
         item.addEventListener('mouseenter', () => handleHorizontalItemHover(horizontalIndex, true));
         item.addEventListener('mouseleave', () => handleHorizontalItemHover(horizontalIndex, false));
+        
+        // Click events - scroll to corresponding timeline item
+        item.addEventListener('click', () => scrollToTimelineItem(horizontalIndex));
         
         // Keyboard support
         item.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
-                handleHorizontalItemHover(horizontalIndex, true);
+                scrollToTimelineItem(horizontalIndex);
             }
         });
-        
-        item.addEventListener('blur', () => handleHorizontalItemHover(horizontalIndex, false));
     });
 
     // Timeline dots interaction
@@ -199,6 +201,7 @@ const handleHorizontalItemHover = (horizontalIndex, isHovering) => {
         elements.timelineItems.forEach(i => {
             i.style.opacity = '0.3';
             i.style.transform = 'translateX(0)';
+            i.classList.remove('highlighted');
         });
         
         // Add active class to current item
@@ -210,6 +213,7 @@ const handleHorizontalItemHover = (horizontalIndex, isHovering) => {
         if (correspondingItem) {
             correspondingItem.style.opacity = '1';
             correspondingItem.style.transform = 'translateX(10px)';
+            correspondingItem.classList.add('highlighted');
         }
     } else {
         // Reset all items
@@ -217,6 +221,7 @@ const handleHorizontalItemHover = (horizontalIndex, isHovering) => {
         elements.timelineItems.forEach(i => {
             i.style.opacity = '1';
             i.style.transform = 'translateX(0)';
+            i.classList.remove('highlighted');
         });
     }
 };
@@ -231,6 +236,27 @@ const handleTimelineDotHover = (timelineIndex, isHovering) => {
         }
     } else {
         elements.horizontalItems.forEach(i => i.classList.remove('active'));
+    }
+};
+
+const scrollToTimelineItem = (horizontalIndex) => {
+    const timelineIndex = TIMELINE_MAPPING[horizontalIndex];
+    const targetItem = document.querySelector(`[data-timeline-index="${timelineIndex}"]`);
+    
+    if (targetItem) {
+        // Add a brief highlight effect
+        handleHorizontalItemHover(horizontalIndex, true);
+        
+        // Scroll to the timeline item
+        targetItem.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+        });
+        
+        // Remove highlight after scroll
+        setTimeout(() => {
+            handleHorizontalItemHover(horizontalIndex, false);
+        }, 2000);
     }
 };
 
@@ -253,6 +279,42 @@ const handleContactButtonClick = (e) => {
             // Fallback: Could show a message to user or redirect to contact
         }
     }
+};
+
+// Leadership Card Interactions
+const initializeLeadershipCards = () => {
+    const leadershipItems = document.querySelectorAll('.leadership-item');
+    
+    leadershipItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            item.style.transform = 'translateY(-15px) scale(1.02)';
+        });
+        
+        item.addEventListener('mouseleave', () => {
+            item.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+};
+
+// Portfolio Item Interactions
+const initializePortfolioItems = () => {
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    
+    portfolioItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            const image = item.querySelector('.portfolio-image');
+            if (image) {
+                image.style.transform = 'scale(1.05)';
+            }
+        });
+        
+        item.addEventListener('mouseleave', () => {
+            const image = item.querySelector('.portfolio-image');
+            if (image) {
+                image.style.transform = 'scale(1)';
+            }
+        });
+    });
 };
 
 // Error Handling
@@ -327,6 +389,7 @@ const updatePageMeta = () => {
                     'about': 'About - Erika Sy',
                     'experience': 'Experience - Erika Sy',
                     'portfolio': 'Portfolio - Erika Sy',
+                    'leadership': 'Leadership - Erika Sy',
                     'contact': 'Contact - Erika Sy'
                 };
                 
@@ -350,6 +413,10 @@ const init = () => {
         initializeScrollAnimations();
         initializeTimeline();
         initializeContactButtons();
+        
+        // Enhanced interactions
+        initializeLeadershipCards();
+        initializePortfolioItems();
         
         // Enhanced features
         enhanceAccessibility();
