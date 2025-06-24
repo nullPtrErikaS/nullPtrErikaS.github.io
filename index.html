@@ -120,57 +120,80 @@
             <div class="subtitle">MY PROFESSIONAL JOURNEY</div>
             <h2>Experience</h2>
             
-            <!-- Horizontal Timeline -->
+            <!-- New Timeline with Duration Bars -->
             <div class="horizontal-timeline">
-                <div class="horizontal-timeline-items">
-                    <div class="horizontal-timeline-item" data-index="0" role="button" tabindex="0" aria-label="KPMG experience">
-                        <div class="horizontal-flag">KPMG</div>
-                        <div class="horizontal-dot"></div>
+                <div class="timeline-scale">
+                    <div class="timeline-base"></div>
+                    <div class="timeline-markers">
+                        <div class="timeline-marker" style="left: 0%;">2022</div>
+                        <div class="timeline-marker" style="left: 25%;">2023</div>
+                        <div class="timeline-marker" style="left: 50%;">2024</div>
+                        <div class="timeline-marker" style="left: 75%;">2025</div>
+                        <div class="timeline-marker" style="left: 100%;">Present</div>
                     </div>
-                    <div class="horizontal-timeline-item" data-index="1" role="button" tabindex="0" aria-label="UIC Research experience">
-                        <div class="horizontal-flag">UIC Research</div>
-                        <div class="horizontal-dot"></div>
-                    </div>
-                    <div class="horizontal-timeline-item" data-index="2" role="button" tabindex="0" aria-label="AbbVie experience">
-                        <div class="horizontal-flag">AbbVie</div>
-                        <div class="horizontal-dot"></div>
-                    </div>
-                    <div class="horizontal-timeline-item" data-index="3" role="button" tabindex="0" aria-label="Snap Inc experience">
-                        <div class="horizontal-flag">Snap Inc</div>
-                        <div class="horizontal-dot"></div>
-                    </div>
-                    <div class="horizontal-timeline-item" data-index="4" role="button" tabindex="0" aria-label="UW Research experience">
-                        <div class="horizontal-flag">UW Research</div>
-                        <div class="horizontal-dot"></div>
+                    <div class="duration-bars">
+                        <!-- KPMG - May 2023 (short duration) -->
+                        <div class="duration-bar work" style="left: 30%; width: 3%; bottom: 5px;">
+                            <div class="duration-tooltip">KPMG Seasonal Advisory Intern</div>
+                        </div>
+                        <!-- UIC Research - Feb 2024 to May 2024 -->
+                        <div class="duration-bar research" style="left: 52%; width: 8%; bottom: 15px;">
+                            <div class="duration-tooltip">UIC Research Assistant</div>
+                        </div>
+                        <!-- AbbVie - May 2024 to Aug 2024 -->
+                        <div class="duration-bar work" style="left: 60%; width: 8%; bottom: 25px;">
+                            <div class="duration-tooltip">AbbVie Technology Intern</div>
+                        </div>
+                        <!-- Snap Inc - Sep 2024 to Nov 2024 -->
+                        <div class="duration-bar work" style="left: 70%; width: 6%; bottom: 35px;">
+                            <div class="duration-tooltip">Snap Inc AR Extern</div>
+                        </div>
+                        <!-- UW Research - Sep 2024 to Present -->
+                        <div class="duration-bar research" style="left: 70%; width: 30%; bottom: 45px;">
+                            <div class="duration-tooltip">UW Research Assistant (Current)</div>
+                        </div>
+                        
+                        <!-- Leadership Positions -->
+                        <!-- ACM President - Sep 2023 to Present -->
+                        <div class="duration-bar leadership" style="left: 35%; width: 65%; bottom: 55px;">
+                            <div class="duration-tooltip">ACM President</div>
+                        </div>
+                        <!-- Women in Computing VP Education - Jan 2024 to Present -->
+                        <div class="duration-bar leadership" style="left: 50%; width: 50%; bottom: 65px;">
+                            <div class="duration-tooltip">Women in Computing VP Education</div>
+                        </div>
+                        <!-- HackUW Technical Director - Aug 2024 to Present -->
+                        <div class="duration-bar leadership" style="left: 68%; width: 32%; bottom: 75px;">
+                            <div class="duration-tooltip">HackUW Technical Director</div>
+                        </div>
                     </div>
                 </div>
-                <div class="horizontal-timeline-line" aria-hidden="true"></div>
             </div>
 
-            <!-- Vertical Timeline -->
+            <!-- Vertical Timeline with Banners -->
             <div class="timeline">
                 <!-- UW Research (Current) -->
                 <article class="timeline-item fade-in" data-timeline-index="0">
                     <div class="timeline-dot current" role="button" tabindex="0" aria-label="Current position"></div>
                     <div class="timeline-content">
-                        <header class="timeline-header">
-                            <div class="timeline-left">
-                                <img src="images/uw logo.jpg" alt="University of Wisconsin Madison logo" class="timeline-logo">
-                                <div class="timeline-text">
-                                    <h3>Undergraduate Research Assistant</h3>
-                                    <div class="timeline-company">University of Wisconsin, Madison</div>
-                                </div>
+                        <div class="timeline-banner">
+                            <div class="timeline-banner-content">
+                                <h3>Undergraduate Research Assistant</h3>
+                                <div class="timeline-company">University of Wisconsin, Madison</div>
+                                <time class="timeline-date" datetime="2024-09">September 2024 - Present</time>
                             </div>
-                            <time class="timeline-date" datetime="2024-09">September 2024 - Present</time>
-                        </header>
-                        <p class="timeline-description">
-                            Engaged in advancing autonomous humanoid robots through cutting-edge motion and decision-making technologies. Contributing to robotic motion analysis using SimRobot and developing hand gesture detection systems for referees using MediaPipe.
-                        </p>
-                        <div class="timeline-skills">
-                            <span class="timeline-skill">SimRobot</span>
-                            <span class="timeline-skill">MediaPipe</span>
-                            <span class="timeline-skill">Machine Learning</span>
-                            <span class="timeline-skill">Robotics</span>
+                            <img src="images/uw logo.jpg" alt="University of Wisconsin Madison logo" class="timeline-banner-logo">
+                        </div>
+                        <div class="timeline-main-content">
+                            <p class="timeline-description">
+                                Engaged in advancing autonomous humanoid robots through cutting-edge motion and decision-making technologies. Contributing to robotic motion analysis using SimRobot and developing hand gesture detection systems for referees using MediaPipe.
+                            </p>
+                            <div class="timeline-skills">
+                                <span class="timeline-skill">SimRobot</span>
+                                <span class="timeline-skill">MediaPipe</span>
+                                <span class="timeline-skill">Machine Learning</span>
+                                <span class="timeline-skill">Robotics</span>
+                            </div>
                         </div>
                     </div>
                 </article>
@@ -179,24 +202,24 @@
                 <article class="timeline-item fade-in" data-timeline-index="1">
                     <div class="timeline-dot" role="button" tabindex="0" aria-label="Snap Inc position"></div>
                     <div class="timeline-content">
-                        <header class="timeline-header">
-                            <div class="timeline-left">
-                                <img src="images/snapinclogo.jpg" alt="Snap Inc logo" class="timeline-logo">
-                                <div class="timeline-text">
-                                    <h3>Augmented Reality Extern</h3>
-                                    <div class="timeline-company">Snap Inc.</div>
-                                </div>
+                        <div class="timeline-banner">
+                            <div class="timeline-banner-content">
+                                <h3>Augmented Reality Extern</h3>
+                                <div class="timeline-company">Snap Inc.</div>
+                                <time class="timeline-date" datetime="2024-09/2024-11">September 2024 - November 2024</time>
                             </div>
-                            <time class="timeline-date" datetime="2024-09/2024-11">September 2024 - November 2024</time>
-                        </header>
-                        <p class="timeline-description">
-                            Worked on cutting-edge AR technologies and immersive experiences, contributing to the development of innovative augmented reality solutions and interactive digital experiences.
-                        </p>
-                        <div class="timeline-skills">
-                            <span class="timeline-skill">AR Development</span>
-                            <span class="timeline-skill">Lens Studio</span>
-                            <span class="timeline-skill">Computer Vision</span>
-                            <span class="timeline-skill">3D Graphics</span>
+                            <img src="images/snapinclogo.jpg" alt="Snap Inc logo" class="timeline-banner-logo">
+                        </div>
+                        <div class="timeline-main-content">
+                            <p class="timeline-description">
+                                Worked on cutting-edge AR technologies and immersive experiences, contributing to the development of innovative augmented reality solutions and interactive digital experiences.
+                            </p>
+                            <div class="timeline-skills">
+                                <span class="timeline-skill">AR Development</span>
+                                <span class="timeline-skill">Lens Studio</span>
+                                <span class="timeline-skill">Computer Vision</span>
+                                <span class="timeline-skill">3D Graphics</span>
+                            </div>
                         </div>
                     </div>
                 </article>
@@ -205,24 +228,24 @@
                 <article class="timeline-item fade-in" data-timeline-index="2">
                     <div class="timeline-dot" role="button" tabindex="0" aria-label="AbbVie position"></div>
                     <div class="timeline-content">
-                        <header class="timeline-header">
-                            <div class="timeline-left">
-                                <img src="images/abbvie-logo.jpg" alt="AbbVie logo" class="timeline-logo">
-                                <div class="timeline-text">
-                                    <h3>Business Solutions Technology Intern</h3>
-                                    <div class="timeline-company">AbbVie</div>
-                                </div>
+                        <div class="timeline-banner">
+                            <div class="timeline-banner-content">
+                                <h3>Business Solutions Technology Intern</h3>
+                                <div class="timeline-company">AbbVie</div>
+                                <time class="timeline-date" datetime="2024-05/2024-08">May 2024 - August 2024</time>
                             </div>
-                            <time class="timeline-date" datetime="2024-05/2024-08">May 2024 - August 2024</time>
-                        </header>
-                        <p class="timeline-description">
-                            Enhanced ServiceNow platform efficiency by mapping critical processes and documenting operational procedures. Led employee workshops and contributed to AI landing page rebranding.
-                        </p>
-                        <div class="timeline-skills">
-                            <span class="timeline-skill">ServiceNow</span>
-                            <span class="timeline-skill">Process Mapping</span>
-                            <span class="timeline-skill">Visio</span>
-                            <span class="timeline-skill">UI/UX</span>
+                            <img src="images/abbvie-logo.jpg" alt="AbbVie logo" class="timeline-banner-logo">
+                        </div>
+                        <div class="timeline-main-content">
+                            <p class="timeline-description">
+                                Enhanced ServiceNow platform efficiency by mapping critical processes and documenting operational procedures. Led employee workshops and contributed to AI landing page rebranding.
+                            </p>
+                            <div class="timeline-skills">
+                                <span class="timeline-skill">ServiceNow</span>
+                                <span class="timeline-skill">Process Mapping</span>
+                                <span class="timeline-skill">Visio</span>
+                                <span class="timeline-skill">UI/UX</span>
+                            </div>
                         </div>
                     </div>
                 </article>
@@ -231,24 +254,24 @@
                 <article class="timeline-item fade-in" data-timeline-index="3">
                     <div class="timeline-dot" role="button" tabindex="0" aria-label="UIC Research position"></div>
                     <div class="timeline-content">
-                        <header class="timeline-header">
-                            <div class="timeline-left">
-                                <img src="images/uic-logo.jpg" alt="University of Illinois Chicago logo" class="timeline-logo">
-                                <div class="timeline-text">
-                                    <h3>Undergraduate Research Assistant</h3>
-                                    <div class="timeline-company">University of Illinois, Chicago</div>
-                                </div>
+                        <div class="timeline-banner">
+                            <div class="timeline-banner-content">
+                                <h3>Undergraduate Research Assistant</h3>
+                                <div class="timeline-company">University of Illinois, Chicago</div>
+                                <time class="timeline-date" datetime="2024-02/2024-05">February 2024 - May 2024</time>
                             </div>
-                            <time class="timeline-date" datetime="2024-02/2024-05">February 2024 - May 2024</time>
-                        </header>
-                        <p class="timeline-description">
-                            Contributed to developing a digital twin for managing nuclear waste using Codesys and Unreal Engine. Enhanced simulation code and improved real-time TCP/IP communication.
-                        </p>
-                        <div class="timeline-skills">
-                            <span class="timeline-skill">Unreal Engine</span>
-                            <span class="timeline-skill">Codesys</span>
-                            <span class="timeline-skill">TCP/IP</span>
-                            <span class="timeline-skill">Digital Twin</span>
+                            <img src="images/uic-logo.jpg" alt="University of Illinois Chicago logo" class="timeline-banner-logo">
+                        </div>
+                        <div class="timeline-main-content">
+                            <p class="timeline-description">
+                                Contributed to developing a digital twin for managing nuclear waste using Codesys and Unreal Engine. Enhanced simulation code and improved real-time TCP/IP communication.
+                            </p>
+                            <div class="timeline-skills">
+                                <span class="timeline-skill">Unreal Engine</span>
+                                <span class="timeline-skill">Codesys</span>
+                                <span class="timeline-skill">TCP/IP</span>
+                                <span class="timeline-skill">Digital Twin</span>
+                            </div>
                         </div>
                     </div>
                 </article>
@@ -257,24 +280,24 @@
                 <article class="timeline-item fade-in" data-timeline-index="4">
                     <div class="timeline-dot" role="button" tabindex="0" aria-label="KPMG position"></div>
                     <div class="timeline-content">
-                        <header class="timeline-header">
-                            <div class="timeline-left">
-                                <img src="images/kpmg-logo.jpg" alt="KPMG logo" class="timeline-logo">
-                                <div class="timeline-text">
-                                    <h3>Seasonal Advisory Intern</h3>
-                                    <div class="timeline-company">KPMG</div>
-                                </div>
+                        <div class="timeline-banner">
+                            <div class="timeline-banner-content">
+                                <h3>Seasonal Advisory Intern</h3>
+                                <div class="timeline-company">KPMG</div>
+                                <time class="timeline-date" datetime="2023-05">May 2023</time>
                             </div>
-                            <time class="timeline-date" datetime="2023-05">May 2023</time>
-                        </header>
-                        <p class="timeline-description">
-                            Investigated innovative technological solutions to support net-zero carbon footprint goals. Developed presentations using Power BI and wireframed sustainability apps.
-                        </p>
-                        <div class="timeline-skills">
-                            <span class="timeline-skill">Power BI</span>
-                            <span class="timeline-skill">Figma</span>
-                            <span class="timeline-skill">Sustainability</span>
-                            <span class="timeline-skill">Data Analysis</span>
+                            <img src="images/kpmg-logo.jpg" alt="KPMG logo" class="timeline-banner-logo">
+                        </div>
+                        <div class="timeline-main-content">
+                            <p class="timeline-description">
+                                Investigated innovative technological solutions to support net-zero carbon footprint goals. Developed presentations using Power BI and wireframed sustainability apps.
+                            </p>
+                            <div class="timeline-skills">
+                                <span class="timeline-skill">Power BI</span>
+                                <span class="timeline-skill">Figma</span>
+                                <span class="timeline-skill">Sustainability</span>
+                                <span class="timeline-skill">Data Analysis</span>
+                            </div>
                         </div>
                     </div>
                 </article>

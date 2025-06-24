@@ -159,22 +159,11 @@ const initializeScrollAnimations = () => {
 
 // Timeline Interactions
 const initializeTimeline = () => {
-    // Horizontal timeline interactions
-    elements.horizontalItems.forEach((item, horizontalIndex) => {
-        // Hover events
-        item.addEventListener('mouseenter', () => handleHorizontalItemHover(horizontalIndex, true));
-        item.addEventListener('mouseleave', () => handleHorizontalItemHover(horizontalIndex, false));
-        
-        // Click events - scroll to corresponding timeline item
-        item.addEventListener('click', () => scrollToTimelineItem(horizontalIndex));
-        
-        // Keyboard support
-        item.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                scrollToTimelineItem(horizontalIndex);
-            }
-        });
+    // Duration bar interactions
+    const durationBars = document.querySelectorAll('.duration-bar');
+    durationBars.forEach(bar => {
+        bar.addEventListener('click', handleDurationBarClick);
+        bar.addEventListener('mouseenter', handleDurationBarHover);
     });
 
     // Timeline dots interaction
@@ -192,6 +181,89 @@ const initializeTimeline = () => {
         
         dot.addEventListener('blur', () => handleTimelineDotHover(timelineIndex, false));
     });
+};
+
+const handleDurationBarClick = (e) => {
+    const tooltip = e.currentTarget.querySelector('.duration-tooltip');
+    const tooltipText = tooltip ? tooltip.textContent : '';
+    
+    // Map tooltip text to timeline items
+    const positionMapping = {
+        'KPMG Seasonal Advisory Intern': 4,
+        'UIC Research Assistant': 3,
+        'AbbVie Technology Intern': 2,
+        'Snap Inc AR Extern': 1,
+        'UW Research Assistant (Current)': 0,
+        // Leadership positions will scroll to leadership section
+        'ACM President': 'leadership',
+        'Women in Computing VP Education': 'leadership',
+        'HackUW Technical Director': 'leadership'
+    };
+    
+    const targetIndex = positionMapping[tooltipText];
+    
+    if (targetIndex === 'leadership') {
+        // Scroll to leadership section
+        const leadershipSection = document.querySelector('#leadership');
+        if (leadershipSection) {
+            leadershipSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    } else if (typeof targetIndex === 'number') {
+        // Scroll to specific timeline item
+        const targetItem = document.querySelector(`[data-timeline-index="${targetIndex}"]`);
+        if (targetItem) {
+            // Add highlight effect
+            highlightTimelineItem(targetIndex);
+            
+            // Scroll to the timeline item
+            targetItem.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+        }
+    }
+};
+
+const handleDurationBarHover = (e) => {
+    const bar = e.currentTarget;
+    const tooltip = bar.querySelector('.duration-tooltip');
+    
+    // Add a subtle glow effect
+    bar.style.boxShadow = '0 4px 20px rgba(255, 115, 0, 0.3)';
+    
+    // Remove glow on mouse leave
+    bar.addEventListener('mouseleave', () => {
+        bar.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
+    }, { once: true });
+};
+
+const highlightTimelineItem = (timelineIndex) => {
+    // Reset all timeline items
+    elements.timelineItems.forEach(item => {
+        item.style.opacity = '0.4';
+        item.style.transform = 'translateX(0)';
+        item.classList.remove('highlighted');
+    });
+    
+    // Highlight target item
+    const targetItem = document.querySelector(`[data-timeline-index="${timelineIndex}"]`);
+    if (targetItem) {
+        targetItem.style.opacity = '1';
+        targetItem.style.transform = 'translateX(15px)';
+        targetItem.classList.add('highlighted');
+        
+        // Reset after 3 seconds
+        setTimeout(() => {
+            elements.timelineItems.forEach(item => {
+                item.style.opacity = '1';
+                item.style.transform = 'translateX(0)';
+                item.classList.remove('highlighted');
+            });
+        }, 3000);
+    }
 };
 
 const handleHorizontalItemHover = (horizontalIndex, isHovering) => {
