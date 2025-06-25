@@ -368,26 +368,177 @@ const initializeLeadershipCards = () => {
     });
 };
 
-// Portfolio Item Interactions
-const initializePortfolioItems = () => {
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
+// Portfolio Carousel Functions
+let currentSlide = 0;
+const totalProjects = 6;
+const projectsPerSlide = 3;
+const totalSlides = Math.ceil(totalProjects / projectsPerSlide);
+
+const initializePortfolioCarousel = () => {
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const indicators = document.querySelectorAll('.carousel-dot');
+    const track = document.getElementById('portfolio-track');
+    const counter = document.getElementById('carousel-counter');
     
-    portfolioItems.forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            const image = item.querySelector('.portfolio-image');
-            if (image) {
-                image.style.transform = 'scale(1.05)';
-            }
-        });
-        
-        item.addEventListener('mouseleave', () => {
-            const image = item.querySelector('.portfolio-image');
-            if (image) {
-                image.style.transform = 'scale(1)';
-            }
+    if (!track) return;
+    
+    // Button event listeners
+    prevBtn?.addEventListener('click', () => {
+        if (currentSlide > 0) {
+            currentSlide--;
+            updateCarousel();
+        }
+    });
+    
+    nextBtn?.addEventListener('click', () => {
+        if (currentSlide < totalSlides - 1) {
+            currentSlide++;
+            updateCarousel();
+        }
+    });
+    
+    // Indicator event listeners
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            currentSlide = index;
+            updateCarousel();
         });
     });
+    
+    // Touch/swipe support
+    let startX = 0;
+    let isDragging = false;
+    
+    track.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+    });
+    
+    track.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+    });
+    
+    track.addEventListener('touchend', (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        
+        const endX = e.changedTouches[0].clientX;
+        const diffX = startX - endX;
+        
+        if (Math.abs(diffX) > 50) { // Minimum swipe distance
+            if (diffX > 0 && currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateCarousel();
+            } else if (diffX < 0 && currentSlide > 0) {
+                currentSlide--;
+                updateCarousel();
+            }
+        }
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.target.closest('.portfolio-carousel')) {
+            if (e.key === 'ArrowLeft' && currentSlide > 0) {
+                currentSlide--;
+                updateCarousel();
+            } else if (e.key === 'ArrowRight' && currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateCarousel();
+            }
+        }
+    });
+    
+    // Initialize
+    updateCarousel();
 };
+
+const updateCarousel = () => {
+    const track = document.getElementById('portfolio-track');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const indicators = document.querySelectorAll('.carousel-dot');
+    const counter = document.getElementById('carousel-counter');
+    
+    if (!track) return;
+    
+    // Calculate responsive slide width
+    const slideWidth = getSlideWidth();
+    const translateX = currentSlide * slideWidth;
+    
+    // Move the track
+    track.style.transform = `translateX(-${translateX}%)`;
+    
+    // Update button states
+    if (prevBtn) {
+        prevBtn.disabled = currentSlide === 0;
+    }
+    if (nextBtn) {
+        nextBtn.disabled = currentSlide === totalSlides - 1;
+    }
+    
+    // Update indicators
+    indicators.forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === currentSlide);
+    });
+    
+    // Update counter
+    if (counter) {
+        const startProject = currentSlide * projectsPerSlide + 1;
+        const endProject = Math.min((currentSlide + 1) * projectsPerSlide, totalProjects);
+        counter.textContent = `${startProject}-${endProject} of ${totalProjects} projects`;
+    }
+};
+
+const getSlideWidth = () => {
+    // Responsive slide width based on screen size
+    if (window.innerWidth <= 768) {
+        return 100; // 1 project per slide on mobile
+    } else if (window.innerWidth <= 1024) {
+        return 100; // 2 projects per slide on tablet, so 50% per project
+    } else {
+        return 100; // 3 projects per slide on desktop, so 33.33% per project
+    }
+};
+
+// Auto-play functionality (optional)
+let autoPlayInterval;
+
+const startAutoPlay = () => {
+    autoPlayInterval = setInterval(() => {
+        if (currentSlide < totalSlides - 1) {
+            currentSlide++;
+        } else {
+            currentSlide = 0; // Loop back to start
+        }
+        updateCarousel();
+    }, 5000); // Change slide every 5 seconds
+};
+
+const stopAutoPlay = () => {
+    if (autoPlayInterval) {
+        clearInterval(autoPlayInterval);
+    }
+};
+
+// Pause auto-play on hover
+const initializeAutoPlay = () => {
+    const carousel = document.querySelector('.portfolio-carousel');
+    if (!carousel) return;
+    
+    carousel.addEventListener('mouseenter', stopAutoPlay);
+    carousel.addEventListener('mouseleave', startAutoPlay);
+    
+    // Start auto-play initially
+    // startAutoPlay(); // Uncomment if you want auto-play
+};
+
+// Handle window resize
+window.addEventListener('resize', debounce(() => {
+    updateCarousel();
+}, 250));
 
 // Error Handling
 const handleErrors = () => {
@@ -488,7 +639,8 @@ const init = () => {
         
         // Enhanced interactions
         initializeLeadershipCards();
-        initializePortfolioItems();
+        initializePortfolioCarousel();
+        initializeAutoPlay();
         
         // Enhanced features
         enhanceAccessibility();
