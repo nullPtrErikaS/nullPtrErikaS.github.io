@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education - Erika Sy</title>
+    <meta name="description" content="Academic background and coursework of Erika Sy - Computer Science at University of Wisconsin, Madison">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Education-specific styles */
+        .education-hero {
+            min-height: 60vh;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #ff7300 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .education-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(45deg, #ff7300, #ff5e00);
+            border-radius: 50% 0 0 50%;
+            transform: translateX(20%);
+        }
+
+        .education-hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            padding: 0 5%;
+        }
+
+        .education-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .education-hero .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #ff7300;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 115, 0, 0.3);
+        }
+
+        .back-button:hover {
+            background: #ff5e00;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 115, 0, 0.4);
+            color: white;
+        }
+
+        .university-info {
+            padding: 4rem 5%;
+            background: white;
+        }
+
+        .university-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .university-logo {
+            text-align: center;
+        }
+
+        .university-logo img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+
+        .university-details h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .degree-info {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+        }
+
+        .degree-info h3 {
+            color: #ff7300;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .academic-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ff7300;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 0.3rem;
+        }
+
+        .coursework-section {
+            padding: 4rem 5%;
+            background: #f8f9fa;
+        }
+
+        .coursework-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-header .subtitle {
+            color: #ff7300;
+            font-weight: 600;
+        }
+
+        .course-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .course-category {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(45deg, #ff7300, #ff5e00);
+        }
+
+        .course-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .category-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #ff7300, #ff5e00);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .course-category h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .course-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .course-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            transition: all 0.2s ease;
+        }
+
+        .course-item:last-child {
+            border-bottom: none;
+        }
+
+        .course-item:hover {
+            background: #f8f9fa;
+            margin: 0 -1rem;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+        }
+
+        .course-name {
+            font-weight: 500;
+            color: #333;
+            flex: 1;
+        }
+
+        .course-code {
+            font-size: 0.8rem;
+            color: #666;
+            margin-left: 1rem;
+        }
+
+        .course-grade {
+            font-weight: 600;
+            color: #ff7300;
+            margin-left: 1rem;
+            min-width: 30px;
+            text-align: right;
+        }
+
+        /* Honors courses get special styling */
+        .honors-category {
+            background: white;
+            border: none;
+            position: relative;
+        }
+
+        .honors-category::before {
+            background: linear-gradient(45deg, #ffd700, #ffb347);
+        }
+
+        .honors-category .category-icon {
+            background: linear-gradient(45deg, #ffd700, #ffb347);
+        }
+
+        .honors-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #ffd700;
+            color: #333;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            opacity: 0.8;
+        }
+
+        .academic-projects {
+            padding: 4rem 5%;
+            background: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .academic-project {
+            background: #f8f9fa;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .academic-project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .project-header {
+            background: linear-gradient(45deg, #ff7300, #ff5e00);
+            color: white;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .project-course {
+            font-size: 0.8rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-description {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            background: white;
+            color: #ff7300;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid #ff7300;
+        }
+
+        .project-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .project-grade {
+            font-weight: 600;
+            color: #ff7300;
+            font-size: 1rem;
+        }
+
+        .project-github-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #333;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(51, 51, 51, 0.2);
+        }
+
+        .project-github-btn:hover {
+            background: #000;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(51, 51, 51, 0.3);
+            color: white;
+        }
+
+        .project-github-btn i {
+            font-size: 0.9rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .project-footer {
+                flex-direction: column;
+                gap: 0.8rem;
+                align-items: center;
+            }
+
+            .project-github-btn {
+                width: 100%;
+                max-width: 150px;
+                justify-content: center;
+            }
+
+            .university-container {
+                grid-template-columns: 1fr 2fr;
+                gap: 1.5rem;
+                align-items: center;
+            }
+
+            .university-logo {
+                text-align: center;
+            }
+
+            .university-logo img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .university-logo h3 {
+                font-size: 0.9rem;
+                margin-top: 0.5rem;
+            }
+
+            .university-details h2 {
+                font-size: 1.5rem;
+            }
+
+            .course-categories {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .academic-stats {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.5rem;
+            }
+
+            .stat-item {
+                padding: 0.8rem;
+            }
+
+            .stat-number {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="logo" aria-label="Erika Sy Portfolio">Erika</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#experience" class="nav-link">Experience</a></li>
+                <li><a href="index.html#portfolio" class="nav-link">Projects</a></li>
+                <li><a href="index.html#leadership" class="nav-link">Leadership</a></li>
+                <li><a href="#" class="nav-link" style="color: #ff7300;">Education</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Education Hero -->
+    <section class="education-hero">
+        <div class="education-hero-content fade-in">
+            <h1>Academic Background</h1>
+            <p class="subtitle">Computer Science studies and technical coursework</p>
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                Back to Portfolio
+            </a>
+        </div>
+    </section>
+
+    <!-- University Information -->
+    <section class="university-info">
+        <div class="university-container fade-in">
+            <div class="university-logo">
+                <img src="images/uw-madison-logo.png" alt="University of Wisconsin Madison logo">
+                <h3>University of Wisconsin, Madison</h3>
+            </div>
+            <div class="university-details">
+                <h2>Bachelor of Science in Computer Science</h2>
+                <div class="degree-info">
+                    <h3>Expected Graduation: May 2026</h3>
+                    <p><strong>Concentration:</strong> Artificial Intelligence & Machine Learning</p>
+                    <p><strong>Minor:</strong> Mathematics</p>
+                </div>
+                
+                <div class="academic-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">60+</span>
+                        <span class="stat-label">Credits Completed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">CS Courses</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">2026</span>
+                        <span class="stat-label">Graduation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coursework Section -->
+    <section class="coursework-section">
+        <div class="coursework-container fade-in">
+            <div class="section-header">
+                <div class="subtitle">COMPREHENSIVE TECHNICAL FOUNDATION</div>
+                <h2>Coursework</h2>
+            </div>
+
+            <div class="course-categories">
+                <!-- Core Computer Science -->
+                <div class="course-category">
+                    <div class="category-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Core Computer Science</h3>
+                    <ul class="course-list">
+                        <li class="course-item">
+                            <span class="course-name">Data Structures and Algorithms</span>
+                            <span class="course-code">CS 400</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Software Engineering</span>
+                            <span class="course-code">CS 506</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Computer Organization</span>
+                            <span class="course-code">CS 354</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Programming III</span>
+                            <span class="course-code">CS 300</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Programming II</span>
+                            <span class="course-code">CS 200</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- AI & Machine Learning -->
+                <div class="course-category">
+                    <div class="category-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI & Machine Learning</h3>
+                    <ul class="course-list">
+                        <li class="course-item">
+                            <span class="course-name">Introduction to Artificial Intelligence</span>
+                            <span class="course-code">CS 540</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Machine Learning</span>
+                            <span class="course-code">CS 760</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Computer Vision</span>
+                            <span class="course-code">CS 766</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Natural Language Processing</span>
+                            <span class="course-code">CS 769</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Systems & Theory -->
+                <div class="course-category">
+                    <div class="category-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Systems & Theory</h3>
+                    <ul class="course-list">
+                        <li class="course-item">
+                            <span class="course-name">Operating Systems</span>
+                            <span class="course-code">CS 537</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Database Management Systems</span>
+                            <span class="course-code">CS 564</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Computer Networks</span>
+                            <span class="course-code">CS 640</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Theory of Computation</span>
+                            <span class="course-code">CS 520</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Mathematics -->
+                <div class="course-category">
+                    <div class="category-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Mathematics</h3>
+                    <ul class="course-list">
+                        <li class="course-item">
+                            <span class="course-name">Calculus III</span>
+                            <span class="course-code">MATH 234</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Linear Algebra</span>
+                            <span class="course-code">MATH 340</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Discrete Mathematics</span>
+                            <span class="course-code">CS 240</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Statistics</span>
+                            <span class="course-code">STAT 371</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Honors Coursework -->
+                <div class="course-category honors-category">
+                    <div class="category-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Honors Program</h3>
+                    <ul class="course-list">
+                        <li class="course-item">
+                            <span class="course-name">Critical Thinking in the Digital Age</span>
+                            <span class="course-code">HONORS 201</span>
+                            <span class="course-grade">A</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Global Perspectives on Technology</span>
+                            <span class="course-code">HONORS 301</span>
+                            <span class="course-grade">A</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Ethics in Emerging Technologies</span>
+                            <span class="course-code">HONORS 305</span>
+                            <span class="course-grade">A-</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Research Methods & Analysis</span>
+                            <span class="course-code">HONORS 285</span>
+                            <span class="course-grade">A</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Leadership in Innovation</span>
+                            <span class="course-code">HONORS 320</span>
+                            <span class="course-grade">A</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Projects -->
+    <section class="academic-projects">
+        <div class="coursework-container fade-in">
+            <div class="section-header">
+                <div class="subtitle">STANDOUT ACADEMIC WORK</div>
+                <h2>Course Projects</h2>
+            </div>
+
+            <div class="projects-grid">
+                <div class="academic-project">
+                    <div class="project-header">
+                        <div class="project-course">CS 760 - Machine Learning</div>
+                        <h4 class="project-title">Neural Network Music Generator</h4>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">
+                            Built a deep learning model using LSTM networks to generate original music compositions. 
+                            Trained on classical piano pieces and achieved coherent melodic structure generation.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">LSTM</span>
+                            <span class="tech-tag">Music21</span>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-grade">Final Grade: A-</div>
+                            <a href="https://github.com/nullPtrErikaS/neural-music-generator" class="project-github-btn" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i>
+                                View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="academic-project">
+                    <div class="project-header">
+                        <div class="project-course">CS 506 - Software Engineering</div>
+                        <h4 class="project-title">Campus Food Tracker App</h4>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">
+                            Led team of 5 to develop full-stack web application tracking dining hall wait times and menu items. 
+                            Implemented agile methodology and comprehensive testing suite.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Jest</span>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-grade">Final Grade: A</div>
+                            <a href="https://github.com/nullPtrErikaS/campus-food-tracker" class="project-github-btn" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i>
+                                View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="academic-project">
+                    <div class="project-header">
+                        <div class="project-course">CS 766 - Computer Vision</div>
+                        <h4 class="project-title">Real-time Object Detection</h4>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">
+                            Implemented YOLO algorithm for real-time object detection in video streams. 
+                            Optimized for mobile deployment with 85% accuracy on custom dataset.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">YOLO</span>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-grade">Final Grade: B+</div>
+                            <a href="https://github.com/nullPtrErikaS/realtime-object-detection" class="project-github-btn" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i>
+                                View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="academic-project">
+                    <div class="project-header">
+                        <div class="project-course">CS 537 - Operating Systems</div>
+                        <h4 class="project-title">Custom Memory Allocator</h4>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">
+                            Designed and implemented a custom memory allocator in C with advanced heap management. 
+                            Achieved 20% performance improvement over standard malloc implementation.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">C</span>
+                            <span class="tech-tag">Systems Programming</span>
+                            <span class="tech-tag">Memory Management</span>
+                            <span class="tech-tag">Performance Testing</span>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-grade">Final Grade: B+</div>
+                            <a href="https://github.com/nullPtrErikaS/custom-memory-allocator" class="project-github-btn" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i>
+                                View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

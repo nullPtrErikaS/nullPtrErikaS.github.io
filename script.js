@@ -371,17 +371,60 @@ const initializeLeadershipCards = () => {
 // Portfolio Carousel Functions
 let currentSlide = 0;
 const totalProjects = 6;
-const projectsPerSlide = 3;
-const totalSlides = Math.ceil(totalProjects / projectsPerSlide);
+let projectsPerSlide = 3; // This will change based on screen size
+let totalSlides = Math.ceil(totalProjects / projectsPerSlide);
+
+const getProjectsPerSlide = () => {
+    if (window.innerWidth <= 768) {
+        return 1; // 1 project per slide on mobile
+    } else if (window.innerWidth <= 1024) {
+        return 2; // 2 projects per slide on tablet
+    } else {
+        return 3; // 3 projects per slide on desktop
+    }
+};
+
+const updateCarouselSettings = () => {
+    projectsPerSlide = getProjectsPerSlide();
+    totalSlides = Math.ceil(totalProjects / projectsPerSlide);
+    
+    // Reset to first slide if current slide is now out of bounds
+    if (currentSlide >= totalSlides) {
+        currentSlide = totalSlides - 1;
+    }
+    
+    // Update indicators
+    updateCarouselIndicators();
+};
+
+const updateCarouselIndicators = () => {
+    const indicatorsContainer = document.getElementById('carousel-indicators');
+    if (!indicatorsContainer) return;
+    
+    // Clear existing indicators
+    indicatorsContainer.innerHTML = '';
+    
+    // Create new indicators based on current totalSlides
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('div');
+        dot.className = `carousel-dot ${i === currentSlide ? 'active' : ''}`;
+        dot.addEventListener('click', () => {
+            currentSlide = i;
+            updateCarousel();
+        });
+        indicatorsContainer.appendChild(dot);
+    }
+};
 
 const initializePortfolioCarousel = () => {
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
-    const indicators = document.querySelectorAll('.carousel-dot');
     const track = document.getElementById('portfolio-track');
-    const counter = document.getElementById('carousel-counter');
     
     if (!track) return;
+    
+    // Update settings based on screen size
+    updateCarouselSettings();
     
     // Button event listeners
     prevBtn?.addEventListener('click', () => {
@@ -396,14 +439,6 @@ const initializePortfolioCarousel = () => {
             currentSlide++;
             updateCarousel();
         }
-    });
-    
-    // Indicator event listeners
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-            currentSlide = index;
-            updateCarousel();
-        });
     });
     
     // Touch/swipe support
@@ -493,50 +528,19 @@ const updateCarousel = () => {
 };
 
 const getSlideWidth = () => {
-    // Responsive slide width based on screen size
+    // Responsive slide width based on screen size and projects per slide
     if (window.innerWidth <= 768) {
-        return 100; // 1 project per slide on mobile
+        return 100; // 1 project per slide, so 100% per slide
     } else if (window.innerWidth <= 1024) {
-        return 100; // 2 projects per slide on tablet, so 50% per project
+        return 100; // 2 projects per slide, but we move 100% to show next 2
     } else {
-        return 100; // 3 projects per slide on desktop, so 33.33% per project
+        return 100; // 3 projects per slide, move 100% to show next 3
     }
-};
-
-// Auto-play functionality (optional)
-let autoPlayInterval;
-
-const startAutoPlay = () => {
-    autoPlayInterval = setInterval(() => {
-        if (currentSlide < totalSlides - 1) {
-            currentSlide++;
-        } else {
-            currentSlide = 0; // Loop back to start
-        }
-        updateCarousel();
-    }, 5000); // Change slide every 5 seconds
-};
-
-const stopAutoPlay = () => {
-    if (autoPlayInterval) {
-        clearInterval(autoPlayInterval);
-    }
-};
-
-// Pause auto-play on hover
-const initializeAutoPlay = () => {
-    const carousel = document.querySelector('.portfolio-carousel');
-    if (!carousel) return;
-    
-    carousel.addEventListener('mouseenter', stopAutoPlay);
-    carousel.addEventListener('mouseleave', startAutoPlay);
-    
-    // Start auto-play initially
-    // startAutoPlay(); // Uncomment if you want auto-play
 };
 
 // Handle window resize
 window.addEventListener('resize', debounce(() => {
+    updateCarouselSettings();
     updateCarousel();
 }, 250));
 

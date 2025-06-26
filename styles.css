@@ -798,6 +798,34 @@ body {
     margin-bottom: 1rem;
 }
 
+.timeline-achievements {
+    margin-bottom: 1rem;
+}
+
+.timeline-achievements ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.timeline-achievements li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.6rem;
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.timeline-achievements li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #ff7300;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
 .timeline-skills {
     display: flex;
     flex-wrap: wrap;
@@ -918,6 +946,7 @@ body {
     transition: all 0.3s ease;
     flex: 0 0 calc(33.333% - 1.33rem);
     min-width: 320px;
+    position: relative;
 }
 
 .portfolio-item:hover {
@@ -925,8 +954,9 @@ body {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-.portfolio-image {
-    height: 180px;
+.portfolio-header {
+    position: relative;
+    height: 140px;
     background: linear-gradient(45deg, #ff7300, #ff5e00);
     display: flex;
     align-items: center;
@@ -934,30 +964,153 @@ body {
     color: white;
     font-size: 1.1rem;
     font-weight: 600;
+    overflow: hidden;
+}
+
+.portfolio-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%);
+    z-index: 1;
+}
+
+.portfolio-header-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.project-status {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 3;
+}
+
+.status-badge {
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-badge.completed {
+    background: rgba(40, 167, 69, 0.9);
+    color: white;
+}
+
+.status-badge.in-progress {
+    background: rgba(255, 193, 7, 0.9);
+    color: #333;
+}
+
+.status-badge.deployed {
+    background: rgba(23, 162, 184, 0.9);
+    color: white;
 }
 
 .portfolio-content {
     padding: 1.5rem;
+    text-align: left;
 }
 
-.portfolio-content h3 {
+.project-title-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.project-info h3 {
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
+    color: #333;
 }
 
-.portfolio-content p {
+.project-links {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.project-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+}
+
+.project-btn.github {
+    background: #333;
+}
+
+.project-btn.demo {
+    background: #ff7300;
+}
+
+.project-btn.paper {
+    background: #6c757d;
+}
+
+.project-btn:hover {
+    transform: translateY(-2px) scale(1.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.project-description {
     color: #666;
     font-size: 0.9rem;
     margin-bottom: 1rem;
     line-height: 1.5;
 }
 
+.project-achievements {
+    margin-bottom: 1rem;
+}
+
+.project-achievements ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.project-achievements li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.project-achievements li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #ff7300;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
 .tech-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .tech-tag {
@@ -1059,6 +1212,15 @@ body {
     .portfolio-carousel {
         margin: 2rem auto 0;
     }
+    
+    .project-title-section {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .project-links {
+        justify-content: flex-start;
+    }
 }
 
 /* Leadership Section */
@@ -1087,7 +1249,7 @@ body {
 
 .leadership-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
 }
@@ -1095,11 +1257,10 @@ body {
 .leadership-item {
     background: #f8f9fa;
     border-radius: 20px;
-    padding: 2rem;
+    overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     position: relative;
-    overflow: hidden;
 }
 
 .leadership-item::before {
@@ -1117,45 +1278,148 @@ body {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
-.leadership-icon {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(45deg, #ff7300, #ff5e00);
-    border-radius: 50%;
+.leadership-header {
+    position: relative;
+    height: 140px;
+    background: linear-gradient(135deg, #f1f3f4 0%, #e8eaf6 100%);
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem;
-    color: white;
-    font-size: 1.5rem;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    overflow: hidden;
 }
 
-.leadership-item h3 {
+.leadership-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255,115,0,0.1) 0%, rgba(255,94,0,0.05) 100%);
+    z-index: 1;
+}
+
+.leadership-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 2;
+    background: white;
+}
+
+.leadership-content {
+    padding: 2rem;
+    text-align: left;
+}
+
+.leadership-title-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.leadership-title-info h3 {
     font-size: 1.3rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
     color: #333;
 }
 
 .leadership-org {
     color: #ff7300;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 0.3rem;
     font-size: 0.9rem;
 }
 
-.leadership-item p {
+.leadership-date {
+    color: #888;
+    font-weight: 500;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+.leadership-socials {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.social-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+}
+
+.social-btn.instagram {
+    background: linear-gradient(45deg, #e1306c, #fd1d1d, #fcb045);
+}
+
+.social-btn.linkedin {
+    background: #0077b5;
+}
+
+.social-btn.website {
+    background: #666;
+}
+
+.social-btn:hover {
+    transform: translateY(-2px) scale(1.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.leadership-description {
     color: #666;
     font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 1rem;
 }
 
+.leadership-achievements {
+    margin-bottom: 1.5rem;
+}
+
+.leadership-achievements ul {
+    list-style: none;
+    padding: 0;
+}
+
+.leadership-achievements li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.leadership-achievements li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #ff7300;
+    font-weight: bold;
+}
+
 .leadership-skills {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .leadership-skill {
@@ -1196,21 +1460,31 @@ body {
 .social-link {
     width: 50px;
     height: 50px;
-    background: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #666;
+    color: white;
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+.social-link[href*="mailto"] {
+    background: linear-gradient(45deg, #ea4335, #d33b2c);
+}
+
+.social-link[href*="linkedin"] {
+    background: #0077b5;
+}
+
+.social-link[href*="github"] {
+    background: #333;
+}
+
 .social-link:hover {
-    background: #ff7300;
-    color: white;
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive Design */
