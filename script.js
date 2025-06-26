@@ -345,7 +345,7 @@ const handleContactButtonClick = (e) => {
     if (button.textContent === 'DOWNLOAD CV') {
         // Update with actual CV file path
         try {
-            window.open('Sy, E. Résumé 2024.pdf', '_blank');
+            window.open('Sy, E. Résumé 2025.pdf', '_blank');
         } catch (error) {
             console.warn('CV file not found. Please ensure the CV file exists in the root directory.');
             // Fallback: Could show a message to user or redirect to contact
