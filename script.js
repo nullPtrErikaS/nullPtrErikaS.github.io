@@ -644,7 +644,6 @@ const init = () => {
         // Enhanced interactions
         initializeLeadershipCards();
         initializePortfolioCarousel();
-        initializeAutoPlay();
         
         // Enhanced features
         enhanceAccessibility();

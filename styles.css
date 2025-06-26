@@ -957,7 +957,7 @@ body {
 .portfolio-header {
     position: relative;
     height: 140px;
-    background: linear-gradient(45deg, #ff7300, #ff5e00);
+    background: linear-gradient(45deg, #ff6600, #ff4500);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -974,7 +974,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%);
+    background: linear-gradient(135deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.15) 100%);
     z-index: 1;
 }
 
@@ -1059,7 +1059,7 @@ body {
 }
 
 .project-btn.demo {
-    background: #ff7300;
+    background: #ff8533;
 }
 
 .project-btn.paper {
@@ -1101,7 +1101,7 @@ body {
     content: '→';
     position: absolute;
     left: 0;
-    color: #ff7300;
+    color: #ff8533;
     font-weight: bold;
     font-size: 0.8rem;
 }
@@ -1115,7 +1115,7 @@ body {
 
 .tech-tag {
     background: #f0f8ff;
-    color: #ff7300;
+    color: #ff8533;
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
     font-size: 0.8rem;
@@ -1147,10 +1147,10 @@ body {
 }
 
 .carousel-btn:hover {
-    background: #ff7300;
+    background: #ff8533;
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 115, 0, 0.3);
+    box-shadow: 0 6px 20px rgba(255, 133, 51, 0.3);
 }
 
 .carousel-btn:disabled {
@@ -1181,7 +1181,7 @@ body {
 }
 
 .carousel-dot.active {
-    background: #ff7300;
+    background: #ff8533;
     transform: scale(1.2);
 }
 
@@ -1581,6 +1581,7 @@ body {
         position: static;
         margin: 0.5rem;
         display: inline-flex;
+        transform: scale(0.7);
     }
 
     .contact-info {
@@ -1588,22 +1589,184 @@ body {
         gap: 1rem;
     }
 
-    .portfolio-grid,
-    .leadership-grid {
-        grid-template-columns: 1fr;
+    /* Make timeline more compact on mobile */
+    .timeline-content {
+        width: calc(100% - 60px);
+        margin-left: 60px;
+        border-radius: 12px;
+    }
+
+    .timeline-banner {
+        height: 100px;
+        padding: 1.2rem;
+    }
+
+    .timeline-banner-logo {
+        width: 45px;
+        height: 45px;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.15rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .timeline-company {
+        font-size: 0.9rem;
+    }
+
+    .timeline-date {
+        font-size: 0.85rem;
+    }
+
+    .timeline-main-content {
+        padding: 1.2rem;
+    }
+
+    .timeline-description {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        line-height: 1.5;
+    }
+
+    .timeline-achievements li {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .timeline-skill {
+        padding: 0.25rem 0.7rem;
+        font-size: 0.8rem;
     }
 
     .timeline::before {
         left: 30px;
     }
 
-    .timeline-content {
-        width: calc(100% - 80px);
-        margin-left: 80px;
-    }
-
     .timeline-dot {
         left: 30px;
+        width: 16px;
+        height: 16px;
+    }
+
+    /* Make portfolio items more compact */
+    .portfolio-item {
+        flex: 0 0 100%;
+        min-width: 100%;
+        border-radius: 15px;
+    }
+    
+    .portfolio-header {
+        height: 120px;
+        font-size: 1rem;
+    }
+
+    .portfolio-content {
+        padding: 1.2rem;
+    }
+
+    .project-info h3 {
+        font-size: 1.1rem;
+    }
+
+    .project-description {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        line-height: 1.5;
+    }
+
+    .project-achievements li {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .tech-tag {
+        padding: 0.3rem 0.7rem;
+        font-size: 0.8rem;
+    }
+
+    .project-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 0.85rem;
+    }
+    
+    .portfolio-track {
+        gap: 1rem;
+    }
+    
+    .portfolio-carousel {
+        margin: 2rem auto 0;
+    }
+    
+    .project-title-section {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .project-links {
+        justify-content: flex-start;
+    }
+
+    /* Make leadership cards more compact */
+    .leadership-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .leadership-item {
+        border-radius: 15px;
+    }
+
+    .leadership-header {
+        height: 120px;
+        padding: 1.2rem;
+    }
+
+    .leadership-logo {
+        width: 45px;
+        height: 45px;
+    }
+
+    .leadership-content {
+        padding: 1.5rem;
+    }
+
+    .leadership-title-info h3 {
+        font-size: 1.15rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .leadership-org {
+        font-size: 0.85rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .leadership-date {
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .leadership-description {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        line-height: 1.5;
+    }
+
+    .leadership-achievements li {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .leadership-skill {
+        padding: 0.3rem 0.7rem;
+        font-size: 0.8rem;
+    }
+
+    .social-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 0.75rem;
     }
 
     .horizontal-timeline-items {

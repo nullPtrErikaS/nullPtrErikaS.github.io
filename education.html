@@ -410,16 +410,87 @@
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
+            .course-categories {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .course-category {
+                padding: 1.5rem;
+                border-radius: 15px;
+            }
+
+            .category-icon {
+                width: 45px;
+                height: 45px;
+                margin-bottom: 1.2rem;
+                font-size: 1.1rem;
+            }
+
+            .course-category h3 {
+                font-size: 1.15rem;
+                margin-bottom: 1rem;
+            }
+
+            .course-item {
+                padding: 0.7rem 0;
+            }
+
+            .course-name {
+                font-size: 0.95rem;
+            }
+
+            .course-code {
+                font-size: 0.8rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .academic-project {
+                border-radius: 15px;
+            }
+
+            .project-header {
+                padding: 1.4rem;
+            }
+
+            .project-content {
+                padding: 1.4rem;
+            }
+
+            .project-course {
+                font-size: 0.8rem;
+            }
+
+            .project-title {
+                font-size: 1.15rem;
+            }
+
+            .project-description {
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
+                line-height: 1.5;
+            }
+
+            .tech-tag {
+                padding: 0.3rem 0.7rem;
+                font-size: 0.8rem;
+            }
+
             .project-footer {
                 flex-direction: column;
-                gap: 0.8rem;
+                gap: 1rem;
                 align-items: center;
             }
 
             .project-github-btn {
                 width: 100%;
-                max-width: 150px;
+                max-width: 160px;
                 justify-content: center;
+                padding: 0.6rem 1.2rem;
             }
 
             .university-container {
@@ -444,14 +515,6 @@
 
             .university-details h2 {
                 font-size: 1.5rem;
-            }
-
-            .course-categories {
-                grid-template-columns: 1fr;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
             }
 
             .academic-stats {
