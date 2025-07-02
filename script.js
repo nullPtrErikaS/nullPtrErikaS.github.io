@@ -8,12 +8,14 @@ const CONFIG = {
     NAVBAR_SCROLL_THRESHOLD: 50
 };
 
+// Updated timeline mapping for new experiences
 const TIMELINE_MAPPING = {
-    0: 4, // KPMG (horizontal index 0) -> timeline index 4 (last in chronological)
-    1: 3, // UIC Research (horizontal index 1) -> timeline index 3
-    2: 2, // AbbVie (horizontal index 2) -> timeline index 2
-    3: 1, // Snap Inc (horizontal index 3) -> timeline index 1
-    4: 0  // UW Research (horizontal index 4) -> timeline index 0 (first in chronological)
+    0: 5, // KPMG (horizontal index 0) -> timeline index 5 (last chronologically)
+    1: 4, // AbbVie 2024 (horizontal index 1) -> timeline index 4
+    2: 3, // Snap Inc (horizontal index 2) -> timeline index 3
+    3: 2, // UW Research (horizontal index 3) -> timeline index 2
+    4: 1, // NASA NPWEE (horizontal index 4) -> timeline index 1
+    5: 0  // AbbVie Current (horizontal index 5) -> timeline index 0 (first chronologically - current)
 };
 
 // DOM Elements Cache
@@ -187,17 +189,16 @@ const handleDurationBarClick = (e) => {
     const tooltip = e.currentTarget.querySelector('.duration-tooltip');
     const tooltipText = tooltip ? tooltip.textContent : '';
     
-    // Map tooltip text to timeline items
+    // Updated position mapping for new experiences
     const positionMapping = {
-        'KPMG Seasonal Advisory Intern': 4,
-        'UIC Research Assistant': 3,
-        'AbbVie Technology Intern': 2,
-        'Snap Inc AR Extern': 1,
-        'UW Research Assistant (Current)': 0,
+        'KPMG Seasonal Advisory Intern': 5,
+        'AbbVie Technology Intern (2024)': 4,
+        'Snap Inc AR Extern': 3,
+        'UW Research Assistant (Current)': 2,
+        'NASA Lead Software Engineer': 1,
+        'AbbVie Technology Intern (Current)': 0,
         // Leadership positions will scroll to leadership section
-        'ACM President': 'leadership',
-        'Women in Computing VP Education': 'leadership',
-        'HackUW Technical Director': 'leadership'
+        'Various Leadership Roles': 'leadership'
     };
     
     const targetIndex = positionMapping[tooltipText];
@@ -342,7 +343,7 @@ const initializeContactButtons = () => {
 const handleContactButtonClick = (e) => {
     const button = e.target;
     
-    if (button.textContent === 'DOWNLOAD CV') {
+    if (button.textContent === 'DOWNLOAD RESUME') {
         // Update with actual CV file path
         try {
             window.open('Sy, E. Résumé 2025.pdf', '_blank');
@@ -370,7 +371,7 @@ const initializeLeadershipCards = () => {
 
 // Portfolio Carousel Functions
 let currentSlide = 0;
-const totalProjects = 6;
+const totalProjects = 8; // Updated to match new project count
 let projectsPerSlide = 3; // This will change based on screen size
 let totalSlides = Math.ceil(totalProjects / projectsPerSlide);
 

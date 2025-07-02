@@ -10,12 +10,51 @@ body {
     line-height: 1.6;
     color: #333;
     overflow-x: hidden;
+    padding-top: 40px; /* Space for work in progress banner */
+}
+
+/* Work in Progress Banner */
+.work-in-progress-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(45deg, #ff7300, #ff5e00);
+    color: white;
+    z-index: 1001;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ticker {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.ticker-content {
+    display: flex;
+    white-space: nowrap;
+    animation: scroll-left 30s linear infinite;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 /* Navigation */
 .navbar {
     position: fixed;
-    top: 0;
+    top: 40px;
     width: 100%;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
@@ -316,93 +355,6 @@ body {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* Floating Stats Cards */
-.floating-stat {
-    position: absolute;
-    background: white;
-    padding: 0.6rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    animation: float 3s ease-in-out infinite;
-    z-index: 5;
-    transform: scale(0.8);
-}
-
-.floating-stat.stat1 {
-    top: 10%;
-    left: -20%;
-    animation-delay: 0s;
-}
-
-.floating-stat.stat2 {
-    top: 50%;
-    right: -25%;
-    animation-delay: 1s;
-}
-
-.floating-stat.stat3 {
-    bottom: 30%;
-    left: -15%;
-    animation-delay: 2s;
-}
-
-.floating-stat.stat4 {
-    bottom: 10%;
-    right: -20%;
-    animation-delay: 0.5s;
-}
-
-.stat-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 16px;
-}
-
-.floating-stat.stat1 .stat-icon {
-    background: #ff7300;
-}
-
-.floating-stat.stat2 .stat-icon {
-    background: #ff6b6b;
-}
-
-.floating-stat.stat3 .stat-icon {
-    background: #4ecdc4;
-}
-
-.floating-stat.stat4 .stat-icon {
-    background: #45b7d1;
-}
-
-.stat-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.stat-number {
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: #333;
-}
-
-.stat-label {
-    font-size: 0.8rem;
-    color: #666;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
-}
-
 .about-content h2 {
     font-size: 2.5rem;
     font-weight: 700;
@@ -477,7 +429,7 @@ body {
 .services .subtitle {
     color: #ff7300;
     font-weight: 600;
-    margin-bottom: 3rem;
+    margin-bottom: 0.8rem;
 }
 
 /* Horizontal Timeline with Stacked Duration Bars */
@@ -491,7 +443,7 @@ body {
 
 .timeline-scale {
     position: relative;
-    height: 60px;
+    height: 80px;
     margin-bottom: 1rem;
 }
 
@@ -537,7 +489,7 @@ body {
     bottom: 15px;
     left: 0;
     right: 0;
-    height: 40px;
+    height: 60px;
 }
 
 .duration-bar {
@@ -600,14 +552,6 @@ body {
     opacity: 1;
 }
 
-.horizontal-timeline-items {
-    display: none; /* Hide the old timeline items */
-}
-
-.horizontal-timeline-line {
-    display: none; /* Hide the old line */
-}
-
 /* Vertical Timeline */
 .timeline {
     position: relative;
@@ -661,6 +605,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 1.5rem;
+    flex-direction: row-reverse;
 }
 
 .timeline-banner::before {
@@ -670,7 +615,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.7) 70%, rgba(255,255,255,0.3) 100%);
+    background: linear-gradient(to right, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.05) 100%);
     z-index: 1;
 }
 
@@ -678,6 +623,8 @@ body {
     position: relative;
     z-index: 2;
     flex: 1;
+    text-align: left;
+    margin-left: 1rem;
 }
 
 .timeline-banner-logo {
@@ -752,44 +699,26 @@ body {
     box-shadow: 0 0 0 6px rgba(255, 115, 0, 0.3);
 }
 
-.timeline-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 1rem;
-}
-
-.timeline-left {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.timeline-logo {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #f8f9fa;
-}
-
-.timeline-text h3 {
+.timeline-banner-content h3 {
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 0.2rem;
-    color: #333;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.5);
 }
 
 .timeline-company {
-    color: #666;
+    color: white;
     font-size: 1rem;
+    margin-bottom: 0.3rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.5);
 }
 
 .timeline-date {
-    color: #ff7300;
+    color: #ffd700;
     font-weight: 600;
     font-size: 0.9rem;
-    text-align: right;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.5);
 }
 
 .timeline-description {
@@ -843,66 +772,6 @@ body {
     font-weight: 500;
 }
 
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 6rem;
-}
-
-.service-card {
-    background: white;
-    padding: 2.5rem;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-.service-card.featured {
-    background: #ff7300;
-    color: white;
-}
-
-.service-icon {
-    width: 60px;
-    height: 60px;
-    background: #f0f8ff;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem;
-    font-size: 1.5rem;
-    color: #ff7300;
-}
-
-.service-card.featured .service-icon {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-}
-
-.service-card h3 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
-.service-card p {
-    color: #666;
-    line-height: 1.6;
-}
-
-.service-card.featured p {
-    color: rgba(255, 255, 255, 0.9);
-}
-
 /* Portfolio Section with Carousel */
 .portfolio {
     padding: 6rem 5%;
@@ -924,7 +793,7 @@ body {
 .portfolio .subtitle {
     color: #ff7300;
     font-weight: 600;
-    margin-bottom: 3rem;
+    margin-bottom: 0.8rem;
 }
 
 .portfolio-carousel {
@@ -964,7 +833,7 @@ body {
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 600;
     overflow: hidden;
 }
@@ -984,6 +853,7 @@ body {
     position: relative;
     z-index: 2;
     text-align: center;
+    font-size: 1.3rem;
 }
 
 .project-status {
@@ -1030,7 +900,7 @@ body {
 }
 
 .project-info h3 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: #333;
@@ -1193,38 +1063,6 @@ body {
     font-weight: 500;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-    .portfolio-item {
-        flex: 0 0 calc(50% - 1rem);
-        min-width: 280px;
-    }
-}
-
-@media (max-width: 768px) {
-    .portfolio-item {
-        flex: 0 0 100%;
-        min-width: 100%;
-    }
-    
-    .portfolio-track {
-        gap: 1rem;
-    }
-    
-    .portfolio-carousel {
-        margin: 2rem auto 0;
-    }
-    
-    .project-title-section {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    
-    .project-links {
-        justify-content: flex-start;
-    }
-}
-
 /* Leadership Section */
 .leadership {
     padding: 6rem 5%;
@@ -1246,7 +1084,7 @@ body {
 .leadership .subtitle {
     color: #ff7300;
     font-weight: 600;
-    margin-bottom: 3rem;
+    margin-bottom: 0.8rem;
 }
 
 .leadership-grid {
@@ -1286,7 +1124,7 @@ body {
     background: linear-gradient(135deg, #f1f3f4 0%, #e8eaf6 100%);
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
     padding: 1.5rem;
     overflow: hidden;
 }
@@ -1436,7 +1274,7 @@ body {
 
 /* Contact Section */
 .contact {
-    padding: 6rem 5%;
+    padding: 3rem 5%;
     background: #f8f9fa;
 }
 
@@ -1447,16 +1285,16 @@ body {
 }
 
 .contact h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .social-links {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 
 .social-link {
@@ -1494,7 +1332,7 @@ body {
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 70px;
+        top: 110px;
         flex-direction: row;
         background: white;
         width: 100%;
@@ -1508,6 +1346,11 @@ body {
         white-space: nowrap;
         display: flex;
         align-items: center;
+    }
+
+    .ticker-content {
+        font-size: 0.8rem;
+        animation: scroll-left 25s linear infinite;
     }
 
     .nav-menu.active {
@@ -1531,7 +1374,6 @@ body {
         display: flex;
     }
 
-    /* Keep side-by-side layout but make it smaller */
     .hero {
         min-height: 75vh;
     }
@@ -1579,19 +1421,11 @@ body {
         gap: 2rem;
     }
 
-    .floating-stat {
-        position: static;
-        margin: 0.5rem;
-        display: inline-flex;
-        transform: scale(0.7);
-    }
-
     .contact-info {
         flex-direction: column;
         gap: 1rem;
     }
 
-    /* Make timeline more compact on mobile */
     .timeline-content {
         width: calc(100% - 60px);
         margin-left: 60px;
@@ -1608,17 +1442,23 @@ body {
         height: 45px;
     }
 
-    .timeline-content h3 {
+    .timeline-banner-content h3 {
         font-size: 1.15rem;
         margin-bottom: 0.3rem;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.5);
     }
 
     .timeline-company {
         font-size: 0.9rem;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.5);
     }
 
     .timeline-date {
         font-size: 0.85rem;
+        color: #ffd700;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.5);
     }
 
     .timeline-main-content {
@@ -1651,7 +1491,6 @@ body {
         height: 16px;
     }
 
-    /* Make portfolio items more compact */
     .portfolio-item {
         flex: 0 0 100%;
         min-width: 100%;
@@ -1662,13 +1501,17 @@ body {
         height: 120px;
         font-size: 1rem;
     }
+    
+    .portfolio-header-content {
+        font-size: 1.15rem;
+    }
 
     .portfolio-content {
         padding: 1.2rem;
     }
 
     .project-info h3 {
-        font-size: 1.1rem;
+        font-size: 1.25rem;
     }
 
     .project-description {
@@ -1710,7 +1553,6 @@ body {
         justify-content: flex-start;
     }
 
-    /* Make leadership cards more compact */
     .leadership-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -1769,15 +1611,6 @@ body {
         width: 30px;
         height: 30px;
         font-size: 0.75rem;
-    }
-
-    .horizontal-timeline-items {
-        min-width: 600px;
-    }
-
-    .horizontal-flag {
-        font-size: 0.75rem;
-        padding: 0.6rem 1rem;
     }
 }
 

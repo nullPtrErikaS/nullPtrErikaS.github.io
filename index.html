@@ -9,6 +9,15 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Work in Progress Banner -->
+    <div class="work-in-progress-banner">
+        <div class="ticker">
+            <div class="ticker-content">
+                🚧 WORK IN PROGRESS: Some iteams may not be fully functional, or accurate • Updated regularly with new projects and improvements • 🚧 WORK IN PROGRESS: Some iteams may not be fully functional, or accurate • Updated regularly with new projects and improvements • 
+            </div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
@@ -60,47 +69,6 @@
         <div class="about-container fade-in">
             <div class="about-image">
                 <img src="images/Sy, Erika - Headshot.png" alt="Erika Sy profile photo" class="about-pic">
-                
-                <!-- Floating Stats Cards -->
-                <!-- <div class="floating-stat stat1" aria-label="5+ internships completed">
-                    <div class="stat-icon" aria-hidden="true">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <div class="stat-info">
-                        <span class="stat-number">5+</span>
-                        <span class="stat-label">Internships</span>
-                    </div>
-                </div>
-                
-                <div class="floating-stat stat2" aria-label="4+ board positions held">
-                    <div class="stat-icon" aria-hidden="true">
-                        <i class="fas fa-users-cog"></i>
-                    </div>
-                    <div class="stat-info">
-                        <span class="stat-number">4+</span>
-                        <span class="stat-label">Board Positions</span>
-                    </div>
-                </div>
-                
-                <div class="floating-stat stat3" aria-label="3+ research projects">
-                    <div class="stat-icon" aria-hidden="true">
-                        <i class="fas fa-flask"></i>
-                    </div>
-                    <div class="stat-info">
-                        <span class="stat-number">3+</span>
-                        <span class="stat-label">Research Projects</span>
-                    </div>
-                </div>
-                
-                <div class="floating-stat stat4" aria-label="16+ coding projects">
-                    <div class="stat-icon" aria-hidden="true">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <div class="stat-info">
-                        <span class="stat-number">16+</span>
-                        <span class="stat-label">Projects</span>
-                    </div>
-                </div> -->
             </div>
             
             <div class="about-content">
@@ -109,7 +77,7 @@
                 <p>I'm a dreamer who dreams big and follows those dreams with unwavering commitment and dedication. My tech journey began with a love for sandbox games, where I discovered the joy of limitless possibilities and letting my creativity run free. It wasn't until my first high school Java class that I truly discovered the power of coding - programming offers the ultimate creative freedom and enables profound problem-solving capabilities.</p>
                 <p>I'm passionate about developing technology that helps people and propels society forward meaningfully. I believe in not just chasing dreams but catching them, and I'm excited to continue pushing boundaries and exploring new opportunities to create meaningful impact through technology.</p>
                 <div class="contact-info">
-                    <button class="contact-button download-cv" type="button">DOWNLOAD CV</button>
+                    <button class="contact-button download-cv" type="button">DOWNLOAD RESUME</button>
                 </div>
             </div>
         </div>
@@ -121,63 +89,125 @@
             <div class="subtitle">MY PROFESSIONAL JOURNEY</div>
             <h2>Experience</h2>
             
-            <!-- New Timeline with Duration Bars -->
+            <!-- Updated Timeline with Duration Bars -->
             <div class="horizontal-timeline">
                 <div class="timeline-scale">
                     <div class="timeline-base"></div>
                     <div class="timeline-markers">
-                        <div class="timeline-marker" style="left: 0%;">2022</div>
-                        <div class="timeline-marker" style="left: 25%;">2023</div>
-                        <div class="timeline-marker" style="left: 50%;">2024</div>
+                        <div class="timeline-marker" style="left: 0%;">2023</div>
+                        <div class="timeline-marker" style="left: 25%;">2024</div>
                         <div class="timeline-marker" style="left: 75%;">2025</div>
                         <div class="timeline-marker" style="left: 100%;">Present</div>
                     </div>
                     <div class="duration-bars">
                         <!-- KPMG - May 2023 (short duration) -->
-                        <div class="duration-bar work" style="left: 30%; width: 3%; bottom: 5px;">
+                        <div class="duration-bar work" style="left: 20%; width: 2%; bottom: 5px;">
                             <div class="duration-tooltip">KPMG Seasonal Advisory Intern</div>
                         </div>
-                        <!-- UIC Research - Feb 2024 to May 2024 -->
-                        <div class="duration-bar research" style="left: 52%; width: 8%; bottom: 15px;">
-                            <div class="duration-tooltip">UIC Research Assistant</div>
-                        </div>
                         <!-- AbbVie - May 2024 to Aug 2024 -->
-                        <div class="duration-bar work" style="left: 60%; width: 8%; bottom: 25px;">
-                            <div class="duration-tooltip">AbbVie Technology Intern</div>
+                        <div class="duration-bar work" style="left: 45%; width: 8%; bottom: 15px;">
+                            <div class="duration-tooltip">AbbVie Technology Intern (2024)</div>
                         </div>
                         <!-- Snap Inc - Sep 2024 to Nov 2024 -->
-                        <div class="duration-bar work" style="left: 70%; width: 6%; bottom: 35px;">
+                        <div class="duration-bar work" style="left: 55%; width: 6%; bottom: 25px;">
                             <div class="duration-tooltip">Snap Inc AR Extern</div>
                         </div>
                         <!-- UW Research - Sep 2024 to Present -->
-                        <div class="duration-bar research" style="left: 70%; width: 30%; bottom: 45px;">
+                        <div class="duration-bar research" style="left: 55%; width: 45%; bottom: 35px;">
                             <div class="duration-tooltip">UW Research Assistant (Current)</div>
+                        </div>
+                        <!-- NASA NPWEE - Jan 2025 to May 2025 -->
+                        <div class="duration-bar work" style="left: 75%; width: 15%; bottom: 45px;">
+                            <div class="duration-tooltip">NASA Lead Software Engineer</div>
+                        </div>
+                        <!-- AbbVie Current - May 2025 to Present -->
+                        <div class="duration-bar work" style="left: 85%; width: 15%; bottom: 55px;">
+                            <div class="duration-tooltip">AbbVie Technology Intern (Current)</div>
                         </div>
                         
                         <!-- Leadership Positions -->
-                        <!-- ACM President - Sep 2023 to Present -->
-                        <div class="duration-bar leadership" style="left: 35%; width: 65%; bottom: 55px;">
-                            <div class="duration-tooltip">ACM President</div>
-                        </div>
-                        <!-- Women in Computing VP Education - Jan 2024 to Present -->
-                        <div class="duration-bar leadership" style="left: 50%; width: 50%; bottom: 65px;">
-                            <div class="duration-tooltip">Women in Computing VP Education</div>
-                        </div>
-                        <!-- HackUW Technical Director - Aug 2024 to Present -->
-                        <div class="duration-bar leadership" style="left: 68%; width: 32%; bottom: 75px;">
-                            <div class="duration-tooltip">HackUW Technical Director</div>
+                        <div class="duration-bar leadership" style="left: 25%; width: 75%; bottom: 65px;">
+                            <div class="duration-tooltip">Various Leadership Roles</div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Vertical Timeline with Banners -->
+            <!-- Vertical Timeline with Updated Experiences -->
             <div class="timeline">
-                <!-- UW Research (Current) -->
+                <!-- AbbVie Current (Most Recent) -->
                 <article class="timeline-item fade-in" data-timeline-index="0">
                     <div class="timeline-dot current" role="button" tabindex="0" aria-label="Current position"></div>
                     <div class="timeline-content">
-                        <div class="timeline-banner">
+                        <div class="timeline-banner" style="background-image: url('images/abbvieBanner.jpg');">
+                            <div class="timeline-banner-content">
+                                <h3>Business Technology Solutions Intern</h3>
+                                <div class="timeline-company">AbbVie</div>
+                                <time class="timeline-date" datetime="2025-05">May 2025 - Present</time>
+                            </div>
+                            <img src="images/abbvie-logo.jpg" alt="AbbVie logo" class="timeline-banner-logo">
+                        </div>
+                        <div class="timeline-main-content">
+                            <p class="timeline-description">
+                                Leading end-to-end automation initiatives within the ServiceNow platform to enhance operational efficiency and reduce costs. Managing employee workshops and driving AI innovation initiatives.
+                            </p>
+                            <div class="timeline-achievements">
+                                <ul>
+                                    <li>Identified and implemented automation opportunities within ServiceNow platform</li>
+                                    <li>Led 8 employee workshops and documented 12 processes using spreadsheets</li>
+                                    <li>Assisted in rebranding AI landing page and presented MVP to VP</li>
+                                </ul>
+                            </div>
+                            <div class="timeline-skills">
+                                <span class="timeline-skill">ServiceNow</span>
+                                <span class="timeline-skill">Process Automation</span>
+                                <span class="timeline-skill">Visio</span>
+                                <span class="timeline-skill">AI/ML</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- NASA NPWEE -->
+                <article class="timeline-item fade-in" data-timeline-index="1">
+                    <div class="timeline-dot" role="button" tabindex="0" aria-label="NASA position"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-banner" style="background-image: url('images/nasaBanner.jpg');">
+                            <div class="timeline-banner-content">
+                                <h3>Lead Software Engineer</h3>
+                                <div class="timeline-company">NASA - NPWEE</div>
+                                <time class="timeline-date" datetime="2025-01/2025-05">January 2025 - May 2025</time>
+                            </div>
+                            <img src="images/nasaLogo.png" alt="NASA logo" class="timeline-banner-logo">
+                        </div>
+                        <div class="timeline-main-content">
+                            <p class="timeline-description">
+                                Led technical direction for GMAPS, a mission scheduling tool enhancing NASA Gateway's autonomy with AI-driven planning and fault prediction. Managed cross-functional team development.
+                            </p>
+                            <div class="timeline-achievements">
+                                <ul>
+                                    <li>Designed tech stack (React, FastAPI, PostgreSQL, Docker, OR-Tools)</li>
+                                    <li>Managed team of 4 across frontend, backend, and ML components</li>
+                                    <li>Co-authored 15+ page technical proposal for system architecture</li>
+                                    <li>Created 12-month roadmap with Agile sprints and Gantt milestones</li>
+                                </ul>
+                            </div>
+                            <div class="timeline-skills">
+                                <span class="timeline-skill">React</span>
+                                <span class="timeline-skill">FastAPI</span>
+                                <span class="timeline-skill">PostgreSQL</span>
+                                <span class="timeline-skill">Docker</span>
+                                <span class="timeline-skill">OR-Tools</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- UW Research (Current) -->
+                <article class="timeline-item fade-in" data-timeline-index="2">
+                    <div class="timeline-dot current" role="button" tabindex="0" aria-label="Current research position"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-banner" style="background-image: url('images/uwmadBanner.jpg');">
                             <div class="timeline-banner-content">
                                 <h3>Undergraduate Research Assistant</h3>
                                 <div class="timeline-company">University of Wisconsin, Madison</div>
@@ -187,32 +217,32 @@
                         </div>
                         <div class="timeline-main-content">
                             <p class="timeline-description">
-                                Engaged in a RoboCup project focusing on advancing autonomous humanoid robots through cutting-edge motion and decision-making technologies. Contributing significantly to robotic motion analysis using SimRobot to enhance robot walking speed and agility in competitive scenarios.
+                                Using evolutionary search optimization and parallel computing to optimize RL agents. Performing robotic motion analysis and generating synthetic data for computer vision applications.
                             </p>
                             <div class="timeline-achievements">
                                 <ul>
-                                    <li>Enhanced robot walking speed by 15% through SimRobot motion optimization</li>
-                                    <li>Developed gesture recognition systems for referees using MediaPipe</li>
-                                    <li>Collaborated with research team on autonomous navigation algorithms</li>
+                                    <li>Used CMA-ES and CHTC for optimal reward function weights for RL agents</li>
+                                    <li>Performed robotic motion analysis in SimRobot to optimize gait patterns</li>
+                                    <li>Used Unreal Engine 4 to generate synthetic data for computer vision</li>
                                 </ul>
                             </div>
                             <div class="timeline-skills">
+                                <span class="timeline-skill">CMA-ES</span>
                                 <span class="timeline-skill">SimRobot</span>
-                                <span class="timeline-skill">MediaPipe</span>
-                                <span class="timeline-skill">Machine Learning</span>
-                                <span class="timeline-skill">Robotics</span>
+                                <span class="timeline-skill">Unreal Engine</span>
+                                <span class="timeline-skill">Computer Vision</span>
                             </div>
                         </div>
                     </div>
                 </article>
 
                 <!-- Snap Inc -->
-                <article class="timeline-item fade-in" data-timeline-index="1">
+                <article class="timeline-item fade-in" data-timeline-index="3">
                     <div class="timeline-dot" role="button" tabindex="0" aria-label="Snap Inc position"></div>
                     <div class="timeline-content">
-                        <div class="timeline-banner">
+                        <div class="timeline-banner" style="background-image: url('images/snapBanner.jpg');">
                             <div class="timeline-banner-content">
-                                <h3>Augmented Reality Extern</h3>
+                                <h3>Augmented Reality Development Extern</h3>
                                 <div class="timeline-company">Snap Inc.</div>
                                 <time class="timeline-date" datetime="2024-09/2024-11">September 2024 - November 2024</time>
                             </div>
@@ -220,32 +250,32 @@
                         </div>
                         <div class="timeline-main-content">
                             <p class="timeline-description">
-                                Engineered 5+ AI applications and APIs using Next.js, OpenAI, Pinecone, and Stripe API, achieving 98% accuracy. Enhanced skills through coaching from Amazon, Bloomberg, and Capital One, focusing on Agile methodologies and CI/CD processes.
+                                Developed interactive AR lenses including multi-user experiences with synchronized 3D animations, custom scripts, and spatial tracking. Presented technical solutions to Snap engineers.
                             </p>
                             <div class="timeline-achievements">
                                 <ul>
-                                    <li>Selected among 15,818 candidates from 41,803 applicants</li>
-                                    <li>Managed project lifecycle from design to development using MVC patterns</li>
-                                    <li>Gained expertise in microservice architecture and Git version control</li>
+                                    <li>Developed 4 interactive lenses with multi-user capabilities</li>
+                                    <li>Created Halloween costume lens with synchronized 3D animations</li>
+                                    <li>Presented technical design and creative vision to Snap engineers</li>
                                 </ul>
                             </div>
                             <div class="timeline-skills">
                                 <span class="timeline-skill">AR Development</span>
                                 <span class="timeline-skill">Lens Studio</span>
-                                <span class="timeline-skill">Next.js</span>
-                                <span class="timeline-skill">OpenAI API</span>
+                                <span class="timeline-skill">3D Animation</span>
+                                <span class="timeline-skill">Spatial Tracking</span>
                             </div>
                         </div>
                     </div>
                 </article>
 
-                <!-- AbbVie -->
-                <article class="timeline-item fade-in" data-timeline-index="2">
-                    <div class="timeline-dot" role="button" tabindex="0" aria-label="AbbVie position"></div>
+                <!-- AbbVie 2024 -->
+                <article class="timeline-item fade-in" data-timeline-index="4">
+                    <div class="timeline-dot" role="button" tabindex="0" aria-label="AbbVie 2024 position"></div>
                     <div class="timeline-content">
-                        <div class="timeline-banner">
+                        <div class="timeline-banner" style="background-image: url('images/abbvieBanner.jpg');">
                             <div class="timeline-banner-content">
-                                <h3>Business Solutions Technology Intern</h3>
+                                <h3>Business Technology Solutions Intern</h3>
                                 <div class="timeline-company">AbbVie</div>
                                 <time class="timeline-date" datetime="2024-05/2024-08">May 2024 - August 2024</time>
                             </div>
@@ -253,63 +283,31 @@
                         </div>
                         <div class="timeline-main-content">
                             <p class="timeline-description">
-                                Identified and implemented automation opportunities within the ServiceNow platform to enhance efficiency and reduce costs. Led employee workshops and assisted in rebranding the AI landing page for improved user experience.
+                                Implemented automation solutions in ServiceNow platform and conducted comprehensive AI model testing. Led workshops and built robust prompt engineering libraries.
                             </p>
                             <div class="timeline-achievements">
                                 <ul>
-                                    <li>Led 8 employee workshops and documented 12 processes using spreadsheets</li>
-                                    <li>Utilized Visio to map out 5 key processes for optimization</li>
-                                    <li>Conducted 3 batches of smoke testing using Postman</li>
+                                    <li>Led 8 employee workshops and documented 12 processes</li>
+                                    <li>Conducted 3 smoke tests using Postman</li>
+                                    <li>Compared Claude, Iliad, Gemini, Llama 4, and GPT-4 for prompt engineering</li>
+                                    <li>Rebuilt AI landing page and presented MVP to VP</li>
                                 </ul>
                             </div>
                             <div class="timeline-skills">
                                 <span class="timeline-skill">ServiceNow</span>
-                                <span class="timeline-skill">Process Mapping</span>
-                                <span class="timeline-skill">Visio</span>
                                 <span class="timeline-skill">Postman</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- UIC Research -->
-                <article class="timeline-item fade-in" data-timeline-index="3">
-                    <div class="timeline-dot" role="button" tabindex="0" aria-label="UIC Research position"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-banner">
-                            <div class="timeline-banner-content">
-                                <h3>Undergraduate Research Assistant</h3>
-                                <div class="timeline-company">University of Illinois, Chicago</div>
-                                <time class="timeline-date" datetime="2024-02/2024-05">February 2024 - May 2024</time>
-                            </div>
-                            <img src="images/uic-logo.jpg" alt="University of Illinois Chicago logo" class="timeline-banner-logo">
-                        </div>
-                        <div class="timeline-main-content">
-                            <p class="timeline-description">
-                                Contributed to developing a digital twin for managing nuclear waste using Codesys and Unreal Engine. Enhanced project efficiency by optimizing simulation code and improving real-time TCP/IP communication between physical crane operations and digital representation.
-                            </p>
-                            <div class="timeline-achievements">
-                                <ul>
-                                    <li>Optimized existing simulation code for improved performance</li>
-                                    <li>Enhanced real-time TCP/IP communication systems</li>
-                                    <li>Examined performance bottlenecks and executed strategic optimizations</li>
-                                </ul>
-                            </div>
-                            <div class="timeline-skills">
-                                <span class="timeline-skill">Unreal Engine</span>
-                                <span class="timeline-skill">Codesys</span>
-                                <span class="timeline-skill">TCP/IP</span>
-                                <span class="timeline-skill">Digital Twin</span>
+                                <span class="timeline-skill">AI Testing</span>
+                                <span class="timeline-skill">Prompt Engineering</span>
                             </div>
                         </div>
                     </div>
                 </article>
 
                 <!-- KPMG -->
-                <article class="timeline-item fade-in" data-timeline-index="4">
+                <article class="timeline-item fade-in" data-timeline-index="5">
                     <div class="timeline-dot" role="button" tabindex="0" aria-label="KPMG position"></div>
                     <div class="timeline-content">
-                        <div class="timeline-banner">
+                        <div class="timeline-banner" style="background-image: url('images/kpmgBanner.jpg');">
                             <div class="timeline-banner-content">
                                 <h3>Seasonal Advisory Intern</h3>
                                 <div class="timeline-company">KPMG</div>
@@ -319,20 +317,20 @@
                         </div>
                         <div class="timeline-main-content">
                             <p class="timeline-description">
-                                Investigated innovative technological solutions to help achieve net-zero carbon footprint goals. Leveraged Power BI, PowerPoint, and Excel to create visually compelling presentations and wireframed a sustainability app using Figma.
+                                Designed sustainability solutions to help KPMG achieve net-zero carbon emissions by 2030. Created data visualizations and prototyped reward systems for green initiatives.
                             </p>
                             <div class="timeline-achievements">
                                 <ul>
-                                    <li>Researched technological solutions for carbon footprint reduction</li>
-                                    <li>Created compelling presentations using Power BI and Excel</li>
-                                    <li>Wireframed sustainability app with employee reward system</li>
+                                    <li>Designed sustainability rewards app prototype in Figma</li>
+                                    <li>Built stakeholder-facing dashboards in Power BI and Excel</li>
+                                    <li>Visualized travel mode trends and CO₂ savings for green incentive planning</li>
                                 </ul>
                             </div>
                             <div class="timeline-skills">
-                                <span class="timeline-skill">Power BI</span>
                                 <span class="timeline-skill">Figma</span>
+                                <span class="timeline-skill">Power BI</span>
+                                <span class="timeline-skill">Excel</span>
                                 <span class="timeline-skill">Sustainability</span>
-                                <span class="timeline-skill">Data Analysis</span>
                             </div>
                         </div>
                     </div>
@@ -351,43 +349,84 @@
                 <div class="portfolio-track" id="portfolio-track">
                     <article class="portfolio-item">
                         <div class="portfolio-header">
-                            <div class="portfolio-header-content">Robotic Motion Analysis</div>
+                            <div class="portfolio-header-content">Hustle Hub</div>
                             <div class="project-status">
-                                <span class="status-badge completed">Completed</span>
+                                <span class="status-badge in-progress">In Progress</span>
                             </div>
                         </div>
                         <div class="portfolio-content">
                             <div class="project-title-section">
                                 <div class="project-info">
-                                    <h3>SimRobot Enhancement</h3>
+                                    <h3>Full-Stack Social Platform</h3>
                                 </div>
                                 <div class="project-links">
-                                    <a href="https://github.com/erikasy/simrobot-enhancement" class="project-btn github" target="_blank" aria-label="View GitHub repository">
+                                    <a href="https://github.com/nullPtrErikaS/Hustle-Hub-V2" class="project-btn github" target="_blank" aria-label="View GitHub repository">
                                         <i class="fab fa-github"></i>
                                     </a>
                                 </div>
                             </div>
                             <p class="project-description">
-                                Advanced robotic motion analysis using SimRobot, enhancing robot walking speed and agility for competitive scenarios.
+                                Building a FastAPI backend with PostgreSQL, featuring secure JWT authentication, task management, and real-time WebSocket integration with Redis pub/sub.
                             </p>
                             <div class="project-achievements">
                                 <ul>
-                                    <li>Improved walking speed by 15% through gait optimization algorithms</li>
-                                    <li>Reduced energy consumption by 20% in locomotion tasks</li>
-                                    <li>Presented findings at RoboCup 2024 conference</li>
+                                    <li>Implemented secure JWT login and form-based authentication</li>
+                                    <li>Developed task creation system with dark-themed UI using Next.js</li>
+                                    <li>Integrating WebSocket live feed, leaderboards, and React Native mobile app</li>
                                 </ul>
                             </div>
                             <div class="tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">FastAPI</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">Next.js</span>
+                                <span class="tech-tag">Redis</span>
+                                <span class="tech-tag">React Native</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="portfolio-item">
+                        <div class="portfolio-header">
+                            <div class="portfolio-header-content">Path-Mind</div>
+                            <div class="project-status">
+                                <span class="status-badge in-progress">In Progress</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="project-title-section">
+                                <div class="project-info">
+                                    <h3>Autonomous Navigation System</h3>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/nullPtrErikaS/Path-Mind" class="project-btn github" target="_blank" aria-label="View GitHub repository">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <p class="project-description">
+                                Built a robot with ultrasonic and IR sensors to autonomously solve mazes using wall-following and Q-Learning agents with C++ firmware and Python AI.
+                            </p>
+                            <div class="project-achievements">
+                                <ul>
+                                    <li>Developed Q-Learning agent with PyTorch reducing completion time by 23%</li>
+                                    <li>Implemented sensor fusion and serial communication in C++</li>
+                                    <li>Visualized agent trajectories in Matplotlib for performance analysis</li>
+                                </ul>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Arduino</span>
                                 <span class="tech-tag">C++</span>
-                                <span class="tech-tag">SimRobot</span>
-                                <span class="tech-tag">Robotics</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">PyTorch</span>
+                                <span class="tech-tag">Q-Learning</span>
                             </div>
                         </div>
                     </article>
                     
                     <article class="portfolio-item">
                         <div class="portfolio-header">
-                            <div class="portfolio-header-content">Gesture Recognition System</div>
+                            <div class="portfolio-header-content">PlantDocNet</div>
                             <div class="project-status">
                                 <span class="status-badge completed">Completed</span>
                             </div>
@@ -395,16 +434,54 @@
                         <div class="portfolio-content">
                             <div class="project-title-section">
                                 <div class="project-info">
-                                    <h3>Digital Hand Pen Whiteboard</h3>
+                                    <h3>Machine Learning Project</h3>
                                 </div>
                                 <div class="project-links">
-                                    <a href="https://github.com/nullPtrErikaS/digital-whiteboard" class="project-btn github" target="_blank" aria-label="View GitHub repository">
+                                    <a href="https://github.com/nullPtrErikaS/PlantDocNet" class="project-btn github" target="_blank" aria-label="View GitHub repository">
                                         <i class="fab fa-github"></i>
                                     </a>
                                 </div>
                             </div>
                             <p class="project-description">
-                                Created a gesture recognition whiteboard using MediaPipe, OpenCV, and PyCharm that enabled real-time interactions with 90% accuracy rate. Showcased at ERSP national conference.
+                                Trained a deep learning classifier using MobileNetV2 on 20K+ leaf images, achieving 89.1% validation accuracy across 16 disease classes.
+                            </p>
+                            <div class="project-achievements">
+                                <ul>
+                                    <li>Achieved 89.1% validation accuracy across 16 disease classes</li>
+                                    <li>Designed full ML pipeline with image augmentation and transfer learning</li>
+                                    <li>Assessed performance using scikit-learn metrics and confusion matrix</li>
+                                </ul>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">TensorFlow</span>
+                                <span class="tech-tag">Keras</span>
+                                <span class="tech-tag">MobileNetV2</span>
+                                <span class="tech-tag">scikit-learn</span>
+                                <span class="tech-tag">Python</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="portfolio-item">
+                        <div class="portfolio-header">
+                            <div class="portfolio-header-content">Digital Hand Pen Whiteboard</div>
+                            <div class="project-status">
+                                <span class="status-badge completed">Completed</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="project-title-section">
+                                <div class="project-info">
+                                    <h3>Gesture Recognition System</h3>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/nullPtrErikaS/Virtual-Hand-Pen" class="project-btn github" target="_blank" aria-label="View GitHub repository">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <p class="project-description">
+                                Created a gesture recognition whiteboard using MediaPipe, OpenCV, and PyCharm that enabled real-time interactions with 90% accuracy rate.
                             </p>
                             <div class="project-achievements">
                                 <ul>
@@ -421,10 +498,10 @@
                             </div>
                         </div>
                     </article>
-                    
+
                     <article class="portfolio-item">
                         <div class="portfolio-header">
-                            <div class="portfolio-header-content">Digital Twin System</div>
+                            <div class="portfolio-header-content">AI-Powered Support Assistant</div>
                             <div class="project-status">
                                 <span class="status-badge completed">Completed</span>
                             </div>
@@ -432,35 +509,36 @@
                         <div class="portfolio-content">
                             <div class="project-title-section">
                                 <div class="project-info">
-                                    <h3>Nuclear Waste Management</h3>
+                                    <h3>AI Support Assistant</h3>
                                 </div>
                                 <div class="project-links">
-                                    <a href="https://github.com/erikasy/nuclear-digital-twin" class="project-btn github" target="_blank" aria-label="View GitHub repository">
+                                    <a href="https://github.com/nullPtrErikaS/ai-support-assistant" class="project-btn github" target="_blank" aria-label="View GitHub repository">
                                         <i class="fab fa-github"></i>
                                     </a>
                                 </div>
                             </div>
                             <p class="project-description">
-                                Digital twin development for nuclear waste management using Codesys and Unreal Engine with real-time TCP/IP communication.
+                                Developed an AI Support Assistant using Next.js, Material-UI, and OpenAI API to enhance user interaction with real-time support capabilities.
                             </p>
                             <div class="project-achievements">
                                 <ul>
-                                    <li>Built real-time simulation with 99.7% accuracy to physical system</li>
-                                    <li>Reduced manual monitoring time by 60% through automation</li>
-                                    <li>Collaborated with UIC Nuclear Engineering department</li>
+                                    <li>Integrated error handling and UX features with loading states and auto-scrolling</li>
+                                    <li>Added multi-language support for improved global usability</li>
+                                    <li>Set up development environment and deployment pipeline with Vercel</li>
                                 </ul>
                             </div>
                             <div class="tech-tags">
-                                <span class="tech-tag">Unreal Engine</span>
-                                <span class="tech-tag">Codesys</span>
-                                <span class="tech-tag">TCP/IP</span>
+                                <span class="tech-tag">Next.js</span>
+                                <span class="tech-tag">Material-UI</span>
+                                <span class="tech-tag">OpenAI API</span>
+                                <span class="tech-tag">Vercel</span>
                             </div>
                         </div>
                     </article>
-                    
+
                     <article class="portfolio-item">
                         <div class="portfolio-header">
-                            <div class="portfolio-header-content">Sustainability App</div>
+                            <div class="portfolio-header-content">Harry Potter Sorting Hat</div>
                             <div class="project-status">
                                 <span class="status-badge completed">Completed</span>
                             </div>
@@ -468,35 +546,36 @@
                         <div class="portfolio-content">
                             <div class="project-title-section">
                                 <div class="project-info">
-                                    <h3>Eco-Friendly Travel Rewards</h3>
+                                    <h3>Interactive Full-Stack Game</h3>
                                 </div>
                                 <div class="project-links">
-                                    <a href="https://github.com/erikasy/eco-travel-app" class="project-btn github" target="_blank" aria-label="View GitHub repository">
+                                    <a href="https://github.com/nullPtrErikaS/Harry-Potter-Sorting-Hat" class="project-btn github" target="_blank" aria-label="View GitHub repository">
                                         <i class="fab fa-github"></i>
                                     </a>
                                 </div>
                             </div>
                             <p class="project-description">
-                                Wireframed sustainability app using Figma, encouraging eco-friendly travel choices through gamification and rewards system.
+                                Created an interactive full-stack game using HTML, CSS, and JavaScript to simulate the Sorting Hat's house selection process with algorithmic decision-making.
                             </p>
                             <div class="project-achievements">
                                 <ul>
-                                    <li>Designed complete user journey with 12 key screens</li>
-                                    <li>Conducted user testing with 25+ participants</li>
-                                    <li>Presented to KPMG sustainability team for potential implementation</li>
+                                    <li>Developed algorithm that analyzes and weighs user responses</li>
+                                    <li>Implemented full-stack architecture with responsive design</li>
+                                    <li>Created engaging user interface with interactive elements</li>
                                 </ul>
                             </div>
                             <div class="tech-tags">
-                                <span class="tech-tag">Figma</span>
-                                <span class="tech-tag">UI/UX</span>
-                                <span class="tech-tag">Sustainability</span>
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Algorithm Design</span>
                             </div>
                         </div>
                     </article>
-                    
+
                     <article class="portfolio-item">
                         <div class="portfolio-header">
-                            <div class="portfolio-header-content">Machine Learning Project</div>
+                            <div class="portfolio-header-content">Space Invaders</div>
                             <div class="project-status">
                                 <span class="status-badge completed">Completed</span>
                             </div>
@@ -504,67 +583,66 @@
                         <div class="portfolio-content">
                             <div class="project-title-section">
                                 <div class="project-info">
-                                    <h3>PlantDocNet</h3>
+                                    <h3>Classic Game Recreation</h3>
                                 </div>
                                 <div class="project-links">
-                                    <a href="https://github.com/nullPtrErikaS/plantdocnet" class="project-btn github" target="_blank" aria-label="View GitHub repository">
+                                    <a href="https://github.com/nullPtrErikaS/space-invaders-python" class="project-btn github" target="_blank" aria-label="View GitHub repository">
                                         <i class="fab fa-github"></i>
                                     </a>
                                 </div>
                             </div>
                             <p class="project-description">
-                                Trained a deep learning classifier using MobileNetV2 on 20K+ leaf images, achieving 89.1% validation accuracy across 16 disease classes with full ML pipeline implementation.
+                                Developed a Space Invaders clone using Python and Turtle graphics with progressive difficulty levels, high scoreboard feature, and enhanced UI design.
                             </p>
                             <div class="project-achievements">
                                 <ul>
-                                    <li>Achieved 89.1% validation accuracy across 16 disease classes</li>
-                                    <li>Processed 20K+ leaf images with data augmentation and transfer learning</li>
-                                    <li>Implemented comprehensive ML pipeline with performance metrics analysis</li>
-                                </ul>
-                            </div>
-                            <div class="tech-tags">
-                                <span class="tech-tag">TensorFlow</span>
-                                <span class="tech-tag">Keras</span>
-                                <span class="tech-tag">MobileNetV2</span>
-                                <span class="tech-tag">scikit-learn</span>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <article class="portfolio-item">
-                        <div class="portfolio-header">
-                            <div class="portfolio-header-content">Full-Stack Platform</div>
-                            <div class="project-status">
-                                <span class="status-badge in-progress">In Progress</span>
-                            </div>
-                        </div>
-                        <div class="portfolio-content">
-                            <div class="project-title-section">
-                                <div class="project-info">
-                                    <h3>Hustle Hub</h3>
-                                </div>
-                                <div class="project-links">
-                                    <a href="https://github.com/nullPtrErikaS/hustle-hub" class="project-btn github" target="_blank" aria-label="View GitHub repository">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <p class="project-description">
-                                Building a FastAPI backend with PostgreSQL and SQLAlchemy, featuring secure JWT authentication, task management, and real-time WebSocket integration with Redis pub/sub for live updates.
-                            </p>
-                            <div class="project-achievements">
-                                <ul>
-                                    <li>Implemented secure JWT login and form-based authentication</li>
-                                    <li>Developed task creation system with dark-themed UI using Next.js and TailwindCSS</li>
-                                    <li>Integrating WebSocket live feed, leaderboards, and React Native mobile app</li>
+                                    <li>Implemented progressive difficulty system for engaging gameplay</li>
+                                    <li>Created high scoreboard feature to track player achievements</li>
+                                    <li>Designed comprehensive UI with intro and game over screens</li>
                                 </ul>
                             </div>
                             <div class="tech-tags">
                                 <span class="tech-tag">Python</span>
-                                <span class="tech-tag">FastAPI</span>
-                                <span class="tech-tag">PostgreSQL</span>
-                                <span class="tech-tag">Next.js</span>
-                                <span class="tech-tag">Redis</span>
+                                <span class="tech-tag">Turtle Graphics</span>
+                                <span class="tech-tag">Game Development</span>
+                                <span class="tech-tag">UI Design</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="portfolio-item">
+                        <div class="portfolio-header">
+                            <div class="portfolio-header-content">Harry Potter Sorting Hat V2</div>
+                            <div class="project-status">
+                                <span class="status-badge completed">Completed</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="project-title-section">
+                                <div class="project-info">
+                                    <h3>Python Flask Game</h3>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/nullPtrErikaS/Harry-Potter-Sorting-Hat" class="project-btn github" target="_blank" aria-label="View GitHub repository">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <p class="project-description">
+                                Enhanced version of the Sorting Hat game using Python, Flask, CSS, and JavaScript with improved algorithms and user experience features.
+                            </p>
+                            <div class="project-achievements">
+                                <ul>
+                                    <li>Upgraded to Flask backend for improved performance and scalability</li>
+                                    <li>Enhanced algorithm for more accurate house placement decisions</li>
+                                    <li>Improved user interface with responsive design and animations</li>
+                                </ul>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Flask</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
                             </div>
                         </div>
                     </article>
@@ -584,7 +662,7 @@
                 </div>
                 
                 <div class="carousel-counter" id="carousel-counter">
-                    1-3 of 6 projects
+                    1-3 of 8 projects
                 </div>
             </div>
         </div>
@@ -598,120 +676,155 @@
             <div class="leadership-grid">
                 <article class="leadership-item">
                     <div class="leadership-header">
-                        <img src="images/acm-logo.jpg" alt="ACM logo" class="leadership-logo">
+                        <img src="images/madhacks-logo.png" alt="MadHacks logo" class="leadership-logo">
                     </div>
                     <div class="leadership-content">
                         <div class="leadership-title-section">
                             <div class="leadership-title-info">
-                                <h3>President</h3>
-                                <div class="leadership-org">Association for Computing Machinery (ACM)</div>
-                                <div class="leadership-date">September 2023 - Present</div>
+                                <h3>Organizer</h3>
+                                <div class="leadership-org">MadHacks</div>
+                                <div class="leadership-date">September 2023 - February 2024</div>
                             </div>
                             <div class="leadership-socials">
-                                <a href="https://instagram.com/acm_uw" class="social-btn instagram" target="_blank" aria-label="ACM Instagram">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a href="https://linkedin.com/company/acm-uw" class="social-btn linkedin" target="_blank" aria-label="ACM LinkedIn">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                                <a href="https://acm.cs.wisc.edu" class="social-btn website" target="_blank" aria-label="ACM Website">
+                                <a href="https://madhacks.io" class="social-btn website" target="_blank" aria-label="MadHacks Website">
                                     <i class="fas fa-globe"></i>
                                 </a>
                             </div>
                         </div>
                         <p class="leadership-description">
-                            Leading the largest computer science organization on campus, organizing tech talks, hackathons, and networking events. Managing a team of 15+ board members and coordinating with industry partners.
+                            Orchestrated a student-run hackathon that attracted 300 participants, managing logistics, sponsorships, and technical infrastructure for the event.
                         </p>
                         <div class="leadership-achievements">
                             <ul>
-                                <li>Increased membership by 40% through innovative programming and outreach</li>
-                                <li>Organized 12+ tech talks featuring engineers from Google, Microsoft, and Meta</li>
-                                <li>Led team to win "Best Student Organization" award for 2024</li>
+                                <li>Successfully organized hackathon with 300 participants</li>
+                                <li>Coordinated with sponsors and managed event logistics</li>
+                                <li>Provided technical support and mentorship to participants</li>
                             </ul>
                         </div>
                         <div class="leadership-skills">
-                            <span class="leadership-skill">Team Leadership</span>
+                            <span class="leadership-skill">Event Management</span>
+                            <span class="leadership-skill">Logistics</span>
+                            <span class="leadership-skill">Team Coordination</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="leadership-item">
+                    <div class="leadership-header">
+                        <img src="images/logica-logo.png" alt="LOGICA logo" class="leadership-logo">
+                    </div>
+                    <div class="leadership-content">
+                        <div class="leadership-title-section">
+                            <div class="leadership-title-info">
+                                <h3>Community & Outreach Chair</h3>
+                                <div class="leadership-org">LOGICA</div>
+                                <div class="leadership-date">July 2023 - May 2024</div>
+                            </div>
+                        </div>
+                        <p class="leadership-description">
+                            Co-managed event operations, merchandise, and organized 6 events to build community engagement and foster connections within the organization.
+                        </p>
+                        <div class="leadership-achievements">
+                            <ul>
+                                <li>Co-managed event operations and merchandise distribution</li>
+                                <li>Successfully organized 6 community engagement events</li>
+                                <li>Increased member participation and community involvement</li>
+                            </ul>
+                        </div>
+                        <div class="leadership-skills">
+                            <span class="leadership-skill">Community Building</span>
                             <span class="leadership-skill">Event Planning</span>
-                            <span class="leadership-skill">Public Speaking</span>
+                            <span class="leadership-skill">Outreach</span>
                         </div>
                     </div>
                 </article>
 
                 <article class="leadership-item">
                     <div class="leadership-header">
-                        <img src="images/wic-logo.jpg" alt="Women in Computing logo" class="leadership-logo">
+                        <img src="images/wics-logo.png" alt="WiCS logo" class="leadership-logo">
                     </div>
                     <div class="leadership-content">
                         <div class="leadership-title-section">
                             <div class="leadership-title-info">
-                                <h3>Vice President of Education</h3>
-                                <div class="leadership-org">Women in Computing</div>
-                                <div class="leadership-date">January 2024 - Present</div>
-                            </div>
-                            <div class="leadership-socials">
-                                <a href="https://instagram.com/wic_uw" class="social-btn instagram" target="_blank" aria-label="WiC Instagram">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a href="https://linkedin.com/company/wic-uw" class="social-btn linkedin" target="_blank" aria-label="WiC LinkedIn">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                                <a href="https://wic.cs.wisc.edu" class="social-btn website" target="_blank" aria-label="WiC Website">
-                                    <i class="fas fa-globe"></i>
-                                </a>
+                                <h3>Newsletter Chair</h3>
+                                <div class="leadership-org">WiCS (Women in Computer Science)</div>
+                                <div class="leadership-date">May 2023 - May 2024</div>
                             </div>
                         </div>
                         <p class="leadership-description">
-                            Developing educational programs and workshops to support women in technology. Creating mentorship programs and organizing technical skill-building sessions for 200+ members.
+                            Organized 10 newsletters, 16 WiCS events, and 1 women in tech week to promote diversity and inclusion in computer science education and careers.
                         </p>
                         <div class="leadership-achievements">
                             <ul>
-                                <li>Designed curriculum for 8 technical workshops covering web dev to AI</li>
-                                <li>Established mentorship program pairing 50+ students with industry professionals</li>
-                                <li>Achieved 95% satisfaction rate in post-workshop surveys</li>
+                                <li>Published 10 newsletters with technical content and community updates</li>
+                                <li>Coordinated 16 WiCS events throughout the academic year</li>
+                                <li>Organized comprehensive women in tech week celebration</li>
                             </ul>
                         </div>
                         <div class="leadership-skills">
-                            <span class="leadership-skill">Curriculum Design</span>
-                            <span class="leadership-skill">Mentorship</span>
-                            <span class="leadership-skill">Workshop Facilitation</span>
+                            <span class="leadership-skill">Content Creation</span>
+                            <span class="leadership-skill">Event Coordination</span>
+                            <span class="leadership-skill">Diversity & Inclusion</span>
                         </div>
                     </div>
                 </article>
 
                 <article class="leadership-item">
                     <div class="leadership-header">
-                        <img src="images/hackuw-logo.jpg" alt="HackUW logo" class="leadership-logo">
+                        <img src="images/flourish-logo.png" alt="Flourish logo" class="leadership-logo">
                     </div>
                     <div class="leadership-content">
                         <div class="leadership-title-section">
                             <div class="leadership-title-info">
-                                <h3>Technical Director</h3>
-                                <div class="leadership-org">HackUW Organizing Committee</div>
-                                <div class="leadership-date">August 2024 - Present</div>
-                            </div>
-                            <div class="leadership-socials">
-                                <a href="https://instagram.com/hackuw" class="social-btn instagram" target="_blank" aria-label="HackUW Instagram">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a href="https://hackuw.com" class="social-btn website" target="_blank" aria-label="HackUW Website">
-                                    <i class="fas fa-globe"></i>
-                                </a>
+                                <h3>Organizer</h3>
+                                <div class="leadership-org">Flourish Open-Source Conference</div>
+                                <div class="leadership-date">May 2023 - September 2023</div>
                             </div>
                         </div>
                         <p class="leadership-description">
-                            Managing technical infrastructure for Wisconsin's largest hackathon with 500+ participants. Overseeing registration systems, judging platforms, and technical workshops.
+                            Organized an open-source conference hosted at UIC, bringing together developers and contributors to celebrate and advance open-source technologies.
                         </p>
                         <div class="leadership-achievements">
                             <ul>
-                                <li>Built custom registration platform handling 500+ applications in 24 hours</li>
-                                <li>Coordinated 15+ technical workshops and mentor matching system</li>
-                                <li>Managed AWS infrastructure supporting 48-hour event with 99.9% uptime</li>
+                                <li>Successfully organized open-source conference at UIC</li>
+                                <li>Coordinated speakers and workshop facilitators</li>
+                                <li>Promoted open-source contribution and collaboration</li>
                             </ul>
                         </div>
                         <div class="leadership-skills">
-                            <span class="leadership-skill">Project Management</span>
-                            <span class="leadership-skill">System Architecture</span>
-                            <span class="leadership-skill">Problem Solving</span>
+                            <span class="leadership-skill">Conference Planning</span>
+                            <span class="leadership-skill">Open Source</span>
+                            <span class="leadership-skill">Community Building</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="leadership-item">
+                    <div class="leadership-header">
+                        <img src="images/code-your-dreams-logo.png" alt="Code Your Dreams logo" class="leadership-logo">
+                    </div>
+                    <div class="leadership-content">
+                        <div class="leadership-title-section">
+                            <div class="leadership-title-info">
+                                <h3>Participant & Award Winner</h3>
+                                <div class="leadership-org">Code Your Dreams Ideathon</div>
+                                <div class="leadership-date">April 2024</div>
+                            </div>
+                        </div>
+                        <p class="leadership-description">
+                            Participated in ideathon focused on community impact through technology solutions, winning the Best Community Outreach Award for innovative approach.
+                        </p>
+                        <div class="leadership-achievements">
+                            <ul>
+                                <li>Won Best Community Outreach Award</li>
+                                <li>Developed technology solution for community impact</li>
+                                <li>Collaborated with diverse team on social innovation</li>
+                            </ul>
+                        </div>
+                        <div class="leadership-skills">
+                            <span class="leadership-skill">Innovation</span>
+                            <span class="leadership-skill">Community Impact</span>
+                            <span class="leadership-skill">Collaboration</span>
                         </div>
                     </div>
                 </article>
@@ -722,8 +835,8 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="contact-container fade-in">
-            <h2>Contact Me</h2>
-            <p>Ready to bring your ideas to life? Let's collaborate and create something amazing together!</p>
+            <h2>Let's Connect</h2>
+            <p>Ready to collaborate? Let's create something amazing together!</p>
             <div class="social-links">
                 <a href="mailto:ebasy22@gmail.com" class="social-link" aria-label="Send email to Erika Sy">
                     <i class="fas fa-envelope" aria-hidden="true"></i>

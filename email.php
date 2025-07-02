@@ -1,6 +1,6 @@
 <?php
 /**
- * Contact Form Handler
+ * Contact Form Handler for Erika Sy Portfolio
  * Handles form submissions with proper validation and security measures
  */
 
@@ -208,9 +208,9 @@ try {
     }
     
     // Prepare email
-    $subject = "New contact from {$name} - Portfolio Website";
+    $subject = "New contact from {$name} - Erika Sy Portfolio";
     
-    $email_content = "New contact form submission:\n\n";
+    $email_content = "New contact form submission from Erika Sy's portfolio:\n\n";
     $email_content .= "Name: {$name}\n";
     $email_content .= "Email: {$email}\n";
     $email_content .= "IP Address: " . ($_SERVER['REMOTE_ADDR'] ?? 'unknown') . "\n";
@@ -240,12 +240,12 @@ try {
         http_response_code(200);
         echo json_encode([
             'success' => true,
-            'message' => 'Thank you! Your message has been sent successfully.'
+            'message' => 'Thank you! Your message has been sent successfully. I\'ll get back to you soon!'
         ]);
         logSubmission($name, $email, true);
     } else {
         http_response_code(500);
-        echo json_encode(['error' => 'Failed to send email. Please try again later.']);
+        echo json_encode(['error' => 'Failed to send email. Please try again later or contact directly via email.']);
         logSubmission($name, $email, false);
         
         // Log error for debugging
@@ -254,7 +254,7 @@ try {
     
 } catch (Exception $e) {
     http_response_code(500);
-    echo json_encode(['error' => 'An unexpected error occurred']);
+    echo json_encode(['error' => 'An unexpected error occurred. Please try again later.']);
     error_log("Contact form error: " . $e->getMessage());
     
     if (isset($name) && isset($email)) {
