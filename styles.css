@@ -356,6 +356,17 @@ body {
     line-height: 1.8;
 }
 
+.about-content .quote {
+    font-size: 1.15rem;
+    color: #ff7300;
+    font-style: italic;
+    text-align: center;
+    margin: 2.5rem 0;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
 .contact-info {
     display: flex;
     gap: 2rem;
