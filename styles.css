@@ -326,13 +326,16 @@ body {
 
 .about-image {
     position: relative;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .about-pic {
     width: 100%;
-    height: 400px;
+    height: 550px;
     object-fit: cover;
-    border-radius: 20px;
+    object-position: center top;
+    border-radius: 15px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
@@ -1405,6 +1408,15 @@ body {
     .about-container {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+
+    .about-image {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+
+    .about-pic {
+        height: 350px;
     }
 
     .contact-info {
