@@ -75,9 +75,35 @@ const closeMobileMenu = () => {
 const handleSmoothScroll = (e) => {
     e.preventDefault();
     const targetId = e.currentTarget.getAttribute('href');
-    const targetElement = document.querySelector(targetId);
+    
+    // Handle subtitle IDs for section navigation
+    const subtitleMappings = {
+        '#my-professional-journey': '#experience',
+        '#some-of-my-recent-work': '#portfolio', 
+        '#building-communities-leading-teams': '#leadership',
+        '#let-me-introduce-myself': '#about'
+    };
+    
+    // Use subtitle mapping if it exists, otherwise use the original target
+    const finalTargetId = subtitleMappings[targetId] || targetId;
+    const targetElement = document.querySelector(finalTargetId);
     
     if (targetElement) {
+        // If we're targeting a subtitle, scroll to it specifically
+        if (subtitleMappings[targetId]) {
+            const subtitleElement = document.querySelector(targetId);
+            if (subtitleElement) {
+                // Scroll to subtitle with some offset
+                const elementTop = subtitleElement.offsetTop - 120;
+                window.scrollTo({
+                    top: elementTop,
+                    behavior: 'smooth'
+                });
+                return;
+            }
+        }
+        
+        // Default scroll behavior
         targetElement.scrollIntoView({
             behavior: 'smooth'
         });
@@ -204,12 +230,13 @@ const handleDurationBarClick = (e) => {
     const targetIndex = positionMapping[tooltipText];
     
     if (targetIndex === 'leadership') {
-        // Scroll to leadership section
-        const leadershipSection = document.querySelector('#leadership');
-        if (leadershipSection) {
-            leadershipSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+        // Scroll to leadership section subtitle
+        const leadershipSubtitle = document.querySelector('#building-communities-leading-teams');
+        if (leadershipSubtitle) {
+            const elementTop = leadershipSubtitle.offsetTop - 120;
+            window.scrollTo({
+                top: elementTop,
+                behavior: 'smooth'
             });
         }
     } else if (typeof targetIndex === 'number') {
