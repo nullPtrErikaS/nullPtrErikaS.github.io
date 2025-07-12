@@ -396,11 +396,15 @@ body {
     background: transparent;
     color: #333;
     border: 2px solid #ddd;
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
 }
 
 .download-cv:hover {
     border-color: #ff7300;
-    color: #ff7300;
+    background: #ff7300;
+    color: white;
+    transform: translateY(-2px);
 }
 
 /* Experience Section */
