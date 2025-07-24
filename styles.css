@@ -1682,7 +1682,7 @@ body {
     .profile-pic {
         height: 50vh;
         min-height: 320px;
-        transform: translateY(25%) scale(0.8); /* Lowered even more from 18% to 25% for smallest screens */
+        transform: translateY(20%) scale(0.8); /* Moved up from 25% to 20% for smallest screens */
     }
     
     .hero-text h1 {
