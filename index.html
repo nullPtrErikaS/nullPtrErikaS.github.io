@@ -87,8 +87,6 @@
         <div class="services-container fade-in">
             <div class="subtitle" id="my-professional-journey">MY PROFESSIONAL JOURNEY</div>
             <h2>Experience</h2>
-            
-            <!-- Updated Timeline with Duration Bars -->
             <div class="horizontal-timeline">
                 <div class="timeline-scale">
                     <div class="timeline-base"></div>
@@ -98,94 +96,88 @@
                         <div class="timeline-marker" style="left: 75%;">2025</div>
                         <div class="timeline-marker" style="left: 100%;">Present</div>
                     </div>
-                    <div class="duration-bars">
-                        <!-- KPMG - May 2023 (short duration) -->
-                        <div class="duration-bar work" style="left: 20%; width: 2%; bottom: 5px;">
-                            <div class="duration-tooltip">KPMG Seasonal Advisory Intern</div>
-                        </div>
-                        <!-- AbbVie - May 2024 to Aug 2024 -->
-                        <div class="duration-bar work" style="left: 45%; width: 8%; bottom: 15px;">
-                            <div class="duration-tooltip">AbbVie Technology Intern (2024)</div>
-                        </div>
-                        <!-- Snap Inc - Sep 2024 to Nov 2024 -->
-                        <div class="duration-bar work" style="left: 55%; width: 6%; bottom: 25px;">
-                            <div class="duration-tooltip">Snap Inc AR Extern</div>
-                        </div>
-                        <!-- UW Research - Sep 2024 to Present -->
-                        <div class="duration-bar research" style="left: 55%; width: 45%; bottom: 35px;">
-                            <div class="duration-tooltip">UW Research Assistant (Current)</div>
-                        </div>
-                        <!-- NASA NPWEE - Jan 2025 to May 2025 -->
-                        <div class="duration-bar work" style="left: 75%; width: 15%; bottom: 45px;">
-                            <div class="duration-tooltip">NASA Lead Software Engineer</div>
-                        </div>
-                        <!-- AbbVie Current - May 2025 to Present -->
-                        <div class="duration-bar work" style="left: 85%; width: 15%; bottom: 55px;">
-                            <div class="duration-tooltip">AbbVie Technology Intern (Current)</div>
-                        </div>
-                        
-                        <!-- Code Your Dreams - April 2024 (single event) -->
-                        <div class="duration-bar leadership" style="left: 44%; width: 1%; bottom: 105px;">
-                            <div class="duration-tooltip">Code Your Dreams Ideathon</div>
-                        </div>
-                        <!-- Flourish Conference - May 2023 to Sep 2023 -->
-                        <div class="duration-bar leadership" style="left: 20%; width: 12%; bottom: 85px;">
-                            <div class="duration-tooltip">Flourish Open-Source Conference</div>
-                        </div>
-                        <!-- MadHacks Organizer - Sep 2023 to Feb 2024 -->
-                        <div class="duration-bar leadership" style="left: 32%; width: 15%; bottom: 95px;">
-                            <div class="duration-tooltip">MadHacks Organizer</div>
-                        </div>
-                        <!-- LOGICA Community Chair - July 2023 to May 2024 -->
-                        <div class="duration-bar leadership" style="left: 25%; width: 22%; bottom: 75px;">
-                            <div class="duration-tooltip">LOGICA Community Chair</div>
-                        </div>
-                        <!-- WiCS Newsletter Chair - May 2023 to May 2024 -->
-                        <div class="duration-bar leadership" style="left: 20%; width: 25%; bottom: 65px;">
-                            <div class="duration-tooltip">WiCS Newsletter Chair</div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
-            <!-- Vertical Timeline with Updated Experiences -->
             <div class="timeline">
-                <!-- AbbVie Current (Most Recent) -->
+                <!-- UW Research - Dr. Gleicher (Sep 2025 - Present) -->
                 <article class="timeline-item fade-in" data-timeline-index="0">
-                    <div class="timeline-dot current" role="button" tabindex="0" aria-label="Current position"></div>
+                    <div class="timeline-dot current" role="button" tabindex="0" aria-label="UW Dr. Gleicher"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-banner" style="background-image: url('images/uwmadBanner.jpg');">
+                            <div class="timeline-banner-content">
+                                <h3>Undergraduate Research Assistant</h3>
+                                <div class="timeline-company">University of Wisconsin, Madison (Dr. Gleicher)</div>
+                                <time class="timeline-date" datetime="2025-09">Sep. 2025 - Present</time>
+                            </div>
+                            <img src="images/uw logo.jpg" alt="University of Wisconsin Madison logo" class="timeline-banner-logo">
+                        </div>
+                        <div class="timeline-main-content">
+                            <p class="timeline-description">Modernizing and extending a Python backend for interactive visualization and exploration of large text corpora; improving interpretability and analytic tooling for embeddings.</p>
+                            <div class="timeline-achievements">
+                                <ul>
+                                    <li>Modernized Python backend and improved APIs for large-corpus interactive exploration</li>
+                                    <li>Implemented and evaluated dimensionality-reduction and clustering methods to improve document-embedding interpretability</li>
+                                    <li>Analyzed linguistic and regional patterns across datasets to improve corpus understanding</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- UW Research (Dr. Hanna) -->
+                <article class="timeline-item fade-in" data-timeline-index="1">
+                    <div class="timeline-dot current" role="button" tabindex="0" aria-label="UW Dr. Hanna"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-banner" style="background-image: url('images/uwmadBanner.jpg');">
+                            <div class="timeline-banner-content">
+                                <h3>Undergraduate Research Assistant</h3>
+                                <div class="timeline-company">University of Wisconsin - Madison (Dr. Hanna)</div>
+                                <time class="timeline-date" datetime="2024-09">September 2024 - Present</time>
+                            </div>
+                            <img src="images/uw logo.jpg" alt="University of Wisconsin Madison logo" class="timeline-banner-logo">
+                        </div>
+                        <div class="timeline-main-content">
+                            <p class="timeline-description">Accelerated RL agent training by automating reward function optimization and used parallel computing resources to scale experiments. Built synthetic datasets for real-time CV model training.</p>
+                            <div class="timeline-achievements">
+                                <ul>
+                                    <li>Automated reward-function optimization using evolutionary algorithms and CHTC parallel compute</li>
+                                    <li>Discovered novel robotic gait patterns in simulation improving stability and traversal speed vs. baselines</li>
+                                    <li>Built a synthetic data pipeline in Unreal Engine 4, generating 10,000+ labeled images to train and benchmark CV models</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- AbbVie (May 2025 - Aug 2025) -->
+                <article class="timeline-item fade-in" data-timeline-index="2">
+                    <div class="timeline-dot" role="button" tabindex="0" aria-label="AbbVie position"></div>
                     <div class="timeline-content">
                         <div class="timeline-banner" style="background-image: url('images/abbvieBanner.jpg');">
                             <div class="timeline-banner-content">
                                 <h3>Business Technology Solutions Intern</h3>
                                 <div class="timeline-company">AbbVie</div>
-                                <time class="timeline-date" datetime="2025-05">May 2025 - Present</time>
+                                <time class="timeline-date" datetime="2025-05">May 2025 - Aug 2025</time>
                             </div>
                             <img src="images/abbvie-logo.jpg" alt="AbbVie logo" class="timeline-banner-logo">
                         </div>
                         <div class="timeline-main-content">
-                            <p class="timeline-description">
-                                Leading end-to-end automation initiatives within the ServiceNow platform to enhance operational efficiency and reduce costs. Managing employee workshops and driving AI innovation initiatives.
-                            </p>
+                            <p class="timeline-description">Automated mapping and streamlined access to institutional knowledge while prototyping AI-enabled onboarding tools to reduce new-hire ramp time.</p>
                             <div class="timeline-achievements">
                                 <ul>
-                                    <li>Identified and implemented automation opportunities within ServiceNow platform</li>
-                                    <li>Led 8 employee workshops and documented 12 processes using spreadsheets</li>
-                                    <li>Assisted in rebranding AI landing page and presented MVP to VP</li>
+                                    <li>Automated mapping of 200+ document workflows with a Neo4j graph database to create a single source of truth</li>
+                                    <li>Architected an AI-powered onboarding prototype to centralize tribal knowledge and shorten ramp-up time</li>
+                                    <li>Developed a Python script to parse keywords from a decentralized archive of spreadsheets, reducing data retrieval time from hours to minutes</li>
                                 </ul>
-                            </div>
-                            <div class="timeline-skills">
-                                <span class="timeline-skill">ServiceNow</span>
-                                <span class="timeline-skill">Process Automation</span>
-                                <span class="timeline-skill">Visio</span>
-                                <span class="timeline-skill">AI/ML</span>
                             </div>
                         </div>
                     </div>
                 </article>
 
                 <!-- NASA NPWEE -->
-                <article class="timeline-item fade-in" data-timeline-index="1">
-                    <div class="timeline-dot" role="button" tabindex="0" aria-label="NASA position"></div>
+                <article class="timeline-item fade-in" data-timeline-index="3">
+                    <div class="timeline-dot" role="button" tabindex="0" aria-label="NASA NPWEE"></div>
                     <div class="timeline-content">
                         <div class="timeline-banner" style="background-image: url('images/nasaBanner.jpg');">
                             <div class="timeline-banner-content">
@@ -196,9 +188,7 @@
                             <img src="images/nasaLogo.png" alt="NASA logo" class="timeline-banner-logo">
                         </div>
                         <div class="timeline-main-content">
-                            <p class="timeline-description">
-                                Led technical direction for GMAPS, a mission scheduling tool enhancing NASA Gateway's autonomy with AI-driven planning and fault prediction. Managed cross-functional team development.
-                            </p>
+                            <p class="timeline-description">Led technical direction for GMAPS, a mission scheduling tool enhancing NASA Gateway's autonomy with AI-driven planning and fault prediction. Managed cross-functional team development.</p>
                             <div class="timeline-achievements">
                                 <ul>
                                     <li>Designed tech stack (React, FastAPI, PostgreSQL, Docker, OR-Tools)</li>
@@ -207,52 +197,37 @@
                                     <li>Created 12-month roadmap with Agile sprints and Gantt milestones</li>
                                 </ul>
                             </div>
-                            <div class="timeline-skills">
-                                <span class="timeline-skill">React</span>
-                                <span class="timeline-skill">FastAPI</span>
-                                <span class="timeline-skill">PostgreSQL</span>
-                                <span class="timeline-skill">Docker</span>
-                                <span class="timeline-skill">OR-Tools</span>
-                            </div>
                         </div>
                     </div>
                 </article>
 
-                <!-- UW Research (Current) -->
-                <article class="timeline-item fade-in" data-timeline-index="2">
-                    <div class="timeline-dot current" role="button" tabindex="0" aria-label="Current research position"></div>
+                <!-- NASA L-Space / MCA (Chief Scientist) -->
+                <article class="timeline-item fade-in" data-timeline-index="4">
+                    <div class="timeline-dot current" role="button" tabindex="0" aria-label="NASA MCA Chief Scientist"></div>
                     <div class="timeline-content">
-                        <div class="timeline-banner" style="background-image: url('images/uwmadBanner.jpg');">
+                        <div class="timeline-banner" style="background-image: url('images/nasaBanner.jpg');">
                             <div class="timeline-banner-content">
-                                <h3>Undergraduate Research Assistant</h3>
-                                <div class="timeline-company">University of Wisconsin, Madison</div>
-                                <time class="timeline-date" datetime="2024-09">September 2024 - Present</time>
+                                <h3>Chief Scientist</h3>
+                                <div class="timeline-company">NASA L-Space — MCA</div>
+                                <time class="timeline-date" datetime="2025-01">Jan 2025 - Present</time>
                             </div>
-                            <img src="images/uw logo.jpg" alt="University of Wisconsin Madison logo" class="timeline-banner-logo">
+                            <img src="images/nasaLogo.png" alt="NASA logo" class="timeline-banner-logo">
                         </div>
                         <div class="timeline-main-content">
-                            <p class="timeline-description">
-                                Using evolutionary search optimization and parallel computing to optimize RL agents. Performing robotic motion analysis and generating synthetic data for computer vision applications.
-                            </p>
+                            <p class="timeline-description">Leading scientific strategy and experiment design for the MCA program within NASA's L‑Space initiative, coordinating cross-disciplinary teams to align mission objectives and data analysis.</p>
                             <div class="timeline-achievements">
                                 <ul>
-                                    <li>Used CMA-ES and CHTC for optimal reward function weights for RL agents</li>
-                                    <li>Performed robotic motion analysis in SimRobot to optimize gait patterns</li>
-                                    <li>Used Unreal Engine 4 to generate synthetic data for computer vision</li>
+                                    <li>Direct scientific planning and design of MCA experiments and validation frameworks</li>
+                                    <li>Coordinate with engineering and software teams to integrate experiment pipelines</li>
+                                    <li>Develop data analysis workflows and prototype visualization tools for mission telemetry</li>
                                 </ul>
-                            </div>
-                            <div class="timeline-skills">
-                                <span class="timeline-skill">CMA-ES</span>
-                                <span class="timeline-skill">SimRobot</span>
-                                <span class="timeline-skill">Unreal Engine</span>
-                                <span class="timeline-skill">Computer Vision</span>
                             </div>
                         </div>
                     </div>
                 </article>
 
                 <!-- Snap Inc -->
-                <article class="timeline-item fade-in" data-timeline-index="3">
+                <article class="timeline-item fade-in" data-timeline-index="5">
                     <div class="timeline-dot" role="button" tabindex="0" aria-label="Snap Inc position"></div>
                     <div class="timeline-content">
                         <div class="timeline-banner" style="background-image: url('images/snapBanner.jpg');">
@@ -285,7 +260,7 @@
                 </article>
 
                 <!-- AbbVie 2024 -->
-                <article class="timeline-item fade-in" data-timeline-index="4">
+                <article class="timeline-item fade-in" data-timeline-index="6">
                     <div class="timeline-dot" role="button" tabindex="0" aria-label="AbbVie 2024 position"></div>
                     <div class="timeline-content">
                         <div class="timeline-banner" style="background-image: url('images/abbvieBanner.jpg');">
@@ -319,7 +294,7 @@
                 </article>
 
                 <!-- KPMG -->
-                <article class="timeline-item fade-in" data-timeline-index="5">
+                <article class="timeline-item fade-in" data-timeline-index="7">
                     <div class="timeline-dot" role="button" tabindex="0" aria-label="KPMG position"></div>
                     <div class="timeline-content">
                         <div class="timeline-banner" style="background-image: url('images/kpmgBanner.jpg');">
@@ -364,7 +339,7 @@
                 <div class="portfolio-track" id="portfolio-track">
                     <article class="portfolio-item">
                         <div class="portfolio-header">
-                            <div class="portfolio-header-content">Hustle Hub</div>
+                            <div class="portfolio-header-content">AI Personal Planner</div>
                             <div class="project-status">
                                 <span class="status-badge in-progress">In Progress</span>
                             </div>
@@ -372,31 +347,30 @@
                         <div class="portfolio-content">
                             <div class="project-title-section">
                                 <div class="project-info">
-                                    <h3>Full-Stack Social Platform</h3>
+                                    <h3>AI Personal Planner</h3>
                                 </div>
                                 <div class="project-links">
-                                    <a href="https://github.com/nullPtrErikaS/Hustle-Hub-V2" class="project-btn github" target="_blank" aria-label="View GitHub repository">
+                                    <a href="#" class="project-btn github" target="_blank" aria-label="View project">
                                         <i class="fab fa-github"></i>
                                     </a>
                                 </div>
                             </div>
                             <p class="project-description">
-                                Building a FastAPI backend with PostgreSQL, featuring secure JWT authentication, task management, and real-time WebSocket integration with Redis pub/sub.
+                                Full-stack AI scheduler that integrates Canvas and Google Calendar APIs to synthesize deadlines and generate optimized daily plans.
                             </p>
                             <div class="project-achievements">
                                 <ul>
-                                    <li>Implemented secure JWT login and form-based authentication</li>
-                                    <li>Developed task creation system with dark-themed UI using Next.js</li>
-                                    <li>Integrating WebSocket live feed, leaderboards, and React Native mobile app</li>
+                                    <li>Designed FastAPI backend with SQLModel and an NLP parser to interpret user constraints</li>
+                                    <li>Built a constraint-based optimizer to resolve scheduling conflicts and prioritize tasks</li>
+                                    <li>Integrated calendar APIs for live synchronization and reminders</li>
                                 </ul>
                             </div>
                             <div class="tech-tags">
-                                <span class="tech-tag">Python</span>
                                 <span class="tech-tag">FastAPI</span>
-                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">SQLModel</span>
                                 <span class="tech-tag">Next.js</span>
-                                <span class="tech-tag">Redis</span>
-                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Tailwind CSS</span>
                             </div>
                         </div>
                     </article>
@@ -590,18 +564,18 @@
 
                     <article class="portfolio-item">
                         <div class="portfolio-header">
-                            <div class="portfolio-header-content">Space Invaders</div>
+                            <div class="portfolio-header-content">Stride</div>
                             <div class="project-status">
-                                <span class="status-badge completed">Completed</span>
+                                <span class="status-badge in-progress">In Progress</span>
                             </div>
                         </div>
                         <div class="portfolio-content">
                             <div class="project-title-section">
                                 <div class="project-info">
-                                    <h3>Classic Game Recreation</h3>
+                                    <h3>Full-Stack Social Platform</h3>
                                 </div>
                                 <div class="project-links">
-                                    <a href="https://github.com/nullPtrErikaS/space-invaders-python" class="project-btn github" target="_blank" aria-label="View GitHub repository">
+                                    <a href="#" class="project-btn github" target="_blank" aria-label="View project">
                                         <i class="fab fa-github"></i>
                                     </a>
                                 </div>
@@ -611,20 +585,22 @@
                             </p>
                             <div class="project-achievements">
                                 <ul>
-                                    <li>Implemented progressive difficulty system for engaging gameplay</li>
-                                    <li>Created high scoreboard feature to track player achievements</li>
-                                    <li>Designed comprehensive UI with intro and game over screens</li>
+                                    <li>Built a responsive Next.js frontend with TailwindCSS focused on daily accomplishments and streaks</li>
+                                    <li>Implemented realtime features using WebSocket + Redis and JWT authentication for sessions</li>
+                                    <li>Designed FastAPI backend with PostgreSQL; currently building a React Native mobile app</li>
                                 </ul>
                             </div>
                             <div class="tech-tags">
                                 <span class="tech-tag">Python</span>
-                                <span class="tech-tag">Turtle Graphics</span>
-                                <span class="tech-tag">Game Development</span>
-                                <span class="tech-tag">UI Design</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">Next.js</span>
+                                <span class="tech-tag">TailwindCSS</span>
+                                <span class="tech-tag">FastAPI</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">Redis</span>
                             </div>
                         </div>
                     </article>
-
                     <article class="portfolio-item">
                         <div class="portfolio-header">
                             <div class="portfolio-header-content">Harry Potter Sorting Hat V2</div>
@@ -698,7 +674,7 @@
                             <div class="leadership-title-info">
                                 <h3>Organizer</h3>
                                 <div class="leadership-org">MadHacks</div>
-                                <div class="leadership-date">September 2023 - February 2024</div>
+                                <div class="leadership-date">April 2025 - Present</div>
                             </div>
                             <div class="leadership-socials">
                                 <a href="https://madhacks.io" class="social-btn website" target="_blank" aria-label="MadHacks Website">
@@ -707,19 +683,19 @@
                             </div>
                         </div>
                         <p class="leadership-description">
-                            Orchestrated a student-run hackathon that attracted 300 participants, managing logistics, sponsorships, and technical infrastructure for the event.
+                            Coordinating logistics and participant experience for UW–Madison's 24-hour hackathon, expected to host 200+ attendees.
                         </p>
                         <div class="leadership-achievements">
                             <ul>
-                                <li>Successfully organized hackathon with 300 participants</li>
-                                <li>Coordinated with sponsors and managed event logistics</li>
-                                <li>Provided technical support and mentorship to participants</li>
+                                <li>Managing event logistics and participant experience for a 24-hour hackathon</li>
+                                <li>Coordinating sponsors, volunteers, and technical infrastructure</li>
+                                <li>Leading outreach to student communities and campus partners</li>
                             </ul>
                         </div>
                         <div class="leadership-skills">
-                            <span class="leadership-skill">Event Management</span>
-                            <span class="leadership-skill">Logistics</span>
-                            <span class="leadership-skill">Team Coordination</span>
+                            <span class="leadership-skill">Event Logistics</span>
+                            <span class="leadership-skill">Sponsorship Management</span>
+                            <span class="leadership-skill">Community Outreach</span>
                         </div>
                     </div>
                 </article>
@@ -786,30 +762,30 @@
 
                 <article class="leadership-item">
                     <div class="leadership-header">
-                        <img src="images/flourish-logo.png" alt="Flourish logo" class="leadership-logo">
+                        <img src="images/sparkhacks-logo.png" alt="SparkHacks logo" class="leadership-logo">
                     </div>
                     <div class="leadership-content">
                         <div class="leadership-title-section">
                             <div class="leadership-title-info">
                                 <h3>Organizer</h3>
-                                <div class="leadership-org">Flourish Open-Source Conference</div>
-                                <div class="leadership-date">May 2023 - September 2023</div>
+                                <div class="leadership-org">SparkHacks</div>
+                                <div class="leadership-date">May 2023 - May 2024</div>
                             </div>
                         </div>
                         <p class="leadership-description">
-                            Organized an open-source conference hosted at UIC, bringing together developers and contributors to celebrate and advance open-source technologies.
+                            Orchestrated a 300-person hackathon; secured $35,000 in sponsorship and handled logistics from judge coordination to community activities.
                         </p>
                         <div class="leadership-achievements">
                             <ul>
-                                <li>Successfully organized open-source conference at UIC</li>
-                                <li>Coordinated speakers and workshop facilitators</li>
-                                <li>Promoted open-source contribution and collaboration</li>
+                                <li>Secured $35,000 in sponsorship for event operations</li>
+                                <li>Managed judge coordination, volunteer scheduling, and community programming</li>
+                                <li>Oversaw venue logistics and participant support for 300 attendees</li>
                             </ul>
                         </div>
                         <div class="leadership-skills">
-                            <span class="leadership-skill">Conference Planning</span>
-                            <span class="leadership-skill">Open Source</span>
-                            <span class="leadership-skill">Community Building</span>
+                            <span class="leadership-skill">Sponsorship</span>
+                            <span class="leadership-skill">Event Management</span>
+                            <span class="leadership-skill">Community Engagement</span>
                         </div>
                     </div>
                 </article>
