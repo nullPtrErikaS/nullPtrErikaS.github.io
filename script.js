@@ -8,14 +8,16 @@ const CONFIG = {
     NAVBAR_SCROLL_THRESHOLD: 50
 };
 
-// Updated timeline mapping for new experiences
+// Updated timeline mapping for new experiences (8 items, index 0-7)
 const TIMELINE_MAPPING = {
-    0: 5, // KPMG (horizontal index 0) -> timeline index 5 (last chronologically)
-    1: 4, // AbbVie 2024 (horizontal index 1) -> timeline index 4
-    2: 3, // Snap Inc (horizontal index 2) -> timeline index 3
-    3: 2, // UW Research (horizontal index 3) -> timeline index 2
-    4: 1, // NASA NPWEE (horizontal index 4) -> timeline index 1
-    5: 0  // AbbVie Current (horizontal index 5) -> timeline index 0 (first chronologically - current)
+    0: 0, // NASA MCA (Chief Scientist) - Current
+    1: 1, // UW Gleicher Research
+    2: 2, // UW Hanna Research
+    3: 3, // AbbVie (May 2025 - Aug 2025)
+    4: 4, // NASA NPWEE (Lead Software Engineer)
+    5: 5, // Snap Inc
+    6: 6, // AbbVie 2024
+    7: 7   // KPMG
 };
 
 // DOM Elements Cache
