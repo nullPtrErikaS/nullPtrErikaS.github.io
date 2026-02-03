@@ -119,20 +119,24 @@
             max-width: 1000px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            align-items: center;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            background: #ffffff;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
         }
 
-        .university-logo {
-            text-align: center;
+        .university-banner {
+            position: relative;
+            overflow: hidden;
         }
 
-        .university-logo img {
-            width: 150px;
-            height: 150px;
-            object-fit: contain;
-            margin-bottom: 1rem;
+        .university-banner img {
+            width: 100%;
+            height: clamp(200px, 28vw, 280px);
+            object-fit: cover;
+            display: block;
         }
 
         .university-details h2 {
@@ -142,17 +146,85 @@
             color: #333;
         }
 
-        .degree-info {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 15px;
+        .university-details {
+            padding: 0 2.5rem 2.5rem;
+        }
+
+        .university-subtitle {
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.85rem;
+            color: #777;
+            font-weight: 600;
             margin-bottom: 1.5rem;
         }
 
-        .degree-info h3 {
+        .degree-info {
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            border: none;
+        }
+
+        .degree-highlight {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.6rem 1rem;
+            border-radius: 999px;
+            background: rgba(255, 115, 0, 0.12);
             color: #ff7300;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .degree-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .degree-row {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 0.8rem;
+            align-items: start;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .degree-row:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .degree-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: #ffffff;
+            color: #ff7300;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+            font-size: 1rem;
+        }
+
+        .degree-label {
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .degree-value {
+            font-size: 1rem;
+            color: #333;
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            line-height: 1.4;
         }
 
         .academic-stats {
@@ -623,33 +695,39 @@
     <!-- University Information -->
     <section class="university-info">
         <div class="university-container fade-in">
-            <div class="university-logo">
-                <img src="images/uw logo.jpg" alt="University of Wisconsin Madison logo">
-                <h3>University of Wisconsin, Madison</h3>
+            <div class="university-banner">
+                <img src="images/uwmadBanner.jpg" alt="University of Wisconsin–Madison campus">
             </div>
             <div class="university-details">
-                <h2>Bachelor of Science in Computer Science</h2>
+                <h2>University of Wisconsin, Madison</h2>
+                <div class="university-subtitle">College of Letters & Science</div>
                 <div class="degree-info">
-                    <h3>Expected Graduation: May 2026</h3>
-                    <p><strong>Minor:</strong> Mathematics</p>
-                </div>
-                
-                <div class="academic-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">60+</span>
-                        <span class="stat-label">Credits Completed</span>
+                    <div class="degree-highlight">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Expected Graduation: December 2026</span>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">15+</span>
-                        <span class="stat-label">CS Courses</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">Honors</span>
-                        <span class="stat-label">Program Member</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">2026</span>
-                        <span class="stat-label">Graduation</span>
+                    <div class="degree-grid">
+                        <div class="degree-row">
+                            <span class="degree-icon"><i class="fas fa-user-graduate"></i></span>
+                            <div>
+                                <span class="degree-label">Degree</span>
+                                <span class="degree-value">Bachelor of Science in Computer Science and Data Science</span>
+                            </div>
+                        </div>
+                        <div class="degree-row">
+                            <span class="degree-icon"><i class="fas fa-award"></i></span>
+                            <div>
+                                <span class="degree-label">Honors</span>
+                                <span class="degree-value">Letters & Science Honors Program</span>
+                            </div>
+                        </div>
+                        <div class="degree-row">
+                            <span class="degree-icon"><i class="fas fa-atom"></i></span>
+                            <div>
+                                <span class="degree-label">Minor</span>
+                                <span class="degree-value">Mathematics and Business</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -785,8 +863,8 @@
                     <h3>Core Computer Science</h3>
                     <ul class="course-list">
                         <li class="course-item">
-                            <span class="course-name">Introduction to Algorithms</span>
-                            <span class="course-code">CS 577</span>
+                            <span class="course-name">Computer Networks</span>
+                            <span class="course-code">CS 640</span>
                         </li>
                         <li class="course-item">
                             <span class="course-name">Software Engineering</span>
@@ -881,9 +959,9 @@
                     <h3>Honors Program</h3>
                     <ul class="course-list">
                         <li class="course-item">
-                            <span class="course-name">Honors Intro to Stochastic Processes</span>
-                            <span class="course-code">MATH 632</span>
-                            <span class="course-grade">A</span>
+                            <span class="course-name">Honors Algorithms</span>
+                            <span class="course-code">CS 577</span>
+                            <span class="course-grade">N/A</span>
                         </li>
                         <li class="course-item">
                             <span class="course-name">Honors Literature and Pop Culture</span>
@@ -893,11 +971,6 @@
                         <li class="course-item">
                             <span class="course-name">Honors Yiddish Literature and Culture</span>
                             <span class="course-code">GERMAN 279</span>
-                            <span class="course-grade">A</span>
-                        </li>
-                        <li class="course-item">
-                            <span class="course-name">Honors Intro to Political Theory</span>
-                            <span class="course-code">POLI SCI 130</span>
                             <span class="course-grade">A</span>
                         </li>
                         <li class="course-item">
