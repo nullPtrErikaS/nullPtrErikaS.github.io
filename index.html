@@ -6,9 +6,13 @@
     <title>Erika Sy - Computer Science Student</title>
     <meta name="description" content="Computer Science student specializing in research, AR development, and software engineering">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+
     <!-- Work in Progress Banner -->
     <div class="work-in-progress-banner">
         <div class="ticker">
@@ -88,13 +92,93 @@
             <div class="subtitle" id="my-professional-journey">MY PROFESSIONAL JOURNEY</div>
             <h2>Experience</h2>
             <div class="horizontal-timeline">
-                <div class="timeline-scale">
-                    <div class="timeline-base"></div>
-                    <div class="timeline-markers">
-                        <div class="timeline-marker" style="left: 0%;">2023</div>
-                        <div class="timeline-marker" style="left: 25%;">2024</div>
-                        <div class="timeline-marker" style="left: 75%;">2025</div>
-                        <div class="timeline-marker" style="left: 100%;">Present</div>
+                <div class="timeline-legend">
+                    <span class="legend-item"><span class="legend-dot work"></span>Work / Internship</span>
+                    <span class="legend-item"><span class="legend-dot research"></span>Research</span>
+                    <span class="legend-item"><span class="legend-dot activities"></span>Extracurriculars</span>
+                </div>
+                <div class="gantt-chart">
+                    <!-- Work row -->
+                    <div class="gantt-row">
+                        <div class="gantt-label">Work</div>
+                        <div class="gantt-lane">
+                            <div class="duration-bar work" style="left:11%;width:3%;top:8px">
+                                <div class="duration-tooltip">KPMG · May 2023</div>
+                            </div>
+                            <div class="duration-bar work" style="left:44%;width:11%;top:8px">
+                                <div class="duration-tooltip">AbbVie · May 2024</div>
+                            </div>
+                            <div class="duration-bar work" style="left:56%;width:8%;top:8px">
+                                <div class="duration-tooltip">Snap Inc · Sep 2024</div>
+                            </div>
+                            <div class="duration-bar work" style="left:67%;width:33%;top:8px">
+                                <div class="duration-tooltip">NASA MCA · Jan 2025</div>
+                            </div>
+                            <div class="duration-bar work" style="left:67%;width:14%;top:22px;opacity:0.8">
+                                <div class="duration-tooltip">NASA NPWEE · Jan 2025</div>
+                            </div>
+                            <div class="duration-bar work" style="left:78%;width:11%;top:34px">
+                                <div class="duration-tooltip">AbbVie · May 2025</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Research row -->
+                    <div class="gantt-row">
+                        <div class="gantt-label">Research</div>
+                        <div class="gantt-lane">
+                            <div class="duration-bar research" style="left:19%;width:28%;top:8px">
+                                <div class="duration-tooltip">UIC Early Scholar · Aug 2023</div>
+                            </div>
+                            <div class="duration-bar research" style="left:36%;width:11%;top:22px">
+                                <div class="duration-tooltip">UIC Research · Feb 2024</div>
+                            </div>
+                            <div class="duration-bar research" style="left:44%;width:56%;top:8px">
+                                <div class="duration-tooltip">HeadStarter · May 2024</div>
+                            </div>
+                            <div class="duration-bar research" style="left:56%;width:44%;top:22px">
+                                <div class="duration-tooltip">UW Research – Hanna · Sep 2024</div>
+                            </div>
+                            <div class="duration-bar research" style="left:89%;width:11%;top:34px">
+                                <div class="duration-tooltip">UW Research – Gleicher · Sep 2025</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Extracurriculars row -->
+                    <div class="gantt-row">
+                        <div class="gantt-label">Activities</div>
+                        <div class="gantt-lane">
+                            <div class="duration-bar activities" style="left:11%;width:33%;top:8px">
+                                <div class="duration-tooltip">WiCS · May 2023</div>
+                            </div>
+                            <div class="duration-bar activities" style="left:11%;width:33%;top:22px">
+                                <div class="duration-tooltip">SparkHacks · May 2023</div>
+                            </div>
+                            <div class="duration-bar activities" style="left:17%;width:30%;top:34px">
+                                <div class="duration-tooltip">LOGICA · Jul 2023</div>
+                            </div>
+                            <div class="duration-bar activities" style="left:42%;width:3%;top:22px">
+                                <div class="duration-tooltip">Code Your Dreams · Apr 2024</div>
+                            </div>
+                            <div class="duration-bar activities" style="left:50%;width:3%;top:8px">
+                                <div class="duration-tooltip">CheeseHacks · Jul 2024</div>
+                            </div>
+                            <div class="duration-bar activities" style="left:75%;width:22%;top:8px">
+                                <div class="duration-tooltip">MadHacks · Apr 2025</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Year axis -->
+                    <div class="gantt-axis">
+                        <div class="gantt-axis-label"></div>
+                        <div class="gantt-axis-track">
+                            <div class="timeline-base"></div>
+                            <div class="timeline-markers">
+                                <div class="timeline-marker" style="left:0%">2023</div>
+                                <div class="timeline-marker" style="left:33.3%">2024</div>
+                                <div class="timeline-marker" style="left:66.7%">2025</div>
+                                <div class="timeline-marker" style="left:100%">Now</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -321,6 +405,78 @@
                                 <span class="timeline-skill">Power BI</span>
                                 <span class="timeline-skill">Excel</span>
                                 <span class="timeline-skill">Sustainability</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- HeadStarter -->
+                <article class="timeline-item fade-in" data-timeline-index="8">
+                    <div class="timeline-dot" role="button" tabindex="0" aria-label="HeadStarter fellow"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-banner" style="background-image: url('images/snapBanner.jpg');">
+                            <div class="timeline-banner-content">
+                                <h3>Software Engineering Fellow</h3>
+                                <div class="timeline-company">HeadStarter</div>
+                                <time class="timeline-date" datetime="2024-05">May 2024 - Present</time>
+                            </div>
+                        </div>
+                        <div class="timeline-main-content">
+                            <p class="timeline-description">Built production-style AI apps and APIs end-to-end with modern web and backend tooling while strengthening engineering fundamentals through industry coaching.</p>
+                            <div class="timeline-achievements">
+                                <ul>
+                                    <li>Engineered 5+ AI applications and APIs using Next.js, OpenAI, Pinecone, and Stripe integrations</li>
+                                    <li>Applied MVC patterns and full project lifecycle practices from design to deployment</li>
+                                    <li>Strengthened Agile, CI/CD, and Git workflows through mentorship from engineers at major tech companies</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- UIC Research Assistant -->
+                <article class="timeline-item fade-in" data-timeline-index="9">
+                    <div class="timeline-dot" role="button" tabindex="0" aria-label="UIC research assistant"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-banner" style="background-image: url('images/uwmadBanner.jpg');">
+                            <div class="timeline-banner-content">
+                                <h3>Research Assistant</h3>
+                                <div class="timeline-company">University of Illinois Chicago</div>
+                                <time class="timeline-date" datetime="2024-02/2024-05">Feb 2024 - May 2024</time>
+                            </div>
+                        </div>
+                        <div class="timeline-main-content">
+                            <p class="timeline-description">Contributed to a digital-twin system for nuclear waste management by improving simulation performance and real-time communication reliability.</p>
+                            <div class="timeline-achievements">
+                                <ul>
+                                    <li>Developed features for crane-operation digital twin workflows using Codesys and Unreal Engine</li>
+                                    <li>Improved real-time TCP/IP synchronization between physical crane operations and digital twin</li>
+                                    <li>Identified bottlenecks and optimized simulation code for improved efficiency and safety</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- UIC Early Research Scholar -->
+                <article class="timeline-item fade-in" data-timeline-index="10">
+                    <div class="timeline-dot" role="button" tabindex="0" aria-label="UIC early research scholar"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-banner" style="background-image: url('images/uwmadBanner.jpg');">
+                            <div class="timeline-banner-content">
+                                <h3>Early Research Scholar</h3>
+                                <div class="timeline-company">University of Illinois Chicago</div>
+                                <time class="timeline-date" datetime="2023-08/2024-05">Aug 2023 - May 2024</time>
+                            </div>
+                        </div>
+                        <div class="timeline-main-content">
+                            <p class="timeline-description">Designed and demonstrated a vision-based whiteboard system using hand-gesture recognition for intuitive digital interaction.</p>
+                            <div class="timeline-achievements">
+                                <ul>
+                                    <li>Built gesture-recognition whiteboard with MediaPipe and OpenCV for camera-based control</li>
+                                    <li>Iterated through mentor-led reviews and team design discussions to improve UX and reliability</li>
+                                    <li>Presented findings and live demo during a research poster session</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -564,7 +720,7 @@
 
                     <article class="portfolio-item">
                         <div class="portfolio-header">
-                            <div class="portfolio-header-content">Stride</div>
+                            <div class="portfolio-header-content">Hustle Hub</div>
                             <div class="project-status">
                                 <span class="status-badge in-progress">In Progress</span>
                             </div>
@@ -572,7 +728,7 @@
                         <div class="portfolio-content">
                             <div class="project-title-section">
                                 <div class="project-info">
-                                    <h3>Full-Stack Social Platform</h3>
+                                    <h3>Social Productivity Platform</h3>
                                 </div>
                                 <div class="project-links">
                                     <a href="#" class="project-btn github" target="_blank" aria-label="View project">
@@ -581,13 +737,13 @@
                                 </div>
                             </div>
                             <p class="project-description">
-                                Developed a Space Invaders clone using Python and Turtle graphics with progressive difficulty levels, high scoreboard feature, and enhanced UI design.
+                                Building a full-stack productivity platform with social accountability, real-time updates, and streak-based engagement.
                             </p>
                             <div class="project-achievements">
                                 <ul>
-                                    <li>Built a responsive Next.js frontend with TailwindCSS focused on daily accomplishments and streaks</li>
-                                    <li>Implemented realtime features using WebSocket + Redis and JWT authentication for sessions</li>
-                                    <li>Designed FastAPI backend with PostgreSQL; currently building a React Native mobile app</li>
+                                    <li>Built FastAPI backend with PostgreSQL and SQLAlchemy plus secure JWT authentication and protected routes</li>
+                                    <li>Developed task creation and reactions with Next.js, Zustand, and TailwindCSS for smooth cross-platform UX</li>
+                                    <li>Integrating WebSocket live task feed via Redis pub/sub, streak leaderboards, reminders, and friend circles</li>
                                 </ul>
                             </div>
                             <div class="tech-tags">
@@ -816,6 +972,36 @@
                             <span class="leadership-skill">Innovation</span>
                             <span class="leadership-skill">Community Impact</span>
                             <span class="leadership-skill">Collaboration</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="leadership-item">
+                    <div class="leadership-header" style="background-image: url('images/madhacks banner.png'); background-size: cover; background-position: center;">
+                        <img src="images/madhacks logo.jpeg" alt="CheeseHacks project" class="leadership-logo">
+                    </div>
+                    <div class="leadership-content">
+                        <div class="leadership-title-section">
+                            <div class="leadership-title-info">
+                                <h3>Hacker</h3>
+                                <div class="leadership-org">CheeseHacks (UW-Madison x Google)</div>
+                                <div class="leadership-date">July 2024</div>
+                            </div>
+                        </div>
+                        <p class="leadership-description">
+                            Built an accessibility-focused object-detection tool for visually impaired users using real-time vision and speech feedback.
+                        </p>
+                        <div class="leadership-achievements">
+                            <ul>
+                                <li>Developed real-time object detection pipeline using YOLOv8 and webcam input</li>
+                                <li>Integrated text-to-speech feedback to verbalize object identities and attributes</li>
+                                <li>Focused on accessibility-first UX to improve independent navigation support</li>
+                            </ul>
+                        </div>
+                        <div class="leadership-skills">
+                            <span class="leadership-skill">Computer Vision</span>
+                            <span class="leadership-skill">Accessibility</span>
+                            <span class="leadership-skill">Rapid Prototyping</span>
                         </div>
                     </div>
                 </article>

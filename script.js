@@ -373,12 +373,16 @@ const handleContactButtonClick = (e) => {
     const button = e.target;
     
     if (button.textContent === 'DOWNLOAD RESUME') {
-        // Update with actual CV file path
         try {
-            window.open('Sy, E. Résumé 2025.pdf', '_blank');
+            const link = document.createElement('a');
+            link.href = 'Sy, E. Résumé 2026 SWE.pdf';
+            link.download = 'Sy, E. Résumé 2026 SWE.pdf';
+            link.target = '_blank';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         } catch (error) {
-            console.warn('CV file not found. Please ensure the CV file exists in the root directory.');
-            // Fallback: Could show a message to user or redirect to contact
+            console.warn('Resume file not found. Please ensure the resume file exists in the root directory.');
         }
     }
 };
@@ -389,11 +393,11 @@ const initializeLeadershipCards = () => {
     
     leadershipItems.forEach(item => {
         item.addEventListener('mouseenter', () => {
-            item.style.transform = 'translateY(-15px) scale(1.02)';
+            item.style.transform = 'translateY(-10px) scale(1.01)';
         });
         
         item.addEventListener('mouseleave', () => {
-            item.style.transform = 'translateY(0) scale(1)';
+            item.style.transform = '';
         });
     });
 };
@@ -663,6 +667,37 @@ const updatePageMeta = () => {
 };
 
 // Main Initialization
+const initializeScrollProgress = () => {
+    const bar = document.getElementById('scroll-progress-bar');
+    if (!bar) return;
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        bar.style.width = `${progress}%`;
+    });
+};
+
+const initializeStaggeredAnimations = () => {
+    // Stagger cards in grids
+    const staggerGroups = [
+        '.skills-grid .skills-card',
+        '.leadership-grid .leadership-item',
+        '.portfolio-track .portfolio-item'
+    ];
+    staggerGroups.forEach(selector => {
+        const items = document.querySelectorAll(selector);
+        items.forEach((item, i) => {
+            item.style.transitionDelay = `${i * 0.08}s`;
+        });
+    });
+
+    // Stagger timeline items
+    document.querySelectorAll('.timeline-item').forEach((item, i) => {
+        item.style.transitionDelay = `${i * 0.06}s`;
+    });
+};
+
 const init = () => {
     try {
         // Core functionality
@@ -670,6 +705,8 @@ const init = () => {
         initializeScrollAnimations();
         initializeTimeline();
         initializeContactButtons();
+        initializeScrollProgress();
+        initializeStaggeredAnimations();
         
         // Enhanced interactions
         initializeLeadershipCards();
