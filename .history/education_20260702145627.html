@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education - Erika Sy</title>
+    <meta name="description" content="Academic background and coursework of Erika Sy - Computer Science at University of Wisconsin, Madison">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Work in Progress Banner */
+        .work-in-progress-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: linear-gradient(45deg, #ff7300, #ff5e00);
+            color: white;
+            z-index: 1001;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .ticker {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .ticker-content {
+            display: flex;
+            white-space: nowrap;
+            animation: scroll-left 30s linear infinite;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Education-specific styles */
+        .education-hero {
+            min-height: 60vh;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #ff7300 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .education-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(45deg, #ff7300, #ff5e00);
+            border-radius: 50% 0 0 50%;
+            transform: translateX(20%);
+        }
+
+        .education-hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            padding: 0 5%;
+        }
+
+        .education-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .education-hero .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #ff7300;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 115, 0, 0.3);
+        }
+
+        .back-button:hover {
+            background: #ff5e00;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 115, 0, 0.4);
+            color: white;
+        }
+
+        .university-info {
+            padding: 4rem 5%;
+            background: white;
+        }
+
+        .university-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            background: #ffffff;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .university-banner {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .university-banner img {
+            width: 100%;
+            height: clamp(200px, 28vw, 280px);
+            object-fit: cover;
+            display: block;
+        }
+
+        .university-details h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .university-details {
+            padding: 0 2.5rem 2.5rem;
+        }
+
+        .university-subtitle {
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.85rem;
+            color: #777;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .degree-info {
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            border: none;
+        }
+
+        .degree-highlight {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.6rem 1rem;
+            border-radius: 999px;
+            background: rgba(255, 115, 0, 0.12);
+            color: #ff7300;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .degree-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .degree-row {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 0.8rem;
+            align-items: start;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .degree-row:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .degree-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: #ffffff;
+            color: #ff7300;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+            font-size: 1rem;
+        }
+
+        .degree-label {
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .degree-value {
+            font-size: 1rem;
+            color: #333;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .academic-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ff7300;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 0.3rem;
+        }
+
+        .coursework-section {
+            padding: 4rem 5%;
+            background: white;
+        }
+
+        .transfer-highlights {
+            padding: 4rem 5%;
+            background: #f8f9fa;
+        }
+
+        .coursework-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-header .subtitle {
+            color: #ff7300;
+            font-weight: 600;
+        }
+
+        .course-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .course-category {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(45deg, #ff7300, #ff5e00);
+        }
+
+        .course-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .category-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #ff7300, #ff5e00);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .course-category h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .course-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .course-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            transition: all 0.2s ease;
+        }
+
+        .course-item:last-child {
+            border-bottom: none;
+        }
+
+        .course-item:hover {
+            background: #f8f9fa;
+            margin: 0 -1rem;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+        }
+
+        .course-name {
+            font-weight: 500;
+            color: #333;
+            flex: 1;
+        }
+
+        .course-code {
+            font-size: 0.8rem;
+            color: #666;
+            margin-left: 1rem;
+        }
+
+        .course-grade {
+            font-weight: 600;
+            color: #ff7300;
+            margin-left: 1rem;
+            min-width: 30px;
+            text-align: right;
+        }
+
+        /* Honors courses get special styling */
+        .honors-category {
+            background: white;
+            border: none;
+            position: relative;
+        }
+
+        .honors-category::before {
+            background: linear-gradient(45deg, #ffd700, #ffb347);
+        }
+
+        .honors-category .category-icon {
+            background: linear-gradient(45deg, #ffd700, #ffb347);
+        }
+
+        .honors-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #ff7300;
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            opacity: 0.9;
+        }
+
+        .academic-projects {
+            padding: 4rem 5%;
+            background: #f8f9fa;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .academic-project {
+            background: #f8f9fa;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .academic-project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .project-header {
+            background: linear-gradient(45deg, #ff7300, #ff5e00);
+            color: white;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .project-course {
+            font-size: 0.8rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-description {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            background: white;
+            color: #ff7300;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid #ff7300;
+        }
+
+        .project-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .project-grade {
+            font-weight: 600;
+            color: #ff7300;
+            font-size: 1rem;
+        }
+
+        .project-github-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #333;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(51, 51, 51, 0.2);
+        }
+
+        .project-github-btn:hover {
+            background: #000;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(51, 51, 51, 0.3);
+            color: white;
+        }
+
+        .project-github-btn i {
+            font-size: 0.9rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .course-categories {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .course-category {
+                padding: 1.5rem;
+                border-radius: 15px;
+            }
+
+            .category-icon {
+                width: 45px;
+                height: 45px;
+                margin-bottom: 1.2rem;
+                font-size: 1.1rem;
+            }
+
+            .course-category h3 {
+                font-size: 1.15rem;
+                margin-bottom: 1rem;
+            }
+
+            .course-item {
+                padding: 0.7rem 0;
+            }
+
+            .course-name {
+                font-size: 0.95rem;
+            }
+
+            .course-code {
+                font-size: 0.8rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .academic-project {
+                border-radius: 15px;
+            }
+
+            .project-header {
+                padding: 1.4rem;
+            }
+
+            .project-content {
+                padding: 1.4rem;
+            }
+
+            .project-course {
+                font-size: 0.8rem;
+            }
+
+            .project-title {
+                font-size: 1.15rem;
+            }
+
+            .project-description {
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
+                line-height: 1.5;
+            }
+
+            .tech-tag {
+                padding: 0.3rem 0.7rem;
+                font-size: 0.8rem;
+            }
+
+            .project-footer {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+
+            .project-github-btn {
+                width: 100%;
+                max-width: 160px;
+                justify-content: center;
+                padding: 0.6rem 1.2rem;
+            }
+
+            .university-container {
+                grid-template-columns: 1fr 2fr;
+                gap: 1.5rem;
+                align-items: center;
+            }
+
+            .university-logo {
+                text-align: center;
+            }
+
+            .university-logo img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .university-logo h3 {
+                font-size: 0.9rem;
+                margin-top: 0.5rem;
+            }
+
+            .university-details h2 {
+                font-size: 1.5rem;
+            }
+
+            .academic-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+            }
+
+            .stat-item {
+                padding: 0.8rem;
+            }
+
+            .stat-number {
+                font-size: 1.2rem;
+            }
+
+            .stat-icon {
+                font-size: 1rem;
+                margin-bottom: 0.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Work in Progress Banner -->
+    <div class="work-in-progress-banner">
+        <div class="ticker">
+            <div class="ticker-content">
+                🚧 WORK IN PROGRESS: Some items may not be fully functional, or accurate • Updated regularly with new projects and improvements • 🚧 WORK IN PROGRESS: Some items may not be fully functional, or accurate • Updated regularly with new projects and improvements • 
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="logo" aria-label="Erika Sy Portfolio">Erika</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="#course-projects" class="nav-link">Course Projects</a></li>
+                <li><a href="#coursework" class="nav-link">Coursework</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Education Hero -->
+    <section class="education-hero">
+        <div class="education-hero-content fade-in">
+            <h1>Academic Background</h1>
+            <p class="subtitle">Computer Science studies and technical coursework</p>
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                Back to Portfolio
+            </a>
+        </div>
+    </section>
+
+    <!-- University Information -->
+    <section class="university-info">
+        <div class="university-container fade-in">
+            <div class="university-banner">
+                <img src="images/uwmadBanner.jpg" alt="University of Wisconsin–Madison campus">
+            </div>
+            <div class="university-details">
+                <h2>University of Wisconsin, Madison</h2>
+                <div class="university-subtitle">College of Letters & Science</div>
+                <div class="degree-info">
+                    <div class="degree-highlight">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Expected Graduation: December 2026</span>
+                    </div>
+                    <div class="degree-grid">
+                        <div class="degree-row">
+                            <span class="degree-icon"><i class="fas fa-user-graduate"></i></span>
+                            <div>
+                                <span class="degree-label">Degree</span>
+                                <span class="degree-value">Bachelor of Science in Computer Science and Data Science</span>
+                            </div>
+                        </div>
+                        <div class="degree-row">
+                            <span class="degree-icon"><i class="fas fa-award"></i></span>
+                            <div>
+                                <span class="degree-label">Honors</span>
+                                <span class="degree-value">Letters & Science Honors Program</span>
+                            </div>
+                        </div>
+                        <div class="degree-row">
+                            <span class="degree-icon"><i class="fas fa-atom"></i></span>
+                            <div>
+                                <span class="degree-label">Minor</span>
+                                <span class="degree-value">Mathematics and Business</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Projects (Now First) -->
+    <section id="course-projects" class="academic-projects">
+        <div class="coursework-container fade-in">
+            <div class="section-header">
+                <div class="subtitle">Selected Course Projects</div>
+                <h2>Course Projects</h2>
+            </div>
+
+            <div class="projects-grid">
+                <div class="academic-project">
+                    <div class="project-header">
+                        <div class="project-course">CS 398 - Undergrad Design/Research</div>
+                        <h4 class="project-title">Digital Hand Pen Whiteboard</h4>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">
+                            Created a gesture recognition whiteboard using MediaPipe, OpenCV, and PyCharm that enabled real-time interactions with 90% accuracy rate for intuitive digital drawing and interaction.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">MediaPipe</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">PyCharm</span>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-grade">Presented at ERSP Conference</div>
+                            <a href="https://github.com/nullPtrErikaS/digital-hand-pen-whiteboard" class="project-github-btn" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i>
+                                View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="academic-project">
+                    <div class="project-header">
+                        <div class="project-course">CS 342 - Software Design</div>
+                        <h4 class="project-title">Full-Stack Social Productivity App</h4>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">
+                            Engineered a full-stack social-media productivity app during a hackathon that boosts user productivity through social interaction and gamification features.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">Bootstrap</span>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-grade">Final Grade: A</div>
+                            <a href="https://github.com/nullPtrErikaS/social-productivity-app" class="project-github-btn" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i>
+                                View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="academic-project">
+                    <div class="project-header">
+                        <div class="project-course">CS 251 - Data Structures</div>
+                        <h4 class="project-title">Space Invaders Game</h4>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">
+                            Developed a Space Invaders clone using Python and Turtle graphics with progressive difficulty levels, high scoreboard feature, and enhanced user interface design.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Turtle Graphics</span>
+                            <span class="tech-tag">Game Development</span>
+                            <span class="tech-tag">UI Design</span>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-grade">Final Grade: A-</div>
+                            <a href="https://github.com/nullPtrErikaS/space-invaders-python" class="project-github-btn" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i>
+                                View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="academic-project">
+                    <div class="project-header">
+                        <div class="project-course">CS 211 - Programming Practicum</div>
+                        <h4 class="project-title">Harry Potter Sorting Hat</h4>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">
+                            Built an interactive game to simulate the Sorting Hat's house selection process using algorithm that analyzes and weighs user responses to determine suitable house placement.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Algorithm Design</span>
+                            <span class="tech-tag">Interactive Systems</span>
+                            <span class="tech-tag">Logic Programming</span>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-grade">Final Grade: A</div>
+                            <a href="https://github.com/nullPtrErikaS/harry-potter-sorting-hat" class="project-github-btn" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i>
+                                View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coursework Section (Now Second) -->
+    <section id="coursework" class="coursework-section">
+        <div class="coursework-container fade-in">
+            <div class="section-header">
+                <div class="subtitle">Technical Foundation</div>
+                <h2>Coursework</h2>
+            </div>
+
+            <div class="course-categories">
+                <!-- Core Computer Science -->
+                <div class="course-category">
+                    <div class="category-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Core Computer Science</h3>
+                    <ul class="course-list">
+                        <li class="course-item">
+                            <span class="course-name">Intro to COMP SCI</span>
+                            <span class="course-code">640 Computer Networks</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Computer Networks</span>
+                            <span class="course-code">CS 640</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Machine Organization and Programming</span>
+                            <span class="course-code">CS 354</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Software Design</span>
+                            <span class="course-code">CS 342</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Data Structures</span>
+                            <span class="course-code">CS 251</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Honors Algorithms</span>
+                            <span class="course-code">CS 577</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- AI & Machine Learning -->
+                <div class="course-category">
+                    <div class="category-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI & Machine Learning</h3>
+                    <ul class="course-list">
+                        <li class="course-item">
+                            <span class="course-name">Introduction to Artificial Intelligence</span>
+                            <span class="course-code">CS 540</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Accelerated Honors Computer Graphics</span>
+                            <span class="course-code">CS 559</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Systems & Theory -->
+                <div class="course-category">
+                    <div class="category-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Systems & Theory</h3>
+                    <ul class="course-list">
+                        <li class="course-item">
+                            <span class="course-name">Introduction to Operating Systems</span>
+                            <span class="course-code">CS 537</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Mathematical Foundations of Computing</span>
+                            <span class="course-code">CS 151</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Mathematics -->
+                <div class="course-category">
+                    <div class="category-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Mathematics</h3>
+                    <ul class="course-list">
+                        <li class="course-item">
+                            <span class="course-name">Intro to Theory of Probability</span>
+                            <span class="course-code">MATH 431</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Applied Linear Algebra</span>
+                            <span class="course-code">MATH 310</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Calculus III</span>
+                            <span class="course-code">MATH 210</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Physics I</span>
+                            <span class="course-code">PHYS 141</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Honors Coursework -->
+                <div class="course-category honors-category">
+                    <div class="category-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Honors Program</h3>
+                    <ul class="course-list">
+                        <li class="course-item">
+                            <span class="course-name">GEN BUS 311 Mgmt &amp; Mrktg Non-Bus Majors</span>
+                            <span class="course-grade">A</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">PSYCH 406 Psychology of Perception</span>
+                            <span class="course-grade">A</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">SOC 181 Hnrs Smr:Sociolgl Enterprse</span>
+                            <span class="course-grade">A</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Honors Literature and Pop Culture</span>
+                            <span class="course-code">ENGL 177</span>
+                            <span class="course-grade">A</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Honors Yiddish Literature and Culture</span>
+                            <span class="course-code">GERMAN 279</span>
+                            <span class="course-grade">A</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Accelerated General Chemistry</span>
+                            <span class="course-code">CHEM 109</span>
+                            <span class="course-grade">N/A</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Honors Intro to Biology</span>
+                            <span class="course-code">BIO 153</span>
+                            <span class="course-grade">A</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Honors Operating Systems</span>
+                            <span class="course-code">CS 537</span>
+                            <span class="course-grade">N/A</span>
+                        </li>
+                        <li class="course-item">
+                            <span class="course-name">Accelerated Honors Computer Graphics</span>
+                            <span class="course-code">CS 559</span>
+                            <span class="course-grade">AB</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Transfer Credits & Transcript Highlights -->
+    <section class="transfer-highlights">
+        <div class="coursework-container fade-in">
+            <div class="section-header">
+                <div class="subtitle">Transfer Credits</div>
+                <h2>Transfer Credits &amp; Selected Grades</h2>
+            </div>
+
+            <div class="course-category">
+                <h3>Transfer Credit (University of Illinois at Chicago)</h3>
+                <p><strong>Applied Toward:</strong> General Course - BS Degree (Computer Sciences)</p>
+                <p><strong>Transfer Course Totals:</strong> 72.00 credits</p>
+                <ul class="course-list">
+                    <li class="course-item"><span class="course-name">COMP SCI 200 / 300 / 400 (Programming I/II/III)</span></li>
+                    <li class="course-item"><span class="course-name">MATH 221, 222, 234, 240, 340 (Calculus &amp; Linear Algebra / Discrete Math)</span></li>
+                    <li class="course-item"><span class="course-name">PHYSICS 201 (General Physics)</span></li>
+                    <li class="course-item"><span class="course-name">Various elective credits applied toward degree requirements</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-container fade-in">
+            <h2>Let's Connect</h2>
+            <p>Ready to collaborate? Let's create something amazing together!</p>
+            <div class="social-links">
+                <a href="mailto:ebasy22@gmail.com" class="social-link" aria-label="Send email to Erika Sy">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/erika-sy/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Visit Erika Sy's LinkedIn profile">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="https://github.com/nullPtrErikaS" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Visit Erika Sy's GitHub profile">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
