@@ -352,9 +352,14 @@ body {
 }
 
 .typing-text::after {
-    content: '|';
-    color: #ff7300;
-    animation: blink 1s infinite;
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 1.1em;
+    background-color: #ff7300;
+    margin-left: 0.25rem;
+    vertical-align: middle;
+    animation: blink 1s steps(1) infinite;
 }
 
 @keyframes blink {
